@@ -79,19 +79,15 @@ class _TiresChecklistPageState extends State<TiresChecklistPage> {
                     Container(
                       width: 30,
                       height: 30,
-                      // child: Icon(Icons.ac_unit),
                       child: Image.asset('assets/icons/checklist/tires_checklist/tire_icon.png')
                     ),
                     Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 10),
                         child: Column(
                           children: [
                             Text('Dianteiro'),
                             Text('Esquerdo', style: titleTextStyle),
                           ],
                         ),
-                      ),
                     ),
                   ],
                 ),
@@ -150,16 +146,13 @@ class _TiresChecklistPageState extends State<TiresChecklistPage> {
                       child: Image.asset('assets/icons/checklist/tires_checklist/tire_icon.png')
                     ),
                     Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Column(
+                      child: Column(
                           children: [
                             Text('Dianteiro'),
                             Text('Direito', style: titleTextStyle),
                           ],
                         ),
                       ),
-                    ),
                   ],
                 ),
                 CircleAvatar(
@@ -217,16 +210,13 @@ class _TiresChecklistPageState extends State<TiresChecklistPage> {
                       child: Image.asset('assets/icons/checklist/tires_checklist/tire_icon.png')
                     ),
                     Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Column(
+                      child: Column(
                           children: [
                             Text('Traseiro'),
                             Text('Esquerdo', style: titleTextStyle),
                           ],
                         ),
                       ),
-                    ),
                   ],
                 ),
                 CircleAvatar(
@@ -284,16 +274,13 @@ class _TiresChecklistPageState extends State<TiresChecklistPage> {
                       child: Image.asset('assets/icons/checklist/tires_checklist/tire_icon.png')
                     ),
                     Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Column(
+                      child: Column(
                           children: [
                             Text('Traseiro'),
                             Text('Direito', style: titleTextStyle),
                           ],
                         ),
                       ),
-                    ),
                   ],
                 ),
                 CircleAvatar(

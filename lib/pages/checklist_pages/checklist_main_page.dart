@@ -1,4 +1,5 @@
 import 'package:comodiwash/pages/checklist_pages/engine_checklist_page.dart';
+import 'package:comodiwash/pages/checklist_pages/lights_checklist_page.dart.dart';
 import 'package:comodiwash/pages/checklist_pages/tires_checklist_page.dart.dart';
 import 'package:flutter/material.dart';
 
@@ -221,7 +222,10 @@ class _CheckListMainPageState extends State<CheckListMainPage>
           primary: Colors.white,
           onPrimary: Colors.black,
           minimumSize: Size(buttonHeight, buttonWidth)),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => LightsChecklistPage()));
+      },
       label: Text(
         'Iluminação                                                                  ',
         textScaleFactor: 1.3,
