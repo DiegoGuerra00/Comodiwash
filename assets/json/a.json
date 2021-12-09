@@ -1,0 +1,4242 @@
+[
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "155"
+    },
+    {
+        "marca": "Agrale",
+        "modelo": "Marruá"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "145"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "147"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "155"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "156"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "159"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "164"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "166"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "2000 GTV"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "2300 B"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "2300 Ti"
+    },
+    {
+        "marca": "Alfa Romeo",
+        "modelo": "SPIDER"
+    },
+    {
+        "marca": "Amazonas",
+        "modelo": "Spyder 550"
+    },
+    {
+        "marca": "Americar",
+        "modelo": "Classic XK120"
+    },
+    {
+        "marca": "Asia",
+        "modelo": "Towner"
+    },
+    {
+        "marca": "Aston Martin",
+        "modelo": "DBS"
+    },
+    {
+        "marca": "Aston Martin",
+        "modelo": "Rapide"
+    },
+    {
+        "marca": "Aston Martin",
+        "modelo": "Vantage"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "80"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "A1"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "A3"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "A4"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "A5"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "A6"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "A7"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "A8"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "Allroad"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "E-Tron"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "Q3"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "Q5"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "Q7"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "Q8"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "R8"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS E-Tron GT"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS Q3"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS Q3"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS2"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS3"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS4"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS5"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS6"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "RS7"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "S3"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "S4"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "S5"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "S6"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "S7"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "S8"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "SQ5"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "TT"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "TTRS"
+    },
+    {
+        "marca": "Audi",
+        "modelo": "TTS"
+    },
+    {
+        "marca": "Austin-Healey",
+        "modelo": "A40"
+    },
+    {
+        "marca": "Austin-Healey",
+        "modelo": "America"
+    },
+    {
+        "marca": "Baja",
+        "modelo": "Buggy"
+    },
+    {
+        "marca": "Bentley",
+        "modelo": "Continental"
+    },
+    {
+        "marca": "Bentley",
+        "modelo": "Flying Spur"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "1M"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "116i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "118i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "120i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "125i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "130i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "135i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "2002"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "2002 Ti"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "218i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "220i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "225i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "2800"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "316i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "318ti"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "318i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "318is"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "320i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "323ti"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "323i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "325ci"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "325i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "328i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "330ci"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "330e"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "330i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "335i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "420i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "428i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "430i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "435i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "523i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "525i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "528i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "530e"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "530i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "535i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "540i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "545i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "550i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "633csi"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "640i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "645ci"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "650i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "740li"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "740i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "745le"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "745i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "750li"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "750i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "760li"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "850ci"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "850i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M135i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M140i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M235i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M240i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M340i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M440i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M760li"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M850i"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M2"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M3"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M4"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M5"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M6"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "M8"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "X1"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "X2"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "X3"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "X4"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "X5"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "X6"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "X7"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "Z3"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "Z4"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "i3"
+    },
+    {
+        "marca": "BMW",
+        "modelo": "i8"
+    },
+    {
+        "marca": "BRM",
+        "modelo": "M-10"
+    },
+    {
+        "marca": "BRM",
+        "modelo": "M-10 1/2"
+    },
+    {
+        "marca": "BRM",
+        "modelo": "M-11"
+    },
+    {
+        "marca": "BRM",
+        "modelo": "M-8"
+    },
+    {
+        "marca": "Bugre",
+        "modelo": "BGR 5"
+    },
+    {
+        "marca": "Bugre",
+        "modelo": "III"
+    },
+    {
+        "marca": "Bugre",
+        "modelo": "V"
+    },
+    {
+        "marca": "Bugway",
+        "modelo": "Buggy"
+    },
+    {
+        "marca": "Buick",
+        "modelo": "Lesabre"
+    },
+    {
+        "marca": "Buick",
+        "modelo": "Regal"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "CTS"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "CTS-V"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "DE Ville"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "Eldorado"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "Escalede"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "Fleetwood"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "Lasalle"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "Limousine"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "Seville"
+    },
+    {
+        "marca": "Cadillac",
+        "modelo": "SRX"
+    },
+    {
+        "marca": "CBT",
+        "modelo": "Jeep"
+    },
+    {
+        "marca": "Chamonix",
+        "modelo": "Speedster"
+    },
+    {
+        "marca": "Chana",
+        "modelo": "Cargo"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Arrizo 5"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Arrizo 6"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Celer"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Cielo"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Face"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "QQ"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "S-18"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Tiggo"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Tiggo 2"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Tiggo 3x"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Tiggo 5x"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Tiggo 7"
+    },
+    {
+        "marca": "Cherry",
+        "modelo": "Tiggo 8"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "3100"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "A10"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "A20"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Agile"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Amazona"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Astra"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Bel Air"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Blazer"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Bolt"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Bonanza"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Brasil"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Basinca"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "C10"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "C14"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "C15"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "C20"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Calibra"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Camaro"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Caprice"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Captiva"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Caravan"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Celta"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Chevelle"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Chevette"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Chevy"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Classic"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Cobalt"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Corsa"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Corvette"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Corvette Grand Sport"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Cruze"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "D10"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "D20"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "D40"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "De Luxe"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "El Camino"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Equinox"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Express"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Fleetline"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Fleetmaster"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Grand Blazer"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Impala"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Ipanema"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Joy"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Kadett"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Malibu"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Marajó"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Master"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Meriva"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Montana"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Monza"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Nova"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Omega"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Onix"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Opala"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Pickup"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Prisma"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Ramona"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "S10"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Silverado"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Sonic"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Space Van"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Spin"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "SS"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "SSR"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Styleline"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Suburban"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Suprema"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Tahoe"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Tigra"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Tracker"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Trailblazer"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Vectra"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Vega"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Veraneio"
+    },
+    {
+        "marca": "Chevrolet",
+        "modelo": "Zafira"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "300c"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "300m"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Caravan"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Crossfire"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Esplanada"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Grand Caravan"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Neon"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Pacifica"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Pt Cruiser"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Stratus"
+    },
+    {
+        "marca": "Chrysler",
+        "modelo": "Town & Country"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "Aircross"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "AX"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "Berlingo"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C3"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C3 Picasso"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C3 Sonora"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C4"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C4 Cactus"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C4 Grand Picasso"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C4 Lound"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C4 Picasso"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C5"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "C8"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "DS3"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "DS4"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "DS5"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "Grand Caravan"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "Jumper"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "Jumpy"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "Xantia"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "Xsara"
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "Xsara Picasso"
+    },
+    {
+        "marca": "Daewoo",
+        "modelo": "Espero"
+    },
+    {
+        "marca": "Daewoo",
+        "modelo": "Lanos"
+    },
+    {
+        "marca": "Daihatsu",
+        "modelo": "Charade"
+    },
+    {
+        "marca": "Daihatsu",
+        "modelo": "Terios"
+    },
+    {
+        "marca": "De Soto",
+        "modelo": "De Soto"
+    },
+    {
+        "marca": "De Tomaso",
+        "modelo": "Pantera"
+    },
+    {
+        "marca": "DKW - Vemag",
+        "modelo": "Belcar"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Challenger"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Charger"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Dakota"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Dart"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Durango"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Grand Caravan"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Journey"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Le Baron"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Magnum"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Nitro"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Pick-up"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Polara"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "RAM"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Stealth"
+    },
+    {
+        "marca": "Dodge",
+        "modelo": "Viper"
+    },
+    {
+        "marca": "Effa",
+        "modelo": "K01"
+    },
+    {
+        "marca": "Effa",
+        "modelo": "V21"
+    },
+    {
+        "marca": "Effa",
+        "modelo": "V22"
+    },
+    {
+        "marca": "Effa",
+        "modelo": "V25"
+    },
+    {
+        "marca": "Effa",
+        "modelo": "VAN"
+    },
+    {
+        "marca": "EMIS",
+        "modelo": "Buggy"
+    },
+    {
+        "marca": "Engesa",
+        "modelo": "Engesa"
+    },
+    {
+        "marca": "Engesa",
+        "modelo": "Engesa 4"
+    },
+    {
+        "marca": "Envemo",
+        "modelo": "Super 90"
+    },
+    {
+        "marca": "Fercar Buggy",
+        "modelo": "Naja One"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "308"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "458 Italia"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "458 Spyder"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "488 GTB"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "488 Spyder"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "550 Maranello"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "812 Superfast"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "California"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "Dino 308"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "F12 Berlinetta"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "F355"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "F355 F1"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "F360"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "F430"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "F8 Spyder"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "F8 Tributo"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "FF"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "GTC4lusso"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "Portofino"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "SF90"
+    },
+    {
+        "marca": "Ferrari",
+        "modelo": "Testarossa"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "128"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "147"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "500"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "500e"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "600"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Argo"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Brava"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Bravo"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Cinquecento"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Coupé"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Cronos"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Doblò"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Ducato"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Elba"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Fiorino"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Freemont"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Grand Siena"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Idea"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Linea"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Marea"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Mobby"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Oggi"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Palio"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Panorama"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Premio"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Punto"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Siena"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Spazio"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Stilo"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Strada"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Tempra"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Tipo"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Toro"
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Uno"
+    },
+    {
+        "marca": "Fibravan",
+        "modelo": "Buggy Pronto"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "A"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Belina"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Bronco Sport"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Club Wagon"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Consul"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Contour"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Corcel"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Corcel II"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Courier"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Cupê"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Del Rey"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Econoline"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Eco Sport"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Edge"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Escort"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Expedition"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Explorer"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-1"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-100"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-1000"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-150"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-250"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-350"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-400"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-75"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "F-MAXX"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Fairlane"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Fiesta"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Focus"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Fusion"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Galaxie"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Jeep"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Ka"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Ka+"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Landau"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Maverick"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Mondeo"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Mustang"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Pampa"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Phaeton"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Rachero"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Ranger"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Royale"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Rural"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "T"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Taurus"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Territory"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Thunderbird"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Torino"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Transit"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Tudor"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Val"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Verona"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Versailles"
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Victoria"
+    },
+    {
+        "marca": "Foton",
+        "modelo": "Aumarqui 3.5"
+    },
+    {
+        "marca": "Fyber",
+        "modelo": "Brisa"
+    },
+    {
+        "marca": "Geely",
+        "modelo": "EC7"
+    },
+    {
+        "marca": "Geely",
+        "modelo": "GC2"
+    },
+    {
+        "marca": "GEO",
+        "modelo": "Metro"
+    },
+    {
+        "marca": "GMC",
+        "modelo": "3500 HD"
+    },
+    {
+        "marca": "GMC",
+        "modelo": "Acadia"
+    },
+    {
+        "marca": "GMC",
+        "modelo": "Blazer"
+    },
+    {
+        "marca": "GMC",
+        "modelo": "Sierra"
+    },
+    {
+        "marca": "GMC",
+        "modelo": "Yukon"
+    },
+    {
+        "marca": "Gurgel",
+        "modelo": "BR-800"
+    },
+    {
+        "marca": "Gurgel",
+        "modelo": "Carajás"
+    },
+    {
+        "marca": "Gurgel",
+        "modelo": "X-15"
+    },
+    {
+        "marca": "Gurgel",
+        "modelo": "X-12"
+    },
+    {
+        "marca": "Hafei",
+        "modelo": "Towner"
+    },
+    {
+        "marca": "Hafei",
+        "modelo": "Towner JR"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "Accord"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "City"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "Civic"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "CRV"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "Fit"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "HR-V"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "Legend"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "Odyssey"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "Prelude"
+    },
+    {
+        "marca": "Honda",
+        "modelo": "WR-V"
+    },
+    {
+        "marca": "Hummer",
+        "modelo": "H1"
+    },
+    {
+        "marca": "Hummer",
+        "modelo": "H2"
+    },
+    {
+        "marca": "Hummer",
+        "modelo": "H3"
+    },
+    {
+        "marca": "Hup Mobile",
+        "modelo": "Model S"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Accent"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Atos"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Azera"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Coupê"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Creta"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Elantra"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Equus"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Galloper"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Genesis"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Grand Santa Fé"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "H1 Starex"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "H100"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "HB20"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "HB20s"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Hb20x"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "HR"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "I30"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "I30 CW"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "IX35"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Santa Fé"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Sonata"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Terracan"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Tiburon"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Tucson"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Veloster"
+    },
+    {
+        "marca": "Hyundai",
+        "modelo": "Veracruz"
+    },
+    {
+        "marca": "Infiniti",
+        "modelo": "EX35"
+    },
+    {
+        "marca": "Infiniti",
+        "modelo": "FX35"
+    },
+    {
+        "marca": "Infiniti",
+        "modelo": "FX45"
+    },
+    {
+        "marca": "Infiniti",
+        "modelo": "FX50"
+    },
+    {
+        "marca": "Infiniti",
+        "modelo": "G35"
+    },
+    {
+        "marca": "Infiniti",
+        "modelo": "G37"
+    },
+    {
+        "marca": "Infiniti",
+        "modelo": "J30"
+    },
+    {
+        "marca": "Iveco",
+        "modelo": "Daily"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "IEV20"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "IEV40"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "J2"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "J3"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "J5"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "J6"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "T40"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "T5"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "T50"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "T6"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "T60"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "T8"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "T80"
+    },
+    {
+        "marca": "Jac",
+        "modelo": "V260"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "Daimler"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "E-Pace"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "E-Type"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "F-Pace"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "F-Type"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "I-Pace"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "Mark V"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "S-Type"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "X-Type"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XE"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XF"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XFR"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XJ"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XJ12L"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XJ6"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XJ8"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XK"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XK120"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XK8"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XKR"
+    },
+    {
+        "marca": "Jaguar",
+        "modelo": "XKR-S"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "Cherokee"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "CJ 5"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "CJ 6"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "Commander"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "Compass"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "Grand Cherokee"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "Liberty"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "Renegade"
+    },
+    {
+        "marca": "Jeep",
+        "modelo": "Wrangler"
+    },
+    {
+        "marca": "Jinbei",
+        "modelo": "Topic"
+    },
+    {
+        "marca": "JPX",
+        "modelo": "Montez"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Besta"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Bongo"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Cadenza"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Carens"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Cerato"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Clarus"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Magentis"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Mohave"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Opirus"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Optima"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Picanto"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Quoris"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Rio"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Sorento"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Soul"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Sportage"
+    },
+    {
+        "marca": "Kia",
+        "modelo": "Stinger"
+    },
+    {
+        "marca": "Lada",
+        "modelo": "Laika"
+    },
+    {
+        "marca": "Lada",
+        "modelo": "Niva"
+    },
+    {
+        "marca": "Lamborghini",
+        "modelo": "Aventador"
+    },
+    {
+        "marca": "Lamborghini",
+        "modelo": "Gallardo"
+    },
+    {
+        "marca": "Lamborghini",
+        "modelo": "Huracán"
+    },
+    {
+        "marca": "Lamborghini",
+        "modelo": "Urus"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Defender"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Discovery"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Discovery 2"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Discovery 3"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Discovery 4"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Discovery Sport"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Freelander"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Freelander 2"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Range Rover"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Range Rover Evoque"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Range Rover Sport"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Range Rover Velar"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Range Rover Vogue"
+    },
+    {
+        "marca": "Land Rover",
+        "modelo": "Series I"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "CT200H"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "ES"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "ES 300h"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "ES 350"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "IS 250 F-Sport"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "IS 300"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "LS"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "LS 460L"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "NX 200T"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "NX 300"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "NX 300h"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "RX"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "RX 350"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "RX 450h"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "RX 350 F-Sport"
+    },
+    {
+        "marca": "Lexus",
+        "modelo": "UX 250h"
+    },
+    {
+        "marca": "LHM",
+        "modelo": "Phienix"
+    },
+    {
+        "marca": "Linfan",
+        "modelo": "320"
+    },
+    {
+        "marca": "Linfan",
+        "modelo": "530"
+    },
+    {
+        "marca": "Linfan",
+        "modelo": "Foison"
+    },
+    {
+        "marca": "Linfan",
+        "modelo": "X60"
+    },
+    {
+        "marca": "Linfan",
+        "modelo": "X80"
+    },
+    {
+        "marca": "Lincon",
+        "modelo": "MKX"
+    },
+    {
+        "marca": "Lincon",
+        "modelo": "NAVIGATOR"
+    },
+    {
+        "marca": "Lincon",
+        "modelo": "Town Car"
+    },
+    {
+        "marca": "Lobini",
+        "modelo": "H1"
+    },
+    {
+        "marca": "Lotus",
+        "modelo": "Elise"
+    },
+    {
+        "marca": "Lotus",
+        "modelo": "Exige"
+    },
+    {
+        "marca": "Mahindra",
+        "modelo": "Pickup"
+    },
+    {
+        "marca": "Mahindra",
+        "modelo": "Suv"
+    },
+    {
+        "marca": "Marcopolo",
+        "modelo": "Volare"
+    },
+    {
+        "marca": "Maserati",
+        "modelo": "3200"
+    },
+    {
+        "marca": "Maserati",
+        "modelo": "Coupé"
+    },
+    {
+        "marca": "Maserati",
+        "modelo": "Ghibli"
+    },
+    {
+        "marca": "Maserati",
+        "modelo": "Grancabrio"
+    },
+    {
+        "marca": "Maserati",
+        "modelo": "Granturismo"
+    },
+    {
+        "marca": "Maserati",
+        "modelo": "Levante"
+    },
+    {
+        "marca": "Maserati",
+        "modelo": "Quattroporte"
+    },
+    {
+        "marca": "Mazda",
+        "modelo": "626"
+    },
+    {
+        "marca": "Mazda",
+        "modelo": "MPV"
+    },
+    {
+        "marca": "Mazda",
+        "modelo": "MX-3"
+    },
+    {
+        "marca": "Mazda",
+        "modelo": "MX-5"
+    },
+    {
+        "marca": "Mazda",
+        "modelo": "Protegé"
+    },
+    {
+        "marca": "Mclaren",
+        "modelo": "12C"
+    },
+    {
+        "marca": "Mclaren",
+        "modelo": "540C"
+    },
+    {
+        "marca": "Mclaren",
+        "modelo": "570S"
+    },
+    {
+        "marca": "Mclaren",
+        "modelo": "600LT"
+    },
+    {
+        "marca": "Mclaren",
+        "modelo": "720S"
+    },
+    {
+        "marca": "Mclaren",
+        "modelo": "GT"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "170 S"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "190 E"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "200 D"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "220"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "220 D"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "220 S"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "230"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "230 E"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "230 S"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "240 D"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "250"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "250 C"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "250 SE"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "260 E"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "260 SE"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "280 CE"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "280 S"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "280 SE"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "280 SL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "280 SLC"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "300 D"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "300 E"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "300 SE"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "300 SEL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "300 SL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "320 E"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "350 SL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "350 SLC"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "380 SL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "450 SL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "500 SE"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "500 SEC"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "500 SEL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "500 SL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "560 SL"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "A 160"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "A 190"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "A 200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "A 250"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "A 35 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "A 45 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "AMG GT"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "AMG GT 43"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "AMG GT 63"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "B 170"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "B180"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "B200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 180"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 180 K"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 200 K"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 220"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 230"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 230 K"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 240"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 250"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 280"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 300"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 320"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 36 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 43 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C450"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "C 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CL 600"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CL 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLA 180"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLA 200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLA 250"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLA 35 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLA 45 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "Classe A"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLC 200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLC 200 K"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLK 230"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLK 320"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLK 430"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLK 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 320"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLK 430"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLK 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 400"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 450"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 53 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 55 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "CLS 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 220"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 240"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 250"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 300"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 320"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 400"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 420"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 43 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 430"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 53 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 55 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 550"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "E 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "EQC 400"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "G 55 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "G 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GL 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GL 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GL 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLA 200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLA 250"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLA 45 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLB 200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLC 220d"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLC 250"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLC 300"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLC 43 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLC 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLE 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLE 400"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLE 400d"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLE 43 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLE 450"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLE 53 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLE 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLK 220"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLK 280"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLK 300"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLS 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLS 450"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "GLS 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "Microônibus"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "ML 320"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "ML 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "ML 430"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "ML 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "S 320"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "S 400"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "S 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "S 500L"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "S 560"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "S 600"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "S 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "S 65 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SL 320"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SL 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SL 400"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SL 500"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SL 55 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SL 600"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SL 63 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLC 300"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLC 43 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLK 200"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLK 230"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLK 250"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLK 300"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLK 320"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLK 350"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLK 55 AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SLS AMG"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "SPRINTER"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "VITO"
+    },
+    {
+        "marca": "Mercury",
+        "modelo": "Cougar"
+    },
+    {
+        "marca": "Mercury",
+        "modelo": "Eight"
+    },
+    {
+        "marca": "Mercury",
+        "modelo": "Grand Marquis"
+    },
+    {
+        "marca": "Mercury",
+        "modelo": "Mystique"
+    },
+    {
+        "marca": "MG",
+        "modelo": "MG 550"
+    },
+    {
+        "marca": "MG",
+        "modelo": "MG 6"
+    },
+    {
+        "marca": "MG",
+        "modelo": "MGA"
+    },
+    {
+        "marca": "MG",
+        "modelo": "MGB"
+    },
+    {
+        "marca": "Mini",
+        "modelo": "Cooper"
+    },
+    {
+        "marca": "Mini",
+        "modelo": "Countryman"
+    },
+    {
+        "marca": "Mini",
+        "modelo": "John Cooper Works"
+    },
+    {
+        "marca": "Mini",
+        "modelo": "One"
+    },
+    {
+        "marca": "Mini",
+        "modelo": "Paceman"
+    },
+    {
+        "marca": "Mini",
+        "modelo": "Roadster"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "3000 GT"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Airtrek"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "ASX"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Colt"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Eclipse"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Eclipse Cross"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Galant"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Grandis"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "L200"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "L200 Outdoor"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "L200 Savana"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "L200 Triton"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "L300"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Lancer"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Outlander"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Outlander Sport"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Pajero"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Pajero Dakar"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Pajero Full"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Pajero"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Pajero Sport"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Pajero IO"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Pajero Sport"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Pajero TR4"
+    },
+    {
+        "marca": "Mitsubishi",
+        "modelo": "Space Wagon"
+    },
+    {
+        "marca": "Miura",
+        "modelo": "BG"
+    },
+    {
+        "marca": "Miura",
+        "modelo": "Saga"
+    },
+    {
+        "marca": "Miura",
+        "modelo": "Sport"
+    },
+    {
+        "marca": "Morris",
+        "modelo": "Mini"
+    },
+    {
+        "marca": "Morris",
+        "modelo": "Oxford"
+    },
+    {
+        "marca": "MP Lafer",
+        "modelo": "Classico"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "300 ZX"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "350Z"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "370Z"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Altima"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Armada"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Frontier"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Grand Livina"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "GT-R"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Infiniti"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Juke"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Licks"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Leaf"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Livina"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "March"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Maxima"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Murano"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Pathfinder"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Pick-up"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Quest"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Sentra"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Tiida"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Versa"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "X-Trail"
+    },
+    {
+        "marca": "Nissan",
+        "modelo": "Xterra"
+    },
+    {
+        "marca": "Oldsmobile",
+        "modelo": "Cutlass Cierra"
+    },
+    {
+        "marca": "Oldsmobile",
+        "modelo": "Toronado"
+    },
+    {
+        "marca": "Opel",
+        "modelo": "GT"
+    },
+    {
+        "marca": "Opel",
+        "modelo": "Kadett"
+    },
+    {
+        "marca": "Pag",
+        "modelo": "Nick"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "2008"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "206"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "207"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "208"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "3008"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "306"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "307"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "308"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "308cc"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "406"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "407"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "408"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "5008"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "508"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "Boxer"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "Expert"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "Hoggar"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "Partner"
+    },
+    {
+        "marca": "Peugeot",
+        "modelo": "RCZ"
+    },
+    {
+        "marca": "Pontiac",
+        "modelo": "GTO"
+    },
+    {
+        "marca": "Pontiac",
+        "modelo": "Solstice"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "356"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "718"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "911"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "914"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "928"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "Boxter"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "Cayenne"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "Cayman"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "Cayman S"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "Macan"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "Panamera"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "Spyder 550"
+    },
+    {
+        "marca": "Porsche",
+        "modelo": "Taycan"
+    },
+    {
+        "marca": "Puma",
+        "modelo": "GTB"
+    },
+    {
+        "marca": "Puma",
+        "modelo": "GTB/S2"
+    },
+    {
+        "marca": "Puma",
+        "modelo": "GTC"
+    },
+    {
+        "marca": "Puma",
+        "modelo": "GTE"
+    },
+    {
+        "marca": "Puma",
+        "modelo": "GTS"
+    },
+    {
+        "marca": "RAM",
+        "modelo": "1500"
+    },
+    {
+        "marca": "RAM",
+        "modelo": "2500"
+    },
+    {
+        "marca": "RDK",
+        "modelo": "Tiger"
+    },
+    {
+        "marca": "Rely",
+        "modelo": "Link"
+    },
+    {
+        "marca": "Rely",
+        "modelo": "Pick-up"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "19"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Captur"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Clio"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Duster"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Duster Oroch"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Fluence"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Grand Scénic"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Juvaquatre"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Kangoo"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Kwid"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Laguna"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Logan"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Master"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Mégane"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Sandero"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Scénic"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Symbol"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Trafic"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Twingo"
+    },
+    {
+        "marca": "Renault",
+        "modelo": "Zoe"
+    },
+    {
+        "marca": "Rolls-Royce",
+        "modelo": "Ghost"
+    },
+    {
+        "marca": "Rolls-Royce",
+        "modelo": "Phantom"
+    },
+    {
+        "marca": "Rolls-Royce",
+        "modelo": "Silver Shadow II"
+    },
+    {
+        "marca": "Saturn",
+        "modelo": "SC-2"
+    },
+    {
+        "marca": "Saturn",
+        "modelo": "SKY"
+    },
+    {
+        "marca": "Seat",
+        "modelo": "Cordoba"
+    },
+    {
+        "marca": "Selvagem",
+        "modelo": "S"
+    },
+    {
+        "marca": "Shelby",
+        "modelo": "Cobra"
+    },
+    {
+        "marca": "Shineray",
+        "modelo": "SY6390"
+    },
+    {
+        "marca": "Shineray",
+        "modelo": "T20"
+    },
+    {
+        "marca": "Shineray",
+        "modelo": "T22"
+    },
+    {
+        "marca": "Smart",
+        "modelo": "Fortwo"
+    },
+    {
+        "marca": "Ssangyong",
+        "modelo": "Actyon Sports"
+    },
+    {
+        "marca": "Ssangyong",
+        "modelo": "Actyon Sports"
+    },
+    {
+        "marca": "Ssangyong",
+        "modelo": "Korando"
+    },
+    {
+        "marca": "Ssangyong",
+        "modelo": "Kyron"
+    },
+    {
+        "marca": "Ssangyong",
+        "modelo": "Rexton"
+    },
+    {
+        "marca": "Ssangyong",
+        "modelo": "Rexton II"
+    },
+    {
+        "marca": "Ssangyong",
+        "modelo": "Tivoli"
+    },
+    {
+        "marca": "Ssangyong",
+        "modelo": "XLV"
+    },
+    {
+        "marca": "Standard",
+        "modelo": "Vanguard"
+    },
+    {
+        "marca": "Studebaker",
+        "modelo": "Studebaker"
+    },
+    {
+        "marca": "Subaru",
+        "modelo": "Forester"
+    },
+    {
+        "marca": "Subaru",
+        "modelo": "Impreza"
+    },
+    {
+        "marca": "Subaru",
+        "modelo": "Legacy"
+    },
+    {
+        "marca": "Subaru",
+        "modelo": "Outback"
+    },
+    {
+        "marca": "Subaru",
+        "modelo": "SVX"
+    },
+    {
+        "marca": "Subaru",
+        "modelo": "Tribeca"
+    },
+    {
+        "marca": "Subaru",
+        "modelo": "Vivio"
+    },
+    {
+        "marca": "Subaru",
+        "modelo": "XV"
+    },
+    {
+        "marca": "Suzuki",
+        "modelo": "Grand Vitara"
+    },
+    {
+        "marca": "Suzuki",
+        "modelo": "Jimny"
+    },
+    {
+        "marca": "Suzuki",
+        "modelo": "S-Cross"
+    },
+    {
+        "marca": "Suzuki",
+        "modelo": "Samurai"
+    },
+    {
+        "marca": "Suzuki",
+        "modelo": "Sidekick"
+    },
+    {
+        "marca": "Suzuki",
+        "modelo": "Swift"
+    },
+    {
+        "marca": "Suzuki",
+        "modelo": "SX4"
+    },
+    {
+        "marca": "Suzuki",
+        "modelo": "Vitara"
+    },
+    {
+        "marca": "TAC",
+        "modelo": "Stark"
+    },
+    {
+        "marca": "Tesla",
+        "modelo": "Model 3"
+    },
+    {
+        "marca": "Tesla",
+        "modelo": "Model S"
+    },
+    {
+        "marca": "Tesla",
+        "modelo": "Model X"
+    },
+    {
+        "marca": "Tesla",
+        "modelo": "Model Y"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Bandeirante"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Camry"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Corolla"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Corolla Cross"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Corona"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Etios"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Etios Cross"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Fielder"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "FJ Cruiser"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Highlander"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Hilux"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Hilux SW4"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Land Cruiser Prado"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Paseop"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Prius"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Rav4"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Sienna"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Supra"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Tundra"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Veneza"
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "Yaris"
+    },
+    {
+        "marca": "Troller",
+        "modelo": "T4"
+    },
+    {
+        "marca": "Troller",
+        "modelo": "T4 Expedition"
+    },
+    {
+        "marca": "Troller",
+        "modelo": "TX4"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "1300"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "1600"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Amarok"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Apollo"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Bora"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Brasilia"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Buggy"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Cross Up"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Crossfox"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "EOS"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Eurovan"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Fox"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Fusca"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Gol"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Gol"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Jetta"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Karmann-Ghia"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Kombi"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Logus"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "New Beetle"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Nivus"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Parati"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Passat "
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Passat Variant"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Pionter"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Polo"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Polo Sedan"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Quantum"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Santana"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Saveiro"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "SP2"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Space Cross"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Spacefox"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "T-Cross"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Taos"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Tiguan"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "TL"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Touareg"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Up"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Variant"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Variant II"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Virtus"
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Voyage"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "460"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "850"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "940"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "960"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "C30"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "C70"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "S40"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "S60"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "S70"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "S80"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "S90"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "V40"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "V50"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "V60"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "V70"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "XC40"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "XC60"
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "XC90"
+    },
+    {
+        "marca": "Wake",
+        "modelo": "Way"
+    },
+    {
+        "marca": "Walk",
+        "modelo": "Walksport"
+    },
+    {
+        "marca": "Way Brasil",
+        "modelo": "Buggy"
+    },
+    {
+        "marca": "Willys",
+        "modelo": "Aero-Willys"
+    },
+    {
+        "marca": "Willys",
+        "modelo": "Jeep"
+    },
+    {
+        "marca": "Willys",
+        "modelo": "Rural"
+    },
+    {
+        "marca": "Willys Overland",
+        "modelo": "CJ3A"
+    },
+    {
+        "marca": "Willys Overland",
+        "modelo": "Jeep"
+    },
+    {
+        "marca": "Willys Overland",
+        "modelo": "Whippet"
+    }
+]

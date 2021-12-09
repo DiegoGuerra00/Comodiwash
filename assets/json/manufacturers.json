@@ -1,0 +1,462 @@
+[
+    {
+        "marca": "Alfa Romeo",
+        "icon": "assets/logos/alfaromeo.png"
+    },
+    {
+        "marca": "Agrale",
+        "icon": "assets/logos/agrale.png"
+    },
+    {
+        "marca": "Amazonas",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Americar",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Asia",
+        "icon": "assets/logos/asia.png"
+    },
+    {
+        "marca": "Aston Martin",
+        "icon": "assets/logos/astonmartin.png"
+    },
+    {
+        "marca": "Audi",
+        "icon": "assets/logos/audi.png"
+    },
+    {
+        "marca": "Austin-Healey",
+        "icon": "assets/logos/austinhealey.png"
+    },
+    {
+        "marca": "Baja",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Bentley",
+        "icon": "assets/logos/bentley.png"
+    },
+    {
+        "marca": "BMW",
+        "icon": "assets/logos/bmw.png"
+    },
+    {
+        "marca": "BRM",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Bugre",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Bugway",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Buick",
+        "icon": "assets/logos/buick.png"
+    },
+    {
+        "marca": "Cadillac",
+        "icon": "assets/logos/cadillac.png"
+    },
+    {
+        "marca": "Cauype",
+        "icon": "assets/logos/cauype.png"
+    },
+    {
+        "marca": "CBT",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Chamonix",
+        "icon": "assets/logos/chamonix.png"
+    },
+    {
+        "marca": "Chana",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Chery",
+        "icon": "assets/logos/chery.png"
+    },
+    {
+        "marca": "Chevrolet",
+        "icon": "assets/logos/chevrolet.png"
+    },
+    {
+        "marca": "Chrysler",
+        "icon": "assets/logos/chrysler.png"
+    },
+    {
+        "marca": "Citroen",
+        "icon": "assets/logos/citroen.png"
+    },
+    {
+        "marca": "Daewoo",
+        "icon": "assets/logos/daewoo.png"
+    },
+    {
+        "marca": "Daihatsu",
+        "icon": "assets/logos/daihatsu.png"
+    },
+    {
+        "marca": "De Soto",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "De Tomaso",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "DKW - Vemag",
+        "icon": "assets/logos/dkwvemag.png"
+    },
+    {
+        "marca": "Dodge",
+        "icon": "assets/logos/dodge.png"
+    },
+    {
+        "marca": "Effa",
+        "icon": "assets/logos/effa.png"
+    },
+    {
+        "marca": "EMIS",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Engesa",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Envemo",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Fercar Buggy",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Ferrari",
+        "icon": "assets/logos/ferrari.png"
+    },
+    {
+        "marca": "Fiat",
+        "icon": "assets/logos/fiat.png"
+    },
+    {
+        "marca": "Fibravan",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Ford",
+        "icon": "assets/logos/ford.png"
+    },
+    {
+        "marca": "Foton",
+        "icon": "assets/logos/foton.png"
+    },
+    {
+        "marca": "Fyber",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Geely",
+        "icon": "assets/logos/geely.png"
+    },
+    {
+        "marca": "GEO",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "GMC",
+        "icon": "assets/logos/gmc.png"
+    },
+    {
+        "marca": "Gurgel",
+        "icon": "assets/logos/gurgel.png"
+    },
+    {
+        "marca": "Hafei",
+        "icon": "assets/logos/hafei.png"
+    },
+    {
+        "marca": "Honda",
+        "icon": "assets/logos/honda.png"
+    },
+    {
+        "marca": "Hummer",
+        "icon": "assets/logos/hummer.png"
+    },
+    {
+        "marca": "Hup Mobile",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Hyundai",
+        "icon": "assets/logos/hyundai.png"
+    },
+    {
+        "marca": "Infiniti",
+        "icon": "assets/logos/infiniti.png"
+    },
+    {
+        "marca": "Iveco",
+        "icon": "assets/logos/iveco.png"
+    },
+    {
+        "marca": "Jac",
+        "icon": "assets/logos/jac.png"
+    },
+    {
+        "marca": "Jaguar",
+        "icon": "assets/logos/jaguar.png"
+    },
+    {
+        "marca": "Jeep",
+        "icon": "assets/logos/jeep.png"
+    },
+    {
+        "marca": "Jinbei",
+        "icon": "assets/logos/jinbei.png"
+    },
+    {
+        "marca": "JPX",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Kia",
+        "icon": "assets/logos/kia.png"
+    },
+    {
+        "marca": "Lada",
+        "icon": "assets/logos/lada.png"
+    },
+    {
+        "marca": "Lamborghini",
+        "icon": "assets/logos/lamborghini.png"
+    },
+    {
+        "marca": "Land Rover",
+        "icon": "assets/logos/landrover.png"
+    },
+    {
+        "marca": "Lexus",
+        "icon": "assets/logos/lexus.png"
+    },
+    {
+        "marca": "LHM",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Lifan",
+        "icon": "assets/logos/lifan.png"
+    },
+    {
+        "marca": "Lincoln",
+        "icon": "assets/logos/lincoln.png"
+    },
+    {
+        "marca": "Lobini",
+        "icon": "assets/logos/lobini.png"
+    },
+    {
+        "marca": "Lotus",
+        "icon": "assets/logos/lotus.png"
+    },
+    {
+        "marca": "Mahindra",
+        "icon": "assets/logos/mahindra.png"
+    },
+    {
+        "marca": "Marcopolo",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Maserati",
+        "icon": "assets/logos/maserati.png"
+    },
+    {
+        "marca": "Mazda",
+        "icon": "assets/logos/mazda.png"
+    },
+    {
+        "marca": "Mclaren",
+        "icon": "assets/logos/mclaren.png"
+    },
+    {
+        "marca": "Mercedes-Benz",
+        "icon": "assets/logos/mercedesbenz.png"
+    },
+    {
+        "marca": "Mercury",
+        "icon": "assets/logos/mercury.png"
+    },
+    {
+        "marca": "MG",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Mini",
+        "icon": "assets/logos/mini.png"
+    },
+    {
+        "marca": "Mitsubishi",
+        "icon": "assets/logos/mitsubishi.png"
+    },
+    {
+        "marca": "Miura",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Morris",
+        "icon": "assets/logos/morris.png"
+    },
+    {
+        "marca": "MP Lafer",
+        "icon": "assets/logos/mplafer.png"
+    },
+    {
+        "marca": "Nissan",
+        "icon": "assets/logos/nissan.png"
+    },
+    {
+        "marca": "Oldsmobile",
+        "icon": "assets/logos/oldsmobile.png"
+    },
+    {
+        "marca": "Opel",
+        "icon": "assets/logos/opel.png"
+    },
+    {
+        "marca": "Pag",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Peugeot",
+        "icon": "assets/logos/peugeot.png"
+    },
+    {
+        "marca": "Pontiac",
+        "icon": "assets/logos/pontiac.png"
+    },
+    {
+        "marca": "Porsche",
+        "icon": "assets/logos/porsche.png"
+    },
+    {
+        "marca": "Puma",
+        "icon": "assets/logos/puma.png"
+    },
+    {
+        "marca": "RAM",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "RDK",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Rely",
+        "icon": "assets/logos/rely.png"
+    },
+    {
+        "marca": "Renault",
+        "icon": "assets/logos/renault.png"
+    },
+    {
+        "marca": "Rolls-Royce",
+        "icon": "assets/logos/rollsroyce.png"
+    },
+    {
+        "marca": "Saturn",
+        "icon": "assets/logos/saturn.png"
+    },
+    {
+        "marca": "Seat",
+        "icon": "assets/logos/seat.png"
+    },
+    {
+        "marca": "Selvagem",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Shelby",
+        "icon": "assets/logos/shelby.png"
+    },
+    {
+        "marca": "Shineray",
+        "icon": "assets/logos/shineray.png"
+    },
+    {
+        "marca": "Smart",
+        "icon": "assets/logos/smart.png"
+    },
+    {
+        "marca": "Ssangyong",
+        "icon": "assets/logos/ssangyong.png"
+    },
+    {
+        "marca": "Standard",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Studebaker",
+        "icon": "assets/logos/studebaker.png"
+    },
+    {
+        "marca": "Subaru",
+        "icon": "assets/logos/subaru.png"
+    },
+    {
+        "marca": "Suzuki",
+        "icon": "assets/logos/suzuki.png"
+    },
+    {
+        "marca": "TAC",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Tesla",
+        "icon": "assets/logos/tesla.png"
+    },
+    {
+        "marca": "Toyota",
+        "icon": "assets/logos/toyota.png"
+    },
+    {
+        "marca": "Troller",
+        "icon": "assets/logos/troller.png"
+    },
+    {
+        "marca": "Volkswagen",
+        "icon": "assets/logos/volkswagen.png"
+    },
+    {
+        "marca": "Volvo",
+        "icon": "assets/logos/volvo.png"
+    },
+    {
+        "marca": "Wake",
+        "icon": "assets/logos/wake.png"
+    },
+    {
+        "marca": "Walk",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Way Brasil",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    },
+    {
+        "marca": "Willys",
+        "icon": "assets/logos/willys.png"
+    },
+    {
+        "marca": "Willys Overland",
+        "icon": "assets/icons/ComodiWashSquarerender.png"
+    }
+]
