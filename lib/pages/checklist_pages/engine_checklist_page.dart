@@ -1,3 +1,4 @@
+import 'package:comodiwash/models/checklist_card.dart';
 import 'package:comodiwash/models/generic_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,17 +13,31 @@ class _EngineChecklistPageState extends State<EngineChecklistPage> {
   double height = 85;
   double circleRadiusExt = 13;
   final titleTextStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+  // Store the status of the items based on firebase database
   // TODO implement realtime database to get the bellow infos in realtime
   int oilLevel = 1; //0 if good, 1 if medium, 2 if bad
   int coolantLevel = 0; //0 if good, 1 if medium, 2 if bad
   int brakesLevel = 1; //0 if good, 1 if medium, 2 if bad
   int steeringLevel = 3; //0 if good, 1 if medium, 2 if bad
   int wiperLevel = 2; //0 if good, 1 if medium, 2 if bad
+  // Default color of the status avatars
   Color oilAvatarColor = Colors.grey.shade300;
   Color coolantAvatarColor = Colors.grey.shade300;
   Color brakesAvatarColor = Colors.grey.shade300;
-  Color steeringAvatarColors = Colors.grey.shade300;
+  Color steeringAvatarColor = Colors.grey.shade300;
   Color wiperAvatarColor = Colors.grey.shade300;
+
+  // Text of the destails of the items that appear when the card is clicked
+  String oilDescription =
+      'A medição foi baseada apenas no nível do óleo pela vareta de medição do motor';
+  String coolantDescrition =
+      'A medição foi baseada apenas no nível do fluído de arrefecimento do recipiente de expansão, caso seu veículo não possua o recipiente expansão a medição foi realizado pela tampa do reservatório do radiador';
+  String brakesDescription =
+      'A medição foi baseada apenas no nível do fluído de freio no reservatório externo, caso seu veículo não possua o reservatório externo desconsidere esta medição';
+  String steeringDescription =
+      'A medição foi baseada apenas no nível do fluído no reservatório externo, caso seu veículo não possua o reservatório externo desconsidere esta medição';
+  String wiperDescription =
+      'A medição foi baseada apenas no nível do fluído no reservatório, caso seu veículo não possua o reservatório desconsidere esta medição';
 
   // TODO remake all text messages for the items
 
@@ -108,7 +123,7 @@ class _EngineChecklistPageState extends State<EngineChecklistPage> {
         'Está abaixo do nível',
         style: TextStyle(fontSize: 18),
       );
-    } else if(_brakesLevel == 2) {
+    } else if (_brakesLevel == 2) {
       setState(() {
         brakesAvatarColor = Colors.red;
       });
@@ -130,7 +145,7 @@ class _EngineChecklistPageState extends State<EngineChecklistPage> {
   Text getSteeringText(int _steeringLevel) {
     if (_steeringLevel == 0) {
       setState(() {
-        steeringAvatarColors = Colors.green;
+        steeringAvatarColor = Colors.green;
       });
       return Text(
         'Está no nível',
@@ -138,15 +153,15 @@ class _EngineChecklistPageState extends State<EngineChecklistPage> {
       );
     } else if (_steeringLevel == 1) {
       setState(() {
-        steeringAvatarColors = Colors.yellow;
+        steeringAvatarColor = Colors.yellow;
       });
       return Text(
         'Está abaixo do nível',
         style: TextStyle(fontSize: 18),
       );
-    } else if(_steeringLevel == 2) {
+    } else if (_steeringLevel == 2) {
       setState(() {
-        steeringAvatarColors = Colors.red;
+        steeringAvatarColor = Colors.red;
       });
       return Text(
         'Sem fluído',
@@ -191,312 +206,6 @@ class _EngineChecklistPageState extends State<EngineChecklistPage> {
     }
   }
 
-  Widget oilCard() {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: height,
-      child: InkWell(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text('Aviso'),
-                  content: Text(
-                      'A medição foi baseada apenas no nível do óleo pela vareta de medição do motor'),
-                  actions: <Widget>[
-                    TextButton(
-                        onPressed: Navigator.of(context).pop,
-                        child: Text(
-                          'Ok',
-                          style:
-                              TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
-                        ))
-                  ],
-                );
-              });
-        },
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Column(
-                      children: [
-                        Text('Nível do'),
-                        Text('Óleo', style: titleTextStyle),
-                      ],
-                    ),
-                  ),
-                ),
-                Spacer(),
-                Container(
-                  child: getOiltext(oilLevel),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.03,
-                ),
-                CircleAvatar(
-                  radius: circleRadiusExt,
-                  backgroundColor: oilAvatarColor,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget coolantCard() {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: height,
-      child: InkWell(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text('Aviso'),
-                  content: Text(
-                      'A medição foi baseada apenas no nível do fluído de arrefecimento do recipiente de expansão, caso seu veículo não possua o recipiente expansão a medição foi realizado pela tampa do reservatório do radiador'),
-                  actions: <Widget>[
-                    TextButton(
-                        onPressed: Navigator.of(context).pop,
-                        child: Text(
-                          'Ok',
-                          style:
-                              TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
-                        ))
-                  ],
-                );
-              });
-        },
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Column(
-                      children: [
-                        Text('Nível do'),
-                        Text('Arrefecimento', style: titleTextStyle),
-                      ],
-                    ),
-                  ),
-                ),
-                Spacer(),
-                Container(
-                  child: getCoolantText(coolantLevel),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.01,
-                ),
-                CircleAvatar(
-                    radius: circleRadiusExt,
-                    backgroundColor: coolantAvatarColor),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget brakesCard() {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: height,
-      child: InkWell(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text('Aviso'),
-                  content: Text('A medição foi baseada apenas no nível do fluído de freio no reservatório externo, caso seu veículo não possua o reservatório externo desconsidere esta medição'),
-                  actions: <Widget>[
-                    TextButton(
-                        onPressed: Navigator.of(context).pop,
-                        child: Text(
-                          'Ok',
-                          style:
-                              TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
-                        ))
-                  ],
-                );
-              });
-        },
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Column(
-                      children: [
-                        Text('Nível do'),
-                        Text('Fluído de Freio', style: titleTextStyle),
-                      ],
-                    ),
-                  ),
-                ),
-                Spacer(),
-                Container(
-                  child: getBrakesText(brakesLevel),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.01,
-                ),
-                CircleAvatar(
-                  radius: circleRadiusExt,
-                  backgroundColor: brakesAvatarColor,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget steeringCard() {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: height,
-      child: InkWell(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text('Aviso'),
-                  content: Text('A medição foi baseada apenas no nível do fluído no reservatório externo, caso seu veículo não possua o reservatório externo desconsidere esta medição'),
-                  actions: <Widget>[
-                    TextButton(
-                        onPressed: Navigator.of(context).pop,
-                        child: Text(
-                          'Ok',
-                          style:
-                              TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
-                        ))
-                  ],
-                );
-              });
-        },
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Column(
-                      children: [
-                        Text('Nível do'),
-                        Text('Fluído de Direção', style: titleTextStyle),
-                      ],
-                    ),
-                  ),
-                ),
-                Spacer(),
-                Container(
-                  child: getSteeringText(steeringLevel),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.01,
-                ),
-                CircleAvatar(
-                  radius: circleRadiusExt,
-                  backgroundColor: steeringAvatarColors,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget wiperCard() {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: height,
-      child: InkWell(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text('Aviso'),
-                  content: Text('A medição foi baseada apenas no nível do fluído no reservatório, caso seu veículo não possua o reservatório desconsidere esta medição'),
-                  actions: <Widget>[
-                    TextButton(
-                        onPressed: Navigator.of(context).pop,
-                        child: Text(
-                          'Ok',
-                          style:
-                              TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
-                        ))
-                  ],
-                );
-              });
-        },
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Column(
-                      children: [
-                        Text('Nível da'),
-                        Text('Água do Parabrisa', style: titleTextStyle),
-                      ],
-                    ),
-                  ),
-                ),
-                Spacer(),
-                Container(
-                  child: getWiperText(wiperLevel),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.01,
-                ),
-                CircleAvatar(
-                  radius: circleRadiusExt,
-                  backgroundColor: wiperAvatarColor,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -505,11 +214,36 @@ class _EngineChecklistPageState extends State<EngineChecklistPage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            oilCard(),
-            coolantCard(),
-            brakesCard(),
-            steeringCard(),
-            wiperCard(),
+            ChecklistCard(
+                topText: 'Nível do',
+                bottonText: 'Óleo',
+                statusDetailText: getOiltext(oilLevel),
+                descriptionText: oilDescription,
+                statusAvatarColor: oilAvatarColor),
+            ChecklistCard(
+                topText: 'Nível do',
+                bottonText: 'Arrefecimento',
+                statusDetailText: getCoolantText(coolantLevel),
+                descriptionText: coolantDescrition,
+                statusAvatarColor: coolantAvatarColor),
+            ChecklistCard(
+                topText: 'Nível do',
+                bottonText: 'Fluído de Freio',
+                statusDetailText: getBrakesText(brakesLevel),
+                descriptionText: brakesDescription,
+                statusAvatarColor: brakesAvatarColor),
+            ChecklistCard(
+                topText: 'Nível do',
+                bottonText: 'Fluído de Direção',
+                statusDetailText: getSteeringText(steeringLevel),
+                descriptionText: steeringDescription,
+                statusAvatarColor: steeringAvatarColor),
+            ChecklistCard(
+                topText: 'Nível da',
+                bottonText: 'Água do Parabrisa',
+                statusDetailText: getWiperText(wiperLevel),
+                descriptionText: wiperDescription,
+                statusAvatarColor: wiperAvatarColor),
           ],
         ),
       ),
