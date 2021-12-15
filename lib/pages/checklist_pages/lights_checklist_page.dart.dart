@@ -82,7 +82,7 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
     return ElevatedButton(
       onPressed: () {
         if (bannerIndex < 0) {
-          bannerIndex = 1;
+
         } else {
           bannerIndex--;
         }
@@ -106,7 +106,7 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
     return ElevatedButton(
       onPressed: () {
         if (bannerIndex > 1) {
-          bannerIndex = 0;
+
         } else {
           bannerIndex++;
         }
