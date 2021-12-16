@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:comodiwash/databases/db_firestore.dart';
 import 'package:comodiwash/models/garage_car.dart';
-import 'package:comodiwash/services/google_auth_service.dart';
+import 'package:comodiwash/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'dart:collection';
@@ -11,7 +11,7 @@ class GarageRepository extends ChangeNotifier {
   final user = FirebaseAuth.instance.currentUser!;
   List<GarageCar> _garageList = [];
   late FirebaseFirestore db;
-  late GoogleSignInProvider auth;
+  late AuthProvider auth;
 
   UnmodifiableListView<GarageCar> get garageList =>
       UnmodifiableListView(_garageList);

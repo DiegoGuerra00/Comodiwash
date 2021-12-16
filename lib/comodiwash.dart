@@ -5,7 +5,7 @@ import 'package:comodiwash/repositories/garage_repository.dart';
 import 'package:comodiwash/repositories/products_repository.dart';
 import 'package:comodiwash/repositories/services_repository.dart';
 import 'package:comodiwash/services/login_handle.dart';
-import 'package:comodiwash/services/google_auth_service.dart';
+import 'package:comodiwash/services/auth_service.dart';
 import 'package:comodiwash/services/themes/themes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -56,14 +56,14 @@ class _ComodiWashState extends State<ComodiWash> {
   @override
   Widget build(BuildContext context) => MultiProvider(
           providers: [
-            ChangeNotifierProvider<GoogleSignInProvider>(
-              create: (_) => GoogleSignInProvider(),
+            ChangeNotifierProvider<AuthProvider>(
+              create: (_) => AuthProvider(),
             ),
             ChangeNotifierProvider<ThemeNotifier>(
                 create: (_) => ThemeNotifier()
             ),
             ChangeNotifierProvider(
-                create: (context) => GarageRepository(auth: context.read<GoogleSignInProvider>())
+                create: (context) => GarageRepository(auth: context.read<AuthProvider>())
             ),
             ChangeNotifierProvider(
               create: (context) => ServicesRepository() 

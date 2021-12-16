@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:comodiwash/pages/user_profile_pages/support_pages/privacy_policy_page.dart';
-import 'package:comodiwash/services/google_auth_service.dart';
+import 'package:comodiwash/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,7 +13,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _emailFormKey = GlobalKey<FormState>();
-  final _passwordFormKey = GlobalKey<FormState>();
+  bool isLogin = true;
 
   /// Create a container with gradient for the purple background and the column with the buttons
   Widget buildBackground() {
@@ -78,8 +78,7 @@ class _LoginState extends State<Login> {
       label: Text("Login com Google"),
       icon: FaIcon(FontAwesomeIcons.google),
       onPressed: () {
-        final provider =
-            Provider.of<GoogleSignInProvider>(context, listen: false);
+        final provider = Provider.of<AuthProvider>(context, listen: false);
         provider.googleLogin();
       },
     );
@@ -102,13 +101,18 @@ class _LoginState extends State<Login> {
   }
 
   Widget emailLoginField() {
+    TextEditingController _email = TextEditingController();
+    TextEditingController _password = TextEditingController();
+
     return Form(
         key: _emailFormKey,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
+              createAccountRow(),
               TextFormField(
+                controller: _email,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'E-mail',
@@ -121,7 +125,6 @@ class _LoginState extends State<Login> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Insira seu e-mail por favor';
-                    // Fluttertoast.showToast(msg: 'Insira seu e-mail por favor');
                   }
                   return null;
                 },
@@ -130,6 +133,7 @@ class _LoginState extends State<Login> {
                 height: MediaQuery.of(context).size.height * 0.01,
               ),
               TextFormField(
+                controller: _password,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Senha',
@@ -143,7 +147,6 @@ class _LoginState extends State<Login> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Insira sua senha por favor';
-                    // Fluttertoast.showToast(msg: 'Insira seu e-mail por favor');
                   }
                   return null;
                 },
@@ -156,16 +159,63 @@ class _LoginState extends State<Login> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100)),
                     primary: Colors.white,
-                    onPrimary: Colors.black, 
+                    onPrimary: Colors.black,
                     minimumSize: Size(300, 50),
                   ),
                   onPressed: () {
-                    print('Email login');
+                    if (isLogin) {
+                      final provider =
+                          Provider.of<AuthProvider>(context, listen: false);
+                      provider.emailSignIn(
+                          email: _email.text.trim(),
+                          password: _password.text.trim());
+                    } else {
+                      final provider =
+                          Provider.of<AuthProvider>(context, listen: false);
+                      provider.emailCreateAccount(
+                          email: _email.text.trim(),
+                          password: _password.text.trim());
+                    }
                   },
-                  child: const Text('Login'))
+                  child: isLogin ? const Text('Login') : const Text('Criar Conta'))
             ],
           ),
         ));
+  }
+
+  Widget createAccountRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        TextButton(
+            onPressed: () {
+              setState(() {
+                isLogin = !isLogin;
+              });
+            },
+            child: Text('Login',
+                style: TextStyle(
+                    fontSize: 16,
+                    decoration: isLogin
+                        ? TextDecoration.underline
+                        : TextDecoration.none,
+                    color: Colors.white))),
+        SizedBox(width: MediaQuery.of(context).size.width * 0.2),
+        TextButton(
+            onPressed: () {
+              setState(() {
+                isLogin = !isLogin;
+              });
+            },
+            child: Text('Criar Conta',
+                style: TextStyle(
+                    fontSize: 16,
+                    decoration: !isLogin
+                        ? TextDecoration.underline
+                        : TextDecoration.none,
+                    color: Colors.white))),
+      ],
+    );
   }
 
   /// TextButton that leads to the privacy policy page

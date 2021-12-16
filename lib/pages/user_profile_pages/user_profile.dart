@@ -4,7 +4,7 @@ import 'package:comodiwash/pages/user_profile_pages/new_car_pages/add_car_page.d
 import 'package:comodiwash/pages/user_profile_pages/settings_page.dart';
 import 'package:comodiwash/pages/user_profile_pages/support_page.dart';
 import 'package:comodiwash/repositories/garage_repository.dart';
-import 'package:comodiwash/services/google_auth_service.dart';
+import 'package:comodiwash/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -24,7 +24,7 @@ class _UserProfileState extends State<UserProfile> {
   late GarageRepository garage;
 
   /// Return a slidable model for the cars list card
-  /// 
+  ///
   /// Does the delete car action
   Widget buildRemoveSlidable() {
     return Container(
@@ -45,7 +45,7 @@ class _UserProfileState extends State<UserProfile> {
   }
 
   /// Return a slidable model for the cars list card
-  /// 
+  ///
   /// Does the edit car action
   Widget buildEditSlidable() {
     return Container(
@@ -66,14 +66,15 @@ class _UserProfileState extends State<UserProfile> {
   }
 
   /// Navigate to the detail page of a car
-  /// 
+  ///
   /// Recieves a car object
   openCarDetail(GarageCar car) {
     Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => CarDetailPage(car: car,)
-        )
-    );
+        MaterialPageRoute(
+            builder: (_) => CarDetailPage(
+                  car: car,
+                )));
   }
 
   /// Navigate to the page to add a new car
@@ -115,8 +116,9 @@ class _UserProfileState extends State<UserProfile> {
                 break;
               case 4:
                 final provider =
-                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                    Provider.of<AuthProvider>(context, listen: false);
                 provider.googleLogout();
+                provider.emailSignOut();
                 break;
             }
           });
@@ -235,16 +237,18 @@ class _UserProfileState extends State<UserProfile> {
             backgroundColor: Color.fromRGBO(45, 26, 71, 1),
             child: CircleAvatar(
               radius: 40,
-              backgroundImage: NetworkImage(user.photoURL!),
+              backgroundColor: Colors.deepPurple,
+              // backgroundImage: NetworkImage(user.photoURL!),
             ),
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.03,
           ),
-          Text(
+          // TODO add name
+          /* Text(
             user.displayName!,
             style: TextStyle(fontSize: 19),
-          ),
+          ), */
           Spacer(),
           buildPopUpMenu()
         ],
@@ -253,7 +257,7 @@ class _UserProfileState extends State<UserProfile> {
   }
 
   /// Returns a listview with the user cars based on the list from firebase
-  /// 
+  ///
   /// If the list is empty return a Text
   Widget buildGarageListView() {
     garage = Provider.of<GarageRepository>(context);
