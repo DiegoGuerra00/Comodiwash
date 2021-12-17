@@ -144,6 +144,7 @@ class _LoginState extends State<Login> {
                 ),
                 obscureText: true,
                 autocorrect: false,
+                enableSuggestions: false,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Insira sua senha por favor';

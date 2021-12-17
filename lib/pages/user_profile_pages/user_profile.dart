@@ -245,10 +245,10 @@ class _UserProfileState extends State<UserProfile> {
             width: MediaQuery.of(context).size.width * 0.03,
           ),
           // TODO add name
-          /* Text(
+          user.displayName != null ? Text(
             user.displayName!,
             style: TextStyle(fontSize: 19),
-          ), */
+          ) : Text('Seu nome', style: TextStyle(fontSize: 19),),
           Spacer(),
           buildPopUpMenu()
         ],
