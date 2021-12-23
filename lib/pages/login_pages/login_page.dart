@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:comodiwash/pages/user_profile_pages/support_pages/privacy_policy_page.dart';
 import 'package:comodiwash/services/auth_service.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +13,17 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _emailFormKey = GlobalKey<FormState>();
+  final _passwordFormKey = GlobalKey<FormState>();
+  final _confirmPasswordFormKey = GlobalKey<FormState>();
+  final _nameFormKey = GlobalKey<FormState>();
+  final _surnameFormKey = GlobalKey<FormState>();
   bool isLogin = true;
+
+  Widget genericSizedBox() {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.01,
+    );
+  }
 
   /// Create a container with gradient for the purple background and the column with the buttons
   Widget buildBackground() {
@@ -45,10 +55,10 @@ class _LoginState extends State<Login> {
             bannerLogo(),
             SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             emailLoginField(),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-            googleLoginButton(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            isLogin ? googleLoginButton() : Container(),
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-            facebookLoginButton(),
+            isLogin ? facebookLoginButton() : Container(),
             Spacer(),
             privacyButton(),
           ],
@@ -100,91 +110,7 @@ class _LoginState extends State<Login> {
     );
   }
 
-  Widget emailLoginField() {
-    TextEditingController _email = TextEditingController();
-    TextEditingController _password = TextEditingController();
-
-    return Form(
-        key: _emailFormKey,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              createAccountRow(),
-              TextFormField(
-                controller: _email,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'E-mail',
-                  fillColor: Colors.white,
-                  filled: true,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                ),
-                autocorrect: false,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Insira seu e-mail por favor';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.01,
-              ),
-              TextFormField(
-                controller: _password,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Senha',
-                  fillColor: Colors.white,
-                  filled: true,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                ),
-                obscureText: true,
-                autocorrect: false,
-                enableSuggestions: false,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Insira sua senha por favor';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.01,
-              ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100)),
-                    primary: Colors.white,
-                    onPrimary: Colors.black,
-                    minimumSize: Size(300, 50),
-                  ),
-                  onPressed: () {
-                    if (isLogin) {
-                      final provider =
-                          Provider.of<AuthProvider>(context, listen: false);
-                      provider.emailSignIn(
-                          email: _email.text.trim(),
-                          password: _password.text.trim());
-                    } else {
-                      final provider =
-                          Provider.of<AuthProvider>(context, listen: false);
-                      provider.emailCreateAccount(
-                          email: _email.text.trim(),
-                          password: _password.text.trim());
-                    }
-                  },
-                  child: isLogin ? const Text('Login') : const Text('Criar Conta'))
-            ],
-          ),
-        ));
-  }
-
-  Widget createAccountRow() {
+  Widget loginOptionsRow() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -219,6 +145,211 @@ class _LoginState extends State<Login> {
     );
   }
 
+  Widget emailLoginField() {
+    TextEditingController _email = TextEditingController();
+    TextEditingController _password = TextEditingController();
+    TextEditingController _confirmPassword = TextEditingController();
+    TextEditingController _name = TextEditingController();
+    TextEditingController _surname = TextEditingController();
+
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          loginOptionsRow(),
+          Container(
+              width: MediaQuery.of(context).size.width,
+              child: emailForm(_email)),
+          genericSizedBox(),
+          passwordField(_password),
+          genericSizedBox(),
+          !isLogin ? confirmPasswordField(_confirmPassword) : Container(),
+          !isLogin ? genericSizedBox() : Container(),
+          !isLogin ? nameField(_name) : Container(),
+          !isLogin ? genericSizedBox() : Container(),
+          !isLogin ? surnameField(_surname) : Container(),
+          !isLogin ? genericSizedBox() : Container(),
+          loginConfirmButton(
+              _email, _password, _confirmPassword, _name, _surname)
+        ],
+      ),
+    );
+  }
+
+  Widget emailForm(TextEditingController _email) {
+    return Form(
+        key: _emailFormKey,
+        child: TextFormField(
+          controller: _email,
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'E-mail',
+            fillColor: Colors.white,
+            filled: true,
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+          ),
+          autocorrect: false,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Insira seu e-mail por favor';
+            }
+            return null;
+          },
+        ));
+  }
+
+  Widget passwordField(TextEditingController _password) {
+    return Form(
+      key: _passwordFormKey,
+      child: TextFormField(
+        controller: _password,
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          hintText: 'Senha',
+          fillColor: Colors.white,
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10))),
+        ),
+        obscureText: true,
+        autocorrect: false,
+        enableSuggestions: false,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Insira sua senha por favor';
+          }
+          return null;
+        },
+      ),
+    );
+  }
+
+  Widget confirmPasswordField(TextEditingController _confirmPassword) {
+    return Form(
+      key: _confirmPasswordFormKey,
+      child: TextFormField(
+        controller: _confirmPassword,
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          hintText: 'Confirme a senha',
+          fillColor: Colors.white,
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10))),
+        ),
+        obscureText: true,
+        autocorrect: false,
+        enableSuggestions: false,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Insira sua senha por favor';
+          }
+          return null;
+        },
+      ),
+    );
+  }
+
+  Widget nameField(TextEditingController _name) {
+    return Form(
+        key: _nameFormKey,
+        child: TextFormField(
+          controller: _name,
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Nome',
+            fillColor: Colors.white,
+            filled: true,
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+          ),
+          obscureText: true,
+          autocorrect: false,
+          enableSuggestions: false,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Insira seu nome por favor';
+            }
+            return null;
+          },
+        ));
+  }
+
+  Widget surnameField(TextEditingController _surname) {
+    return Form(
+        key: _surnameFormKey,
+        child: TextFormField(
+          controller: _surname,
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Sobrenome',
+            fillColor: Colors.white,
+            filled: true,
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+          ),
+          obscureText: true,
+          autocorrect: false,
+          enableSuggestions: false,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Insira seu sobrenome por favor';
+            }
+            return null;
+          },
+        ));
+  }
+
+  Widget loginConfirmButton(
+      TextEditingController _email,
+      TextEditingController _password,
+      TextEditingController _confirmPassword,
+      TextEditingController _name,
+      TextEditingController _surname) {
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+          primary: Colors.white,
+          onPrimary: Colors.black,
+          minimumSize: Size(300, 50),
+        ),
+        onPressed: () {
+          if (isLogin) {
+            final provider = Provider.of<AuthProvider>(context, listen: false);
+            provider.emailSignIn(
+                email: _email.text.trim(), password: _password.text.trim());
+          } else {
+            final provider = Provider.of<AuthProvider>(context, listen: false);
+            if (_password.text.trim() == _confirmPassword.text.trim()) {
+              provider.emailCreateAccount(
+                  email: _email.text.trim(), password: _password.text.trim());
+            } else {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Aviso'),
+                      content: Text(
+                          'O login ou senha estão inválidos.\nRevise as informações ou altere sua senha em "esqueci minha senha"'),
+                      actions: <Widget>[
+                        TextButton(
+                            onPressed: Navigator.of(context).pop,
+                            child: Text(
+                              'Entendi',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(45, 26, 71, 1)),
+                            ))
+                      ],
+                    );
+                  });
+            }
+          }
+        },
+        child: isLogin ? const Text('Login') : const Text('Criar Conta'));
+  }
+
   /// TextButton that leads to the privacy policy page
   Widget privacyButton() {
     return TextButton(
@@ -235,8 +366,8 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: buildBackground(),
+      // resizeToAvoidBottomInset: false, 
+      body: buildBackground()
     );
   }
 }

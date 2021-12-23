@@ -16,7 +16,7 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
   bool isFrontBanner =
       true; // true if the banner with the front of the car is on the screen, false if the rear banner is beeing shown
   int bannerIndex = 0;
-  String bannerPath = 'assets/images/ComodiWash_horizontal.png';
+  String bannerPath = 'assets/images/checklist_assets/checklist_front.png';
 
   // Lights info from firestore
   // TODO implement realtime database
@@ -43,12 +43,12 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
     switch (bannerIndex) {
       case 0:
         setState(() {
-          bannerPath = 'assets/images/ComodiWash_horizontal.png';
+          bannerPath = 'assets/images/checklist_assets/checklist_front.png';
         });
         break;
       case 1:
         setState(() {
-          bannerPath = 'assets/images/user_profile_banner.png';
+          bannerPath = 'assets/images/checklist_assets/checklist_rear.png';
         });
         break;
     }
