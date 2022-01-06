@@ -1,7 +1,7 @@
 import 'package:comodiwash/pages/checklist_pages/engine_checklist_page.dart';
 import 'package:comodiwash/pages/checklist_pages/lights_checklist_page.dart.dart';
 import 'package:comodiwash/pages/checklist_pages/tires_checklist_page.dart.dart';
-import 'package:comodiwash/pages/login_pages/get_user_info_page.dart';
+import 'package:comodiwash/pages/login_pages/user_info_page.dart';
 import 'package:flutter/material.dart';
 
 class CheckListMainPage extends StatefulWidget {

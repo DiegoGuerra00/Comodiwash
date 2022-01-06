@@ -19,7 +19,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
   double rating = 0;
 
   /// Returns a circular button with inkwell gesture detector
-  /// 
+  ///
   /// @param isAdd Bool used to define if the icon should be add(if true) or minus(false)
   Widget buildQtdButton(bool isAdd) {
     if (!isAdd) {
@@ -111,43 +111,33 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
             SizedBox(height: 20),
             // row with price, qtd button and rating bar
             Padding(
-              padding: const EdgeInsets.only(left: 6,right: 6),
+              padding: const EdgeInsets.only(left: 6, right: 6),
               child: Row(
                 children: [
-                  buildQtdButton(false),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      qtd.toString(),
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                    ),
+                  Text(
+                    real.format(widget.services.price),
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
-                  buildQtdButton(true),
                   Spacer(),
-                  Column(children: [
-                    Text(
-                      real.format(widget.services.price * qtd),
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  RatingBar.builder(
+                    // TODO implment functional rating
+                    minRating: 1,
+                    initialRating: rating,
+                    allowHalfRating: true,
+                    itemSize: 30,
+                    itemBuilder: (context, _) => Icon(
+                      Icons.star,
+                      color: Colors.amber,
                     ),
-                    RatingBar.builder(
-                      minRating: 1,
-                      initialRating: rating,
-                      allowHalfRating: true,
-                      itemSize: 30,
-                      itemBuilder: (context, _) => Icon(
-                        Icons.star,
-                        color: Colors.amber,
-                      ),
-                      onRatingUpdate: (rating) => setState(() {
-                        this.rating = rating;
-                      }),
-                    )
-                  ])
+                    onRatingUpdate: (rating) => setState(() {
+                      this.rating = rating;
+                    }),
+                  ),
                 ],
               ),
             ),
             Spacer(),
-            // service description 
+            // service description
             Padding(
               padding: const EdgeInsets.only(left: 6, right: 6),
               child: buildDescription(),
@@ -155,26 +145,27 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
             Spacer(),
             // add to cart button
             SafeArea(
-              top: false,
-              left: false,
-              right: false,
-              child: ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100)),
-                      primary: Color.fromRGBO(45, 26, 71, 1),
-                      onPrimary: Colors.white,
-                      minimumSize: Size(300, 50)),
-                  onPressed: () {
-                    print('Carrinho ${widget.services.name}');
-                  },
-                  icon: Icon(Icons.shopping_bag, size: 28,),
-                  label: Text(
-                    'Adicionar ao carrinho',
-                    style: TextStyle(fontSize: 18),
-                  )
-              )
-            )
+                top: false,
+                left: false,
+                right: false,
+                child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100)),
+                        primary: Color.fromRGBO(45, 26, 71, 1),
+                        onPrimary: Colors.white,
+                        minimumSize: Size(300, 50)),
+                    onPressed: () {
+                      print('Carrinho ${widget.services.name}');
+                    },
+                    icon: Icon(
+                      Icons.shopping_bag,
+                      size: 28,
+                    ),
+                    label: Text(
+                      'Adicionar ao carrinho',
+                      style: TextStyle(fontSize: 18),
+                    )))
           ],
         ),
       ),

@@ -9,45 +9,34 @@ class UserInfoPage extends StatefulWidget {
 }
 
 class _UserInfoPageState extends State<UserInfoPage> {
-  final _nameFormKey = GlobalKey<FormState>();
-  final _surnameFormKey = GlobalKey<FormState>();
-  final _nicknameFormKey = GlobalKey<FormState>();
-  final _adressFormKey = GlobalKey<FormState>();
-  final _numberFormKey = GlobalKey<FormState>();
-  final _complementFormKey = GlobalKey<FormState>();
-  final _cepFormKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   Widget nameField() {
     TextEditingController _name = TextEditingController();
 
-    return Form(
-      key: _nameFormKey,
-      child: TextFormField(
-        controller: _name,
-        decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Nome',
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)))),
-        autocorrect: false,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Insira seu nome';
-          }
-          return null;
-        },
-      ),
+    return TextFormField(
+      controller: _name,
+      decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          hintText: 'Nome',
+          fillColor: Colors.white,
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)))),
+      autocorrect: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Insira seu nome';
+        }
+        return null;
+      },
     );
   }
 
   Widget surnameField() {
     TextEditingController _surname = TextEditingController();
 
-    return Form(
-      key: _surnameFormKey,
-      child: TextFormField(
+    return TextFormField(
         controller: _surname,
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -63,16 +52,13 @@ class _UserInfoPageState extends State<UserInfoPage> {
           }
           return null;
         },
-      ),
     );
   }
 
   Widget nicknameField() {
     TextEditingController _nickname = TextEditingController();
 
-    return Form(
-      key: _nicknameFormKey,
-      child: TextFormField(
+    return TextFormField(
         controller: _nickname,
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -88,16 +74,13 @@ class _UserInfoPageState extends State<UserInfoPage> {
           }
           return null;
         },
-      ),
     );
   }
 
   Widget cepField() {
     TextEditingController _cep = TextEditingController();
 
-    return Form(
-      key: _cepFormKey,
-      child: TextFormField(
+    return TextFormField(
         controller: _cep,
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -113,16 +96,13 @@ class _UserInfoPageState extends State<UserInfoPage> {
           }
           return null;
         },
-      ),
     );
   }
 
   Widget adressField() {
     TextEditingController _adress = TextEditingController();
 
-    return Form(
-      key: _adressFormKey,
-      child: TextFormField(
+    return TextFormField(
         controller: _adress,
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -138,7 +118,6 @@ class _UserInfoPageState extends State<UserInfoPage> {
           }
           return null;
         },
-      ),
     );
   }
 
@@ -149,9 +128,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
     return Row(
       children: [
         Expanded(
-          child: Form(
-            key: _numberFormKey,
-            child: TextFormField(
+          child: TextFormField(
               controller: _number,
               decoration: const InputDecoration(
                   border: OutlineInputBorder(),
@@ -169,11 +146,8 @@ class _UserInfoPageState extends State<UserInfoPage> {
               },
             ),
           ),
-        ),
         Expanded(
-          child: Form(
-            key: _complementFormKey,
-            child: TextFormField(
+          child: TextFormField(
               controller: _complement,
               decoration: const InputDecoration(
                   border: OutlineInputBorder(),
@@ -191,7 +165,6 @@ class _UserInfoPageState extends State<UserInfoPage> {
               },
             ),
           ),
-        ),
       ],
     );
   }
@@ -270,11 +243,11 @@ class _UserInfoPageState extends State<UserInfoPage> {
 
   Widget confirmButton() {
     return ElevatedButton(
-        onPressed: () {
-          print('Confirmar cadastro');
-        },
-        child: Text('Confirmar'),
-        style: ElevatedButton.styleFrom(
+      onPressed: () {
+        print('Confirmar cadastro');
+      },
+      child: Text('Confirmar'),
+      style: ElevatedButton.styleFrom(
           minimumSize: Size(300, 50),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
@@ -285,22 +258,29 @@ class _UserInfoPageState extends State<UserInfoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: GenericAppBar(title: '', useTitle: false),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
-          children: [
-            nameField(),
-            surnameField(),
-            nicknameField(),
-            cepField(),
-            adressField(),
-            adressComplementRow(),
-            stateFieldRow(),
-            Spacer(),
-            confirmButton()
-          ],
-        ),
+            children: [
+              Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      nameField(),
+                      surnameField(),
+                      nicknameField(),
+                      cepField(),
+                      adressField(),
+                      adressComplementRow(),
+                    ],
+                  )
+              ),
+              stateFieldRow(),
+              confirmButton()
+            ],
+          ),
       ),
     );
   }

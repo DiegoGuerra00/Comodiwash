@@ -12,6 +12,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
   final _emailFormKey = GlobalKey<FormState>();
   final _passwordFormKey = GlobalKey<FormState>();
   final _confirmPasswordFormKey = GlobalKey<FormState>();
@@ -51,15 +52,19 @@ class _LoginState extends State<Login> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(),
+            // Spacer(),
             bannerLogo(),
             SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-            emailLoginField(),
+            Form(
+              key: _formKey,
+              child: emailLoginField(),
+            ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             isLogin ? googleLoginButton() : Container(),
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             isLogin ? facebookLoginButton() : Container(),
-            Spacer(),
+            // Spacer(),
+            isLogin ? SizedBox(height: MediaQuery.of(context).size.height * 0.13) : Container(),
             privacyButton(),
           ],
         ),
@@ -177,128 +182,119 @@ class _LoginState extends State<Login> {
   }
 
   Widget emailForm(TextEditingController _email) {
-    return Form(
-        key: _emailFormKey,
-        child: TextFormField(
-          controller: _email,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'E-mail',
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10))),
-          ),
-          autocorrect: false,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Insira seu e-mail por favor';
-            }
-            return null;
-          },
-        ));
+    return TextFormField(
+      controller: _email,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        hintText: 'E-mail*',
+        fillColor: Colors.white,
+        filled: true,
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+      ),
+      autocorrect: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Insira seu e-mail por favor';
+        }
+        return null;
+      },
+    );
   }
 
   Widget passwordField(TextEditingController _password) {
-    return Form(
-      key: _passwordFormKey,
-      child: TextFormField(
-        controller: _password,
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: 'Senha',
-          fillColor: Colors.white,
-          filled: true,
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10))),
-        ),
-        obscureText: true,
-        autocorrect: false,
-        enableSuggestions: false,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Insira sua senha por favor';
-          }
-          return null;
-        },
+    return TextFormField(
+      controller: _password,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        hintText: 'Senha*',
+        fillColor: Colors.white,
+        filled: true,
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10))),
       ),
+      obscureText: true,
+      autocorrect: false,
+      enableSuggestions: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Insira sua senha por favor';
+        }
+        if (value.length < 6) {
+          return 'Senha deve possuir pelo menos 6 caracteres';
+        }
+        return null;
+      },
     );
   }
 
   Widget confirmPasswordField(TextEditingController _confirmPassword) {
-    return Form(
-      key: _confirmPasswordFormKey,
-      child: TextFormField(
-        controller: _confirmPassword,
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: 'Confirme a senha',
-          fillColor: Colors.white,
-          filled: true,
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10))),
-        ),
-        obscureText: true,
-        autocorrect: false,
-        enableSuggestions: false,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Insira sua senha por favor';
-          }
-          return null;
-        },
+    return TextFormField(
+      controller: _confirmPassword,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        hintText: 'Confirme a senha*',
+        fillColor: Colors.white,
+        filled: true,
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10))),
       ),
+      obscureText: true,
+      autocorrect: false,
+      enableSuggestions: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Insira sua senha por favor';
+        }
+        return null;
+      },
     );
   }
 
   Widget nameField(TextEditingController _name) {
-    return Form(
-        key: _nameFormKey,
-        child: TextFormField(
-          controller: _name,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Nome',
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10))),
-          ),
-          obscureText: true,
-          autocorrect: false,
-          enableSuggestions: false,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Insira seu nome por favor';
-            }
-            return null;
-          },
-        ));
+    return TextFormField(
+      controller: _name,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        hintText: 'Nome*',
+        fillColor: Colors.white,
+        filled: true,
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+      ),
+      obscureText: true,
+      autocorrect: false,
+      enableSuggestions: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Insira seu nome por favor';
+        }
+        return null;
+      },
+    );
   }
 
   Widget surnameField(TextEditingController _surname) {
-    return Form(
-        key: _surnameFormKey,
-        child: TextFormField(
-          controller: _surname,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Sobrenome',
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10))),
-          ),
-          obscureText: true,
-          autocorrect: false,
-          enableSuggestions: false,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Insira seu sobrenome por favor';
-            }
-            return null;
-          },
-        ));
+    return TextFormField(
+      controller: _surname,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        hintText: 'Sobrenome*',
+        fillColor: Colors.white,
+        filled: true,
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+      ),
+      obscureText: true,
+      autocorrect: false,
+      enableSuggestions: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Insira seu sobrenome por favor';
+        }
+        return null;
+      },
+    );
   }
 
   Widget loginConfirmButton(
@@ -317,33 +313,39 @@ class _LoginState extends State<Login> {
         ),
         onPressed: () {
           if (isLogin) {
-            final provider = Provider.of<AuthProvider>(context, listen: false);
-            provider.emailSignIn(
-                email: _email.text.trim(), password: _password.text.trim());
-          } else {
-            final provider = Provider.of<AuthProvider>(context, listen: false);
-            if (_password.text.trim() == _confirmPassword.text.trim()) {
-              provider.emailCreateAccount(
+            if (_formKey.currentState!.validate()) {
+              final provider =
+                  Provider.of<AuthProvider>(context, listen: false);
+              provider.emailSignIn(
                   email: _email.text.trim(), password: _password.text.trim());
-            } else {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text('Aviso'),
-                      content: Text(
-                          'O login ou senha estão inválidos.\nRevise as informações ou altere sua senha em "esqueci minha senha"'),
-                      actions: <Widget>[
-                        TextButton(
-                            onPressed: Navigator.of(context).pop,
-                            child: Text(
-                              'Entendi',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(45, 26, 71, 1)),
-                            ))
-                      ],
-                    );
-                  });
+            }
+          } else {
+            if (_formKey.currentState!.validate()) {
+              final provider =
+                  Provider.of<AuthProvider>(context, listen: false);
+              if (_password.text.trim() == _confirmPassword.text.trim()) {
+                provider.emailCreateAccount(
+                    email: _email.text.trim(), password: _password.text.trim());
+              } else {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('Aviso'),
+                        content: Text(
+                            'O login ou senha estão inválidos.\nRevise as informações ou altere sua senha em "esqueci minha senha"'),
+                        actions: <Widget>[
+                          TextButton(
+                              onPressed: Navigator.of(context).pop,
+                              child: Text(
+                                'Entendi',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(45, 26, 71, 1)),
+                              ))
+                        ],
+                      );
+                    });
+              }
             }
           }
         },
@@ -366,8 +368,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // resizeToAvoidBottomInset: false, 
-      body: buildBackground()
-    );
+        resizeToAvoidBottomInset: false,
+        body: SingleChildScrollView(child: buildBackground()));
   }
 }

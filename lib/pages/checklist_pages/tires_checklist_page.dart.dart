@@ -12,7 +12,7 @@ class _TiresChecklistPageState extends State<TiresChecklistPage> {
   double height = 200;
   double circleRadiusExt = 13;
   final titleTextStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
-  String dialogtext = 'A medição do pneu foi realizada através de um paquímetro de profundidade onde a tolerancia máxima aceitável para os pneus é X'; //TODO add X value
+  String dialogtext = 'A medição do pneu foi realizada através de um profundímetro onde a tolerância máxima aceitável para os pneus é X'; //TODO add X value
   bool tireFL = true;
   bool tireFR = true;
   bool tireRL = true;

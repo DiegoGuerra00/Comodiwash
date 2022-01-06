@@ -63,27 +63,30 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
   }
 
   Widget bannerCard() {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.7,
-      height: MediaQuery.of(context).size.height * 0.3,
-      child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          child: InkWell(
-            child: Center(
-                child: Container(
-              child: Image.asset(bannerPath),
-            )),
-          )),
+    return Stack(
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.7,
+          height: MediaQuery.of(context).size.height * 0.3,
+          child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              child: InkWell(
+                child: Center(
+                    child: Container(
+                  child: Image.asset(bannerPath),
+                )),
+              )),
+        ),
+        // TODO marcções visuais das lampadas
+      ],
     );
   }
 
   Widget bannerBackButton() {
     return ElevatedButton(
       onPressed: () {
-        if (bannerIndex < 0) {
-
-        } else {
+        if (bannerIndex > 0) {
           bannerIndex--;
         }
 
@@ -105,9 +108,7 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
   Widget bannerForwardButton() {
     return ElevatedButton(
       onPressed: () {
-        if (bannerIndex > 1) {
-
-        } else {
+        if (bannerIndex < 1) {
           bannerIndex++;
         }
 

@@ -1,6 +1,5 @@
 import 'package:comodiwash/models/products.dart';
 import 'package:comodiwash/models/services.dart';
-import 'package:comodiwash/pages/place_holder_page.dart';
 import 'package:comodiwash/pages/store_pages/product_detail_page.dart';
 import 'package:comodiwash/pages/store_pages/shopping_cart_page.dart';
 import 'package:comodiwash/repositories/products_repository.dart';
@@ -134,7 +133,7 @@ class _StorePageState extends State<StorePage> {
   }
 
   /// Return card(with inkwell) for the sort options of the services.
-  /// 
+  ///
   /// onTap opens ModalButtonSheet
   Widget buildServicesSortButton() {
     return Card(
@@ -165,7 +164,10 @@ class _StorePageState extends State<StorePage> {
               Spacer(),
               Padding(
                 padding: const EdgeInsets.only(right: 10),
-                child: Icon(Icons.sort, color: Colors.white,),
+                child: Icon(
+                  Icons.sort,
+                  color: Colors.white,
+                ),
               )
             ],
           ),
@@ -175,7 +177,7 @@ class _StorePageState extends State<StorePage> {
   }
 
   /// Return card(with inkwell) for the sort options of the products.
-  /// 
+  ///
   /// onTap opens ModalButtonSheet
   Widget buildProductsSortButton() {
     return Card(
@@ -206,7 +208,10 @@ class _StorePageState extends State<StorePage> {
               Spacer(),
               Padding(
                 padding: const EdgeInsets.only(right: 10),
-                child: Icon(Icons.sort, color: Colors.white,),
+                child: Icon(
+                  Icons.sort,
+                  color: Colors.white,
+                ),
               )
             ],
           ),
@@ -216,7 +221,7 @@ class _StorePageState extends State<StorePage> {
   }
 
   /// Open the specific page for the service, using MaterialPageRoute with Navigator.push
-  /// 
+  ///
   /// @param services The service to use to open the detail page
   openServicePage(Services services) {
     Navigator.push(
@@ -226,7 +231,7 @@ class _StorePageState extends State<StorePage> {
   }
 
   /// Open the specific page for the product, using MaterialPageRoute with Navigator.push
-  /// 
+  ///
   /// @param products The product to use to open the detail page
   openProductPage(Products products) {
     Navigator.push(
@@ -244,7 +249,8 @@ class _StorePageState extends State<StorePage> {
           ? SizedBox(
               height: 260,
               child: Center(
-                  child: CircularProgressIndicator(color: Color.fromRGBO(45, 26, 71, 1))),
+                  child: CircularProgressIndicator(
+                      color: Color.fromRGBO(45, 26, 71, 1))),
             )
           : Padding(
               padding: const EdgeInsets.all(8.0),
@@ -256,9 +262,11 @@ class _StorePageState extends State<StorePage> {
                   scrollDirection: Axis.horizontal,
                   itemCount: services.servicesList.length,
                   itemBuilder: (BuildContext context, int service) => Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
                     child: InkWell(
-                      onTap: () => openServicePage(services.servicesList[service]),
+                      onTap: () =>
+                          openServicePage(services.servicesList[service]),
                       child: Center(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -267,9 +275,9 @@ class _StorePageState extends State<StorePage> {
                               width: 200,
                               height: 200,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.asset(services.servicesList[service].icon)
-                              ),
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.asset(
+                                      services.servicesList[service].icon)),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 8),
@@ -334,9 +342,9 @@ class _StorePageState extends State<StorePage> {
                               width: 200,
                               height: 200,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.asset(services.productsList[product].icon)
-                              ),
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.asset(
+                                      services.productsList[product].icon)),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 8),
