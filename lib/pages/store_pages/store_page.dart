@@ -248,9 +248,13 @@ class _StorePageState extends State<StorePage> {
       return services.servicesList.isEmpty
           ? SizedBox(
               height: 260,
-              child: Center(
-                  child: CircularProgressIndicator(
-                      color: Color.fromRGBO(45, 26, 71, 1))),
+              child: ListView.separated(
+                itemCount: 10,
+                itemBuilder: (BuildContext context, int index) =>
+                    const LoadingContainer(height: 260, width: 200),
+                separatorBuilder: (BuildContext context, int index) =>
+                    Divider()
+              ),
             )
           : Padding(
               padding: const EdgeInsets.all(8.0),
@@ -315,9 +319,17 @@ class _StorePageState extends State<StorePage> {
       return products.productsList.isEmpty
           ? SizedBox(
               height: 260,
-              child: Center(
-                  child: CircularProgressIndicator(
-                      color: Color.fromRGBO(45, 26, 71, 1))),
+              width: 200,
+              child: ListView.separated(
+                itemCount: 5,
+                shrinkWrap: true,
+                itemBuilder: (BuildContext context, int index) =>
+                    const LoadingContainer(height: 260, width: 200),
+                separatorBuilder: (BuildContext context, int index) =>
+                    const SizedBox(
+                  width: 16,
+                ),
+              ),
             )
           : Padding(
               padding: const EdgeInsets.all(8.0),
@@ -477,6 +489,29 @@ class _StorePageState extends State<StorePage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class LoadingContainer extends StatelessWidget {
+  const LoadingContainer({
+    Key? key,
+    this.height,
+    this.width,
+  }) : super(key: key);
+
+  final double? height;
+  final double? width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(8),
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.05),
+          borderRadius: const BorderRadius.all(Radius.circular(20))),
     );
   }
 }

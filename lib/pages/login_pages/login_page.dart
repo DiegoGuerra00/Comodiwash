@@ -13,11 +13,6 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
-  final _emailFormKey = GlobalKey<FormState>();
-  final _passwordFormKey = GlobalKey<FormState>();
-  final _confirmPasswordFormKey = GlobalKey<FormState>();
-  final _nameFormKey = GlobalKey<FormState>();
-  final _surnameFormKey = GlobalKey<FormState>();
   bool isLogin = true;
 
   Widget genericSizedBox() {
