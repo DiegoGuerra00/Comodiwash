@@ -72,7 +72,7 @@ class AuthProvider extends ChangeNotifier {
   }
 
   /// Sign in in an already existing account with email
-  Future emailSignIn({required String email, required String password}) async {
+  Future emailLogin({required String email, required String password}) async {
     try {
       await auth.signInWithEmailAndPassword(email: email, password: password);
       notifyListeners();

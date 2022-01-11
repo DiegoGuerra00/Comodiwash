@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:comodiwash/pages/user_profile_pages/support_pages/privacy_policy_page.dart';
+import 'package:comodiwash/pages/user_profile_pages/support_pages/eula_page.dart';
 import 'package:comodiwash/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -13,6 +13,8 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
+  EdgeInsetsGeometry formPadding =
+      EdgeInsets.symmetric(vertical: 15, horizontal: 10);
   bool isLogin = true;
 
   Widget genericSizedBox() {
@@ -59,7 +61,9 @@ class _LoginState extends State<Login> {
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             isLogin ? facebookLoginButton() : Container(),
             // Spacer(),
-            isLogin ? SizedBox(height: MediaQuery.of(context).size.height * 0.13) : Container(),
+            isLogin
+                ? SizedBox(height: MediaQuery.of(context).size.height * 0.10)
+                : SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             privacyButton(),
           ],
         ),
@@ -110,6 +114,7 @@ class _LoginState extends State<Login> {
     );
   }
 
+  /// Button to switch between login and sign in fiels
   Widget loginOptionsRow() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -145,6 +150,8 @@ class _LoginState extends State<Login> {
     );
   }
 
+  /// Form to get user data for login with email and password
+  /// using firebase auth
   Widget emailLoginField() {
     TextEditingController _email = TextEditingController();
     TextEditingController _password = TextEditingController();
@@ -163,23 +170,35 @@ class _LoginState extends State<Login> {
           genericSizedBox(),
           passwordField(_password),
           genericSizedBox(),
-          !isLogin ? confirmPasswordField(_confirmPassword) : Container(),
+          !isLogin
+              ? confirmPasswordField(_confirmPassword, _password)
+              : Container(),
           !isLogin ? genericSizedBox() : Container(),
           !isLogin ? nameField(_name) : Container(),
           !isLogin ? genericSizedBox() : Container(),
           !isLogin ? surnameField(_surname) : Container(),
           !isLogin ? genericSizedBox() : Container(),
-          loginConfirmButton(
-              _email, _password, _confirmPassword, _name, _surname)
+          loginConfirmButton(_email, _password, _name, _surname),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.001,
+          ),
+          passwordResetButton(_email)
         ],
       ),
     );
   }
 
+  /// TextForm field to get user email.
+  ///
+  ///@parameters
+  ///TextEditingController _email TextEditingController to store the input from the user
+  ///
+  /// Is used in login and sign in
   Widget emailForm(TextEditingController _email) {
     return TextFormField(
       controller: _email,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
+        contentPadding: formPadding,
         border: OutlineInputBorder(),
         hintText: 'E-mail*',
         fillColor: Colors.white,
@@ -190,17 +209,24 @@ class _LoginState extends State<Login> {
       autocorrect: false,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Insira seu e-mail por favor';
+          return 'Campo obrigatório';
         }
         return null;
       },
     );
   }
 
+  /// TextForm field to get user password.
+  ///
+  ///@parameters
+  ///TextEditingController _password TextEditingController to store the input from the user
+  ///
+  /// Is used in login and sign in
   Widget passwordField(TextEditingController _password) {
     return TextFormField(
       controller: _password,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
+        contentPadding: formPadding,
         border: OutlineInputBorder(),
         hintText: 'Senha*',
         fillColor: Colors.white,
@@ -213,7 +239,7 @@ class _LoginState extends State<Login> {
       enableSuggestions: false,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Insira sua senha por favor';
+          return 'Campo obrigatório';
         }
         if (value.length < 6) {
           return 'Senha deve possuir pelo menos 6 caracteres';
@@ -223,10 +249,15 @@ class _LoginState extends State<Login> {
     );
   }
 
-  Widget confirmPasswordField(TextEditingController _confirmPassword) {
+  /// TextForm field to get confirm the password.
+  ///
+  /// Used only on sign in
+  Widget confirmPasswordField(
+      TextEditingController _confirmPassword, TextEditingController _password) {
     return TextFormField(
       controller: _confirmPassword,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
+        contentPadding: formPadding,
         border: OutlineInputBorder(),
         hintText: 'Confirme a senha*',
         fillColor: Colors.white,
@@ -239,17 +270,27 @@ class _LoginState extends State<Login> {
       enableSuggestions: false,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Insira sua senha por favor';
+          return 'Campo obrigatório';
+        }
+        if (value != _password.text.trim()) {
+          return 'As senhas não conferem';
         }
         return null;
       },
     );
   }
 
+  /// TextField to get user name.
+  ///
+  ///@parameters
+  ///TextEditingController _name TextEditingController to store the input from the user
+  ///
+  /// Used only on sign in
   Widget nameField(TextEditingController _name) {
     return TextFormField(
       controller: _name,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
+        contentPadding: formPadding,
         border: OutlineInputBorder(),
         hintText: 'Nome*',
         fillColor: Colors.white,
@@ -262,17 +303,24 @@ class _LoginState extends State<Login> {
       enableSuggestions: false,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Insira seu nome por favor';
+          return 'Campo obrigatório';
         }
         return null;
       },
     );
   }
 
+  /// TextField to get user surname.
+  ///
+  ///@parameters
+  ///TextEditingController _surmane TextEditingController to store the input from the user
+  ///
+  /// User only on sign in
   Widget surnameField(TextEditingController _surname) {
     return TextFormField(
       controller: _surname,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
+        contentPadding: formPadding,
         border: OutlineInputBorder(),
         hintText: 'Sobrenome*',
         fillColor: Colors.white,
@@ -285,17 +333,28 @@ class _LoginState extends State<Login> {
       enableSuggestions: false,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Insira seu sobrenome por favor';
+          return 'Campo obrigatório';
         }
         return null;
       },
     );
   }
 
+  /// ElevatedButton used to login or sign up.
+  ///
+  /// @parameters
+  /// TextEditingController _email The user email
+  /// TextEditingController _password The user password
+  ///TextEditingController _name The user name
+  ///TextEditingController _surname The user surmane
+  ///
+  /// If the bool isLogin is true acts as login button calling the emailLogin method from AuthProvider.
+  /// If the bool isLogin is false acts as sign in button calling the emailCreateAccount method from AuthProvider.
+  ///
+  /// Each field has it's own validation from TextFormFIeld validator
   Widget loginConfirmButton(
       TextEditingController _email,
       TextEditingController _password,
-      TextEditingController _confirmPassword,
       TextEditingController _name,
       TextEditingController _surname) {
     return ElevatedButton(
@@ -311,40 +370,31 @@ class _LoginState extends State<Login> {
             if (_formKey.currentState!.validate()) {
               final provider =
                   Provider.of<AuthProvider>(context, listen: false);
-              provider.emailSignIn(
+              provider.emailLogin(
                   email: _email.text.trim(), password: _password.text.trim());
             }
           } else {
             if (_formKey.currentState!.validate()) {
               final provider =
                   Provider.of<AuthProvider>(context, listen: false);
-              if (_password.text.trim() == _confirmPassword.text.trim()) {
-                provider.emailCreateAccount(
-                    email: _email.text.trim(), password: _password.text.trim());
-              } else {
-                showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: Text('Aviso'),
-                        content: Text(
-                            'O login ou senha estão inválidos.\nRevise as informações ou altere sua senha em "esqueci minha senha"'),
-                        actions: <Widget>[
-                          TextButton(
-                              onPressed: Navigator.of(context).pop,
-                              child: Text(
-                                'Entendi',
-                                style: TextStyle(
-                                    color: Color.fromRGBO(45, 26, 71, 1)),
-                              ))
-                        ],
-                      );
-                    });
-              }
+              provider.emailCreateAccount(
+                  email: _email.text.trim(), password: _password.text.trim());
             }
           }
         },
         child: isLogin ? const Text('Login') : const Text('Criar Conta'));
+  }
+
+  /// Elevated button to go to reset the user's password page
+  ///
+  /// @parameters
+  /// TextEditingController _email The email to send the reset email
+  Widget passwordResetButton(TextEditingController _email) {
+    // TODO implement reset password page
+    return Text(
+      'Esqueci minha senha',
+      style: TextStyle(color: Colors.white),
+    );
   }
 
   /// TextButton that leads to the privacy policy page
@@ -352,7 +402,7 @@ class _LoginState extends State<Login> {
     return TextButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (_) => PrivacyPolicyPage()));
+              context, MaterialPageRoute(builder: (_) => EulaPage()));
         },
         child: Text(
           'Política de Privacidade',

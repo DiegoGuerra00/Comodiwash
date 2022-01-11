@@ -247,6 +247,7 @@ class _StorePageState extends State<StorePage> {
     return Consumer<ServicesRepository>(builder: (context, services, child) {
       return services.servicesList.isEmpty
           ? SizedBox(
+            // FIXME broken loading
               height: 260,
               child: ListView.separated(
                 itemCount: 10,

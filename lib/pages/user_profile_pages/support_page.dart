@@ -1,7 +1,7 @@
 import 'package:comodiwash/models/generic_app_bar.dart';
 import 'package:comodiwash/pages/user_profile_pages/support_pages/about_page.dart';
 import 'package:comodiwash/pages/user_profile_pages/support_pages/contact_page.dart';
-import 'package:comodiwash/pages/user_profile_pages/support_pages/privacy_policy_page.dart';
+import 'package:comodiwash/pages/user_profile_pages/support_pages/eula_page.dart';
 import 'package:flutter/material.dart';
 
 class SupportPage extends StatefulWidget {
@@ -69,7 +69,7 @@ class _SupportPageState extends State<SupportPage> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             child: InkWell(
               onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => PrivacyPolicyPage())),
+                  context, MaterialPageRoute(builder: (_) => EulaPage())),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: 70,

@@ -2,14 +2,14 @@ import 'package:comodiwash/models/generic_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PrivacyPolicyPage extends StatefulWidget {
-  const PrivacyPolicyPage({Key? key}) : super(key: key);
+class EulaPage extends StatefulWidget {
+  const EulaPage({Key? key}) : super(key: key);
 
   @override
-  _PrivacyPolicyPageState createState() => _PrivacyPolicyPageState();
+  _EulaPageState createState() => _EulaPageState();
 }
 
-class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
+class _EulaPageState extends State<EulaPage> {
   Widget buildPolicyText() {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.85,

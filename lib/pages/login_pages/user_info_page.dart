@@ -10,13 +10,22 @@ class UserInfoPage extends StatefulWidget {
 
 class _UserInfoPageState extends State<UserInfoPage> {
   final _formKey = GlobalKey<FormState>();
+  EdgeInsetsGeometry formPadding =
+      EdgeInsets.symmetric(vertical: 15, horizontal: 10);
+
+  Widget genericSizedBox() {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.01,
+    );
+  }
 
   Widget nameField() {
     TextEditingController _name = TextEditingController();
 
     return TextFormField(
       controller: _name,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
+          contentPadding: formPadding,
           border: OutlineInputBorder(),
           hintText: 'Nome',
           fillColor: Colors.white,
@@ -26,7 +35,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
       autocorrect: false,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Insira seu nome';
+          return 'Campo obrigatório';
         }
         return null;
       },
@@ -37,21 +46,22 @@ class _UserInfoPageState extends State<UserInfoPage> {
     TextEditingController _surname = TextEditingController();
 
     return TextFormField(
-        controller: _surname,
-        decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Sobrenome',
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)))),
-        autocorrect: false,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Insira seu sobrenome';
-          }
-          return null;
-        },
+      controller: _surname,
+      decoration: InputDecoration(
+          contentPadding: formPadding,
+          border: OutlineInputBorder(),
+          hintText: 'Sobrenome',
+          fillColor: Colors.white,
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)))),
+      autocorrect: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Campo obrigatório';
+        }
+        return null;
+      },
     );
   }
 
@@ -59,21 +69,19 @@ class _UserInfoPageState extends State<UserInfoPage> {
     TextEditingController _nickname = TextEditingController();
 
     return TextFormField(
-        controller: _nickname,
-        decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Apelido (opcional)',
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)))),
-        autocorrect: false,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Insira seu apelido';
-          }
-          return null;
-        },
+      controller: _nickname,
+      decoration: InputDecoration(
+          contentPadding: formPadding,
+          border: OutlineInputBorder(),
+          hintText: 'Apelido (opcional)',
+          fillColor: Colors.white,
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)))),
+      autocorrect: false,
+      validator: (value) {
+        return null;
+      },
     );
   }
 
@@ -81,21 +89,22 @@ class _UserInfoPageState extends State<UserInfoPage> {
     TextEditingController _cep = TextEditingController();
 
     return TextFormField(
-        controller: _cep,
-        decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'CEP',
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)))),
-        autocorrect: false,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Insira seu CEP';
-          }
-          return null;
-        },
+      controller: _cep,
+      decoration: InputDecoration(
+          contentPadding: formPadding,
+          border: OutlineInputBorder(),
+          hintText: 'CEP',
+          fillColor: Colors.white,
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)))),
+      autocorrect: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Campo obrigatório';
+        }
+        return null;
+      },
     );
   }
 
@@ -103,21 +112,22 @@ class _UserInfoPageState extends State<UserInfoPage> {
     TextEditingController _adress = TextEditingController();
 
     return TextFormField(
-        controller: _adress,
-        decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Endereço',
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)))),
-        autocorrect: false,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Insira seu endereço';
-          }
-          return null;
-        },
+      controller: _adress,
+      decoration: InputDecoration(
+          contentPadding: formPadding,
+          border: OutlineInputBorder(),
+          hintText: 'Endereço',
+          fillColor: Colors.white,
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)))),
+      autocorrect: false,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Campo obrigatório';
+        }
+        return null;
+      },
     );
   }
 
@@ -126,45 +136,48 @@ class _UserInfoPageState extends State<UserInfoPage> {
     TextEditingController _complement = TextEditingController();
 
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Expanded(
           child: TextFormField(
-              controller: _number,
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Número',
-                  fillColor: Colors.white,
-                  filled: true,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)))),
-              autocorrect: false,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Insira seu número';
-                }
-                return null;
-              },
-            ),
+            controller: _number,
+            decoration: InputDecoration(
+                contentPadding: formPadding,
+                border: OutlineInputBorder(),
+                hintText: 'Número',
+                fillColor: Colors.white,
+                filled: true,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)))),
+            autocorrect: false,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Campo obrigatório';
+              }
+              return null;
+            },
           ),
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.01,
+        ),
         Expanded(
           child: TextFormField(
-              controller: _complement,
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Complemento (Opcional)',
-                  fillColor: Colors.white,
-                  filled: true,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)))),
-              autocorrect: false,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Insira seu complemento';
-                }
-                return null;
-              },
-            ),
+            controller: _complement,
+            decoration: InputDecoration(
+                contentPadding: formPadding,
+                border: OutlineInputBorder(),
+                hintText: 'Complemento (Opcional)',
+                fillColor: Colors.white,
+                filled: true,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)))),
+            autocorrect: false,
+            validator: (value) {
+              return null;
+            },
           ),
+        ),
       ],
     );
   }
@@ -244,7 +257,9 @@ class _UserInfoPageState extends State<UserInfoPage> {
   Widget confirmButton() {
     return ElevatedButton(
       onPressed: () {
-        print('Confirmar cadastro');
+        if(_formKey.currentState!.validate()) {
+          print('Confirmar cadastro');
+        }
       },
       child: Text('Confirmar'),
       style: ElevatedButton.styleFrom(
@@ -262,25 +277,32 @@ class _UserInfoPageState extends State<UserInfoPage> {
       appBar: GenericAppBar(title: '', useTitle: false),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Column(
+        child: Padding(
+          padding: EdgeInsets.all(8),
+          child: Column(
             children: [
               Form(
                   key: _formKey,
                   child: Column(
                     children: [
                       nameField(),
+                      genericSizedBox(),
                       surnameField(),
+                      genericSizedBox(),
                       nicknameField(),
+                      genericSizedBox(),
                       cepField(),
+                      genericSizedBox(),
                       adressField(),
+                      genericSizedBox(),
                       adressComplementRow(),
                     ],
-                  )
-              ),
+                  )),
               stateFieldRow(),
               confirmButton()
             ],
           ),
+        ),
       ),
     );
   }
