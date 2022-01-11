@@ -117,8 +117,16 @@ class _UserProfileState extends State<UserProfile> {
               case 4:
                 final provider =
                     Provider.of<AuthProvider>(context, listen: false);
-                provider.googleLogout();
-                provider.emailSignOut();
+                for (UserInfo profile in user.providerData) {
+                  if (profile.providerId == 'google.com') {
+                    provider.googleLogout();
+                  } else if (profile.providerId == 'password') {
+                    provider.emailSignOut();
+                  }
+                  else if(profile.providerId == 'facebook.com') {
+                    // logout with facebook
+                  }
+                }
                 break;
             }
           });
@@ -245,10 +253,15 @@ class _UserProfileState extends State<UserProfile> {
             width: MediaQuery.of(context).size.width * 0.03,
           ),
           // TODO add name
-          user.displayName != null ? Text(
-            user.displayName!,
-            style: TextStyle(fontSize: 19),
-          ) : Text('Seu nome', style: TextStyle(fontSize: 19),),
+          user.displayName != null
+              ? Text(
+                  user.displayName!,
+                  style: TextStyle(fontSize: 19),
+                )
+              : Text(
+                  'Seu nome',
+                  style: TextStyle(fontSize: 19),
+                ),
           Spacer(),
           buildPopUpMenu()
         ],

@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:comodiwash/pages/login_pages/reset_password_page.dart';
 import 'package:comodiwash/pages/user_profile_pages/support_pages/eula_page.dart';
 import 'package:comodiwash/services/auth_service.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +14,36 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
-  EdgeInsetsGeometry formPadding =
-      EdgeInsets.symmetric(vertical: 15, horizontal: 10);
   bool isLogin = true;
 
+  ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+    primary: Colors.white,
+    onPrimary: Colors.black,
+    minimumSize: Size(300, 50),
+  );
+
+  /// Returns InputDecoration for the TextFormFields.
+  /// 
+  /// @parameters
+  /// String hintText String containing the text to be used as hint for that specific textfield
+  InputDecoration formDecoration(String hintText) {
+    return InputDecoration(
+      contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+      border: OutlineInputBorder(),
+      hintText: hintText,
+      fillColor: Colors.white,
+      filled: true,
+      enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10))),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Color.fromRGBO(45, 26, 71, 1)),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
+    );
+  }
+
+  /// SizedBox used only for spacing porposes
   Widget genericSizedBox() {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.01,
@@ -197,15 +224,7 @@ class _LoginState extends State<Login> {
   Widget emailForm(TextEditingController _email) {
     return TextFormField(
       controller: _email,
-      decoration: InputDecoration(
-        contentPadding: formPadding,
-        border: OutlineInputBorder(),
-        hintText: 'E-mail*',
-        fillColor: Colors.white,
-        filled: true,
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-      ),
+      decoration: formDecoration('E-mail*'),
       autocorrect: false,
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -225,15 +244,7 @@ class _LoginState extends State<Login> {
   Widget passwordField(TextEditingController _password) {
     return TextFormField(
       controller: _password,
-      decoration: InputDecoration(
-        contentPadding: formPadding,
-        border: OutlineInputBorder(),
-        hintText: 'Senha*',
-        fillColor: Colors.white,
-        filled: true,
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-      ),
+      decoration: formDecoration('Senha*'),
       obscureText: true,
       autocorrect: false,
       enableSuggestions: false,
@@ -251,20 +262,12 @@ class _LoginState extends State<Login> {
 
   /// TextForm field to get confirm the password.
   ///
-  /// Used only on sign in
+  /// Used only on sign up
   Widget confirmPasswordField(
       TextEditingController _confirmPassword, TextEditingController _password) {
     return TextFormField(
       controller: _confirmPassword,
-      decoration: InputDecoration(
-        contentPadding: formPadding,
-        border: OutlineInputBorder(),
-        hintText: 'Confirme a senha*',
-        fillColor: Colors.white,
-        filled: true,
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-      ),
+      decoration: formDecoration('Confirme sua senha*'),
       obscureText: true,
       autocorrect: false,
       enableSuggestions: false,
@@ -285,19 +288,11 @@ class _LoginState extends State<Login> {
   ///@parameters
   ///TextEditingController _name TextEditingController to store the input from the user
   ///
-  /// Used only on sign in
+  /// Used only on sign up
   Widget nameField(TextEditingController _name) {
     return TextFormField(
       controller: _name,
-      decoration: InputDecoration(
-        contentPadding: formPadding,
-        border: OutlineInputBorder(),
-        hintText: 'Nome*',
-        fillColor: Colors.white,
-        filled: true,
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-      ),
+      decoration: formDecoration('Nome*'),
       obscureText: true,
       autocorrect: false,
       enableSuggestions: false,
@@ -319,15 +314,7 @@ class _LoginState extends State<Login> {
   Widget surnameField(TextEditingController _surname) {
     return TextFormField(
       controller: _surname,
-      decoration: InputDecoration(
-        contentPadding: formPadding,
-        border: OutlineInputBorder(),
-        hintText: 'Sobrenome*',
-        fillColor: Colors.white,
-        filled: true,
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-      ),
+      decoration: formDecoration('Sobrenome*'),
       obscureText: true,
       autocorrect: false,
       enableSuggestions: false,
@@ -349,7 +336,7 @@ class _LoginState extends State<Login> {
   ///TextEditingController _surname The user surmane
   ///
   /// If the bool isLogin is true acts as login button calling the emailLogin method from AuthProvider.
-  /// If the bool isLogin is false acts as sign in button calling the emailCreateAccount method from AuthProvider.
+  /// If the bool isLogin is false acts as sign up button calling the emailCreateAccount method from AuthProvider.
   ///
   /// Each field has it's own validation from TextFormFIeld validator
   Widget loginConfirmButton(
@@ -358,13 +345,7 @@ class _LoginState extends State<Login> {
       TextEditingController _name,
       TextEditingController _surname) {
     return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-          primary: Colors.white,
-          onPrimary: Colors.black,
-          minimumSize: Size(300, 50),
-        ),
+        style: buttonStyle,
         onPressed: () {
           if (isLogin) {
             if (_formKey.currentState!.validate()) {
@@ -391,10 +372,15 @@ class _LoginState extends State<Login> {
   /// TextEditingController _email The email to send the reset email
   Widget passwordResetButton(TextEditingController _email) {
     // TODO implement reset password page
-    return Text(
-      'Esqueci minha senha',
-      style: TextStyle(color: Colors.white),
-    );
+    return TextButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => ResetPasswordPage()));
+        },
+        child: Text(
+          'Esqueci minha senha',
+          style: TextStyle(color: Colors.white),
+        ));
   }
 
   /// TextButton that leads to the privacy policy page

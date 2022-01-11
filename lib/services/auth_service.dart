@@ -26,8 +26,10 @@ class AuthProvider extends ChangeNotifier {
       final credential = GoogleAuthProvider.credential(
           accessToken: googleAuth.accessToken, idToken: googleAuth.idToken);
       await auth.signInWithCredential(credential);
-    } catch (loginError) {
-      print(loginError.toString());
+    } on FirebaseAuthException catch (e) {
+      print(e.message);
+      Fluttertoast.showToast(
+          msg: e.message.toString(), toastLength: Toast.LENGTH_LONG);
     }
 
     notifyListeners();
@@ -38,8 +40,10 @@ class AuthProvider extends ChangeNotifier {
     try {
       await googleSignIn.disconnect();
       auth.signOut();
-    } catch (logoutError) {
-      print(logoutError.toString());
+    } on FirebaseAuthException catch (e) {
+      print(e.message);
+      Fluttertoast.showToast(
+          msg: e.message.toString(), toastLength: Toast.LENGTH_LONG);
     }
   }
 
@@ -67,7 +71,6 @@ class AuthProvider extends ChangeNotifier {
     } catch (e) {
       print(e.toString());
       Fluttertoast.showToast(msg: 'Algo deu errado');
-      // return 'Algo deu errado';
     }
   }
 
@@ -79,13 +82,15 @@ class AuthProvider extends ChangeNotifier {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         Fluttertoast.showToast(
-            msg: 'Usuário não encontrado', toastLength:
-             Toast.LENGTH_LONG);
+            msg: 'Usuário não encontrado', toastLength: Toast.LENGTH_LONG);
       } else if (e.code == 'wrong-password') {
         Fluttertoast.showToast(
             msg: 'E-mail ou senha incorretos', toastLength: Toast.LENGTH_LONG);
       }
-    } catch (e) {}
+    } catch (e) {
+      print(e.toString());
+      Fluttertoast.showToast(msg: 'Algo deu errado');
+    }
   }
 
   /// Sends reset password email to the user email
@@ -94,16 +99,20 @@ class AuthProvider extends ChangeNotifier {
       await auth.sendPasswordResetEmail(email: email);
       Fluttertoast.showToast(
           msg: 'E-mail enviado', toastLength: Toast.LENGTH_LONG);
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
       Fluttertoast.showToast(
-          msg: 'Algo deu errado! Tente novamente',
-          toastLength: Toast.LENGTH_LONG);
+          msg: e.message.toString(), toastLength: Toast.LENGTH_LONG);
     }
   }
 
   /// Sign out the current user
   void emailSignOut() {
-    auth.signOut();
+    try {
+      auth.signOut();
+    } on FirebaseAuthException catch (e) {
+      print(e.message);
+      Fluttertoast.showToast(msg: e.message.toString(), toastLength: Toast.LENGTH_LONG);
+    }
   }
 
   // Facebook auth

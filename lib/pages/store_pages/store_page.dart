@@ -223,7 +223,7 @@ class _StorePageState extends State<StorePage> {
   /// Open the specific page for the service, using MaterialPageRoute with Navigator.push
   ///
   /// @param services The service to use to open the detail page
-  openServicePage(Services services) {
+  void openServicePage(Services services) {
     Navigator.push(
         context,
         MaterialPageRoute(
@@ -233,7 +233,7 @@ class _StorePageState extends State<StorePage> {
   /// Open the specific page for the product, using MaterialPageRoute with Navigator.push
   ///
   /// @param products The product to use to open the detail page
-  openProductPage(Products products) {
+  void openProductPage(Products products) {
     Navigator.push(
         context,
         MaterialPageRoute(
