@@ -122,8 +122,7 @@ class _UserProfileState extends State<UserProfile> {
                     provider.googleLogout();
                   } else if (profile.providerId == 'password') {
                     provider.emailSignOut();
-                  }
-                  else if(profile.providerId == 'facebook.com') {
+                  } else if (profile.providerId == 'facebook.com') {
                     // logout with facebook
                   }
                 }
@@ -253,15 +252,10 @@ class _UserProfileState extends State<UserProfile> {
             width: MediaQuery.of(context).size.width * 0.03,
           ),
           // TODO add name
-          user.displayName != null
-              ? Text(
-                  user.displayName!,
-                  style: TextStyle(fontSize: 19),
-                )
-              : Text(
-                  'Seu nome',
-                  style: TextStyle(fontSize: 19),
-                ),
+          Text(
+            user.displayName!,
+            style: TextStyle(fontSize: 19),
+          ),
           Spacer(),
           buildPopUpMenu()
         ],

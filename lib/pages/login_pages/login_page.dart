@@ -7,12 +7,12 @@ import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-class Login extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   bool isLogin = true;
 
@@ -293,7 +293,7 @@ class _LoginState extends State<Login> {
     return TextFormField(
       controller: _name,
       decoration: formDecoration('Nome*'),
-      obscureText: true,
+      obscureText: false,
       autocorrect: false,
       enableSuggestions: false,
       validator: (value) {
@@ -315,7 +315,7 @@ class _LoginState extends State<Login> {
     return TextFormField(
       controller: _surname,
       decoration: formDecoration('Sobrenome*'),
-      obscureText: true,
+      obscureText: false,
       autocorrect: false,
       enableSuggestions: false,
       validator: (value) {
@@ -359,7 +359,7 @@ class _LoginState extends State<Login> {
               final provider =
                   Provider.of<AuthProvider>(context, listen: false);
               provider.emailCreateAccount(
-                  email: _email.text.trim(), password: _password.text.trim());
+                  email: _email.text.trim(), password: _password.text.trim(), name: _name.text.trim());
             }
           }
         },

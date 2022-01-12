@@ -1,3 +1,4 @@
+import 'package:comodiwash/pages/user_profile_pages/user_profile.dart';
 import 'package:flutter/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -51,10 +52,11 @@ class AuthProvider extends ChangeNotifier {
 
   /// Create an account with email and password
   Future emailCreateAccount(
-      {required String email, required String password}) async {
+      {required String email, required String password, required String name}) async {
     try {
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
+      auth.currentUser!.updateDisplayName(name);
       notifyListeners();
       Fluttertoast.showToast(
           msg: 'Conta criada com sucesso', toastLength: Toast.LENGTH_LONG);
@@ -111,7 +113,8 @@ class AuthProvider extends ChangeNotifier {
       auth.signOut();
     } on FirebaseAuthException catch (e) {
       print(e.message);
-      Fluttertoast.showToast(msg: e.message.toString(), toastLength: Toast.LENGTH_LONG);
+      Fluttertoast.showToast(
+          msg: e.message.toString(), toastLength: Toast.LENGTH_LONG);
     }
   }
 
