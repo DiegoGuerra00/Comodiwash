@@ -359,7 +359,7 @@ class _LoginPageState extends State<LoginPage> {
               final provider =
                   Provider.of<AuthProvider>(context, listen: false);
               provider.emailCreateAccount(
-                  email: _email.text.trim(), password: _password.text.trim(), name: _name.text.trim());
+                  email: _email.text.trim(), password: _password.text.trim(), name: _name.text.trim(), surname: _surname.text.trim());
             }
           }
         },

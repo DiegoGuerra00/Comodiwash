@@ -251,7 +251,6 @@ class _UserProfileState extends State<UserProfile> {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.03,
           ),
-          // TODO add name
           Text(
             user.displayName!,
             style: TextStyle(fontSize: 19),

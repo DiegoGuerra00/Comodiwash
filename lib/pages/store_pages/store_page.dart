@@ -246,15 +246,15 @@ class _StorePageState extends State<StorePage> {
 
     return Consumer<ServicesRepository>(builder: (context, services, child) {
       return services.servicesList.isEmpty
-          ? SizedBox(
-            // FIXME broken loading
-              height: 260,
-              child: ListView.separated(
-                itemCount: 10,
-                itemBuilder: (BuildContext context, int index) =>
-                    const LoadingContainer(height: 260, width: 200),
-                separatorBuilder: (BuildContext context, int index) =>
-                    Divider()
+          ? Padding(
+              padding: const EdgeInsets.all(8),
+              child: SizedBox(
+                height: 260,
+                child: ListView.separated(
+                    itemCount: 50,
+                    itemBuilder: (BuildContext context, int index) => LoadingContainer(height: 260, width: 200,),
+                    separatorBuilder: (BuildContext context, int index) => SizedBox(width: 50,),
+                  ),
               ),
             )
           : Padding(
@@ -318,20 +318,22 @@ class _StorePageState extends State<StorePage> {
 
     return Consumer<ProductsRepository>(builder: (context, services, child) {
       return products.productsList.isEmpty
-          ? SizedBox(
-              height: 260,
-              width: 200,
-              child: ListView.separated(
-                itemCount: 5,
-                shrinkWrap: true,
-                itemBuilder: (BuildContext context, int index) =>
-                    const LoadingContainer(height: 260, width: 200),
-                separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(
-                  width: 16,
+          ? Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+                height: 260,
+                child: ListView.separated(
+                  itemCount: 5,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) =>
+                      const LoadingContainer(height: 260, width: 200),
+                  separatorBuilder: (BuildContext context, int index) =>
+                      const SizedBox(
+                    width: 16,
+                  ),
                 ),
               ),
-            )
+          )
           : Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
@@ -507,11 +509,11 @@ class LoadingContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
       height: height,
       width: width,
       decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.05),
+          color: Colors.black,
+          // color: Colors.black.withOpacity(0.05),
           borderRadius: const BorderRadius.all(Radius.circular(20))),
     );
   }

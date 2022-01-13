@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:comodiwash/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class VerifyEmailPage extends StatefulWidget {
   const VerifyEmailPage({Key? key}) : super(key: key);
@@ -29,19 +30,24 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   }
 
   Future sendVerificationEmail() async {
+    // Set timer so the user can only request new email after 5 minutes
     setState(() {
       canResendEmail = false;
     });
-    Future.delayed(Duration(minutes: 5));
-    setState(() {
-      canResendEmail = true;
-    });
+
+    // Sends the email
     try {
       final user = FirebaseAuth.instance.currentUser!;
       await user.sendEmailVerification();
+      Fluttertoast.showToast(msg: 'E-mail enviado');
     } catch (e) {
       print(e.toString());
     }
+
+    await Future.delayed(Duration(minutes: 5));
+    setState(() {
+      canResendEmail = true;
+    });
   }
 
   Future checkEmail() async {
@@ -86,13 +92,15 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100)),
-                      primary: Colors.white,
-                      onPrimary: Colors.black,
+                      primary: canResendEmail
+                          ? Color.fromRGBO(45, 26, 71, 1)
+                          : Colors.grey,
+                      onPrimary: canResendEmail ? Colors.white : Colors.black,
                       minimumSize: Size(300, 50),
                     ),
                     onPressed: canResendEmail ? sendVerificationEmail : null,
                     icon: Icon(Icons.email),
-                    label: Text('Reenviar e-mail')),
+                    label: Text('Re-enviar e-mail')),
                 TextButton(
                     onPressed: () => FirebaseAuth.instance.signOut(),
                     child: Text(

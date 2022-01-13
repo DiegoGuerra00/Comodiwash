@@ -52,11 +52,16 @@ class AuthProvider extends ChangeNotifier {
 
   /// Create an account with email and password
   Future emailCreateAccount(
-      {required String email, required String password, required String name}) async {
+      {required String email,
+      required String password,
+      required String name,
+      required String surname}) async {
     try {
+      String completeName = '$name $surname';
+
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
-      auth.currentUser!.updateDisplayName(name);
+      auth.currentUser!.updateDisplayName(completeName);
       notifyListeners();
       Fluttertoast.showToast(
           msg: 'Conta criada com sucesso', toastLength: Toast.LENGTH_LONG);
