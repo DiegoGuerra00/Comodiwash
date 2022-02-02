@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:comodiwash/models/generic_app_bar.dart';
 import 'package:comodiwash/services/auth_service.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,53 @@ class ResetPasswordPage extends StatefulWidget {
 class _ResetPasswordPageState extends State<ResetPasswordPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
+  bool canSendEmail = true;
+  Timer? timer;
+  int spamCount = 0;
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  /// Sends the password reset email and then awaits 5 minutes to enable the send button again
+  Future resetPassword() async {
+    setState(() {
+      canSendEmail = false;
+    });
+
+    try {
+      if (_formKey.currentState!.validate()) {
+        final provider = Provider.of<AuthProvider>(context, listen: false);
+        provider.emailResetPassword(email: _emailController.text.trim());
+        spamCount++;
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+
+    timer = Timer.periodic(
+        Duration(minutes: 5),
+        (_) => {
+              setState(() {
+                canSendEmail = true;
+              })
+            });
+    // await Future.delayed(Duration(minutes: 5));
+  }
+
+  /// Checks spam with the email
+  /// 
+  /// Blocks the button if either more than 5 requisitons were made or the last email was sent less than 5 minutes ago
+  bool checkSpam() {
+    if (spamCount <= 5 && canSendEmail) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /// Style of the formfield
   InputDecoration formDecoration(String hintText) {
     return InputDecoration(
       contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
@@ -30,13 +78,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     );
   }
 
-  ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-    primary: Color.fromRGBO(45, 26, 71, 1),
-    onPrimary: Colors.white,
-    minimumSize: Size(300, 50),
-  );
-
+  /// Returns TextFormField for the email field
   Widget emailField() {
     return TextFormField(
       controller: _emailController,
@@ -51,16 +93,27 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     );
   }
 
-  Widget submitButton(String _email) {
+  /// ElevatedButton to submit the password reset
+  ///
+  /// onPressed checks the bool canSendEmail to enable or disable the button
+  Widget submitButton() {
     return ElevatedButton(
-        style: buttonStyle,
-        onPressed: () {
-          if (_formKey.currentState!.validate()) {
-            final provider = Provider.of<AuthProvider>(context, listen: false);
-            provider.emailResetPassword(email: _email);
-          }
-        },
+        style: ElevatedButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+          primary: checkSpam() ? Color.fromRGBO(45, 26, 71, 1) : Colors.grey,
+          onPrimary: Colors.white,
+          minimumSize: Size(300, 50),
+        ),
+        onPressed: canSendEmail ? resetPassword : null,
         child: Text('Enviar'));
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+
+    super.dispose();
   }
 
   @override
@@ -87,7 +140,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              submitButton(_emailController.text.trim())
+              submitButton()
             ],
           ),
         ),
