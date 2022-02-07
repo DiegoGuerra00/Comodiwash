@@ -107,8 +107,14 @@ class AuthProvider extends ChangeNotifier {
       Fluttertoast.showToast(
           msg: 'E-mail enviado', toastLength: Toast.LENGTH_LONG);
     } on FirebaseAuthException catch (e) {
+      if (e.code == 'invalid-email' || e.code == 'user-not-found') {
+        Fluttertoast.showToast(
+            msg: 'E-mail inválido', toastLength: Toast.LENGTH_LONG);
+      }
+    } catch (e) {
+      print(e.toString());
       Fluttertoast.showToast(
-          msg: e.message.toString(), toastLength: Toast.LENGTH_LONG);
+          msg: 'Algo deu errado', toastLength: Toast.LENGTH_LONG);
     }
   }
 
@@ -119,7 +125,7 @@ class AuthProvider extends ChangeNotifier {
     } on FirebaseAuthException catch (e) {
       print(e.message);
       Fluttertoast.showToast(
-          msg: e.message.toString(), toastLength: Toast.LENGTH_LONG);
+          msg: 'Algo deu errado', toastLength: Toast.LENGTH_LONG);
     }
   }
 
