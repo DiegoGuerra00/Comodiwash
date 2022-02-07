@@ -50,7 +50,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     });
   }
 
-  Future checkEmail() async {
+  Future  checkEmail() async {
     // reloads the current user
     await FirebaseAuth.instance.currentUser!.reload();
 

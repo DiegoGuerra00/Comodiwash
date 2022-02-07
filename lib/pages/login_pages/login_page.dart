@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
   );
 
   /// Returns InputDecoration for the TextFormFields.
-  /// 
+  ///
   /// @parameters
   /// String hintText String containing the text to be used as hint for that specific textfield
   InputDecoration formDecoration(String hintText) {
@@ -230,6 +230,11 @@ class _LoginPageState extends State<LoginPage> {
         if (value == null || value.isEmpty) {
           return 'Campo obrigatório';
         }
+        if (!RegExp(
+                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+            .hasMatch(value)) {
+          return 'E-mail Inválido';
+        }
         return null;
       },
     );
@@ -255,6 +260,9 @@ class _LoginPageState extends State<LoginPage> {
         if (value.length < 6) {
           return 'Senha deve possuir pelo menos 6 caracteres';
         }
+        if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$').hasMatch(value) && !isLogin) {
+          return 'Sua senha deve possuir pelo menos um caractere maiúsculo, \num minúsculo e um número';
+        }
         return null;
       },
     );
@@ -277,6 +285,9 @@ class _LoginPageState extends State<LoginPage> {
         }
         if (value != _password.text.trim()) {
           return 'As senhas não conferem';
+        }
+        if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$').hasMatch(value) && !isLogin) {
+          return 'Sua senha deve possuir pelo menos um caractere maiúsculo, \num minúsculo e um número';
         }
         return null;
       },
@@ -359,7 +370,10 @@ class _LoginPageState extends State<LoginPage> {
               final provider =
                   Provider.of<AuthProvider>(context, listen: false);
               provider.emailCreateAccount(
-                  email: _email.text.trim(), password: _password.text.trim(), name: _name.text.trim(), surname: _surname.text.trim());
+                  email: _email.text.trim(),
+                  password: _password.text.trim(),
+                  name: _name.text.trim(),
+                  surname: _surname.text.trim());
             }
           }
         },
