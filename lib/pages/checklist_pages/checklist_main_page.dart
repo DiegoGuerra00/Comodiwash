@@ -1,6 +1,7 @@
 import 'package:comodiwash/pages/checklist_pages/engine_checklist_page.dart';
 import 'package:comodiwash/pages/checklist_pages/lights_checklist_page.dart.dart';
 import 'package:comodiwash/pages/checklist_pages/tires_checklist_page.dart.dart';
+import 'package:comodiwash/pages/login_pages/user_info_page.dart';
 import 'package:flutter/material.dart';
 
 class CheckListMainPage extends StatefulWidget {
@@ -282,7 +283,9 @@ class _CheckListMainPageState extends State<CheckListMainPage>
           primary: Colors.white,
           onPrimary: Colors.black,
           minimumSize: Size(buttonHeight, buttonWidth)),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (_) => UserInfoPage()));
+      },
       label: Text(
         'Informações Gerais                                                                  ',
         textScaleFactor: 1.3,
@@ -304,7 +307,7 @@ class _CheckListMainPageState extends State<CheckListMainPage>
   }
 
   /// Switch to checklist options or recording
-  /// 
+  ///
   /// If passed parameter is true switch to checklist options, if false to recording
   Widget changeChecklistRecord() {
     if (checklistSelected) {

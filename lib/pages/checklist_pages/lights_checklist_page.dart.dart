@@ -16,7 +16,7 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
   bool isFrontBanner =
       true; // true if the banner with the front of the car is on the screen, false if the rear banner is beeing shown
   int bannerIndex = 0;
-  String bannerPath = 'assets/images/ComodiWash_horizontal.png';
+  String bannerPath = 'assets/images/checklist_assets/checklist_front.png';
 
   // Lights info from firestore
   // TODO implement realtime database
@@ -43,12 +43,12 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
     switch (bannerIndex) {
       case 0:
         setState(() {
-          bannerPath = 'assets/images/ComodiWash_horizontal.png';
+          bannerPath = 'assets/images/checklist_assets/checklist_front.png';
         });
         break;
       case 1:
         setState(() {
-          bannerPath = 'assets/images/user_profile_banner.png';
+          bannerPath = 'assets/images/checklist_assets/checklist_rear.png';
         });
         break;
     }
@@ -63,27 +63,30 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
   }
 
   Widget bannerCard() {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.7,
-      height: MediaQuery.of(context).size.height * 0.3,
-      child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          child: InkWell(
-            child: Center(
-                child: Container(
-              child: Image.asset(bannerPath),
-            )),
-          )),
+    return Stack(
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.7,
+          height: MediaQuery.of(context).size.height * 0.3,
+          child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              child: InkWell(
+                child: Center(
+                    child: Container(
+                  child: Image.asset(bannerPath),
+                )),
+              )),
+        ),
+        // TODO marcções visuais das lampadas
+      ],
     );
   }
 
   Widget bannerBackButton() {
     return ElevatedButton(
       onPressed: () {
-        if (bannerIndex < 0) {
-
-        } else {
+        if (bannerIndex > 0) {
           bannerIndex--;
         }
 
@@ -105,9 +108,7 @@ class _LightsChecklistPageState extends State<LightsChecklistPage> {
   Widget bannerForwardButton() {
     return ElevatedButton(
       onPressed: () {
-        if (bannerIndex > 1) {
-
-        } else {
+        if (bannerIndex < 1) {
           bannerIndex++;
         }
 

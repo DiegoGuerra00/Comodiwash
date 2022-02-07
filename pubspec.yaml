@@ -113,6 +113,7 @@ flutter:
     - assets/images/
     - assets/images/products_assets/
     - assets/images/services_assets/
+    - assets/images/checklist_assets/
     - assets/icons/
     - assets/icons/placas/
     - assets/icons/colors/
