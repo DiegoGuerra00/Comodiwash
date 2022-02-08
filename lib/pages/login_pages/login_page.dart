@@ -1,9 +1,7 @@
-import 'dart:ui';
 import 'package:comodiwash/pages/login_pages/reset_password_page.dart';
 import 'package:comodiwash/pages/user_profile_pages/support_pages/eula_page.dart';
 import 'package:comodiwash/services/auth_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -51,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   /// Create a container with gradient for the purple background and the column with the buttons
-  Widget buildBackground() {
+  Widget buildBody() {
     return Stack(
       children: [
         Container(
@@ -85,9 +83,9 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             isLogin ? googleLoginButton() : Container(),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-            isLogin ? facebookLoginButton() : Container(),
-            // Spacer(),
+            // TODO reenable apple login button
+            // SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            // isLogin ? appleLoginButton() : Container(),
             isLogin
                 ? SizedBox(height: MediaQuery.of(context).size.height * 0.10)
                 : SizedBox(height: MediaQuery.of(context).size.height * 0.01),
@@ -125,19 +123,19 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  /// Elevated button for login with facebook
-  /// TODO add login with facebook
-  Widget facebookLoginButton() {
+  /// Elevated button for login with apple
+  /// TODO add login with apple
+  Widget appleLoginButton() {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-        primary: Color.fromRGBO(59, 89, 152, 1), //background
+        primary: Color.fromRGBO(67, 67, 69, 1), //background
         onPrimary: Colors.white, //font
         minimumSize: Size(300, 50),
       ),
-      label: Text("Login com Facebook"),
-      icon: FaIcon(FontAwesomeIcons.facebook),
-      onPressed: () => print("Apertado Face"),
+      label: Text("Login com Apple", style: TextStyle(color: Color.fromRGBO(225, 225, 214, 1))),
+      icon: FaIcon(FontAwesomeIcons.apple, color: Color.fromRGBO(225, 225, 214, 1)),
+      onPressed: () => print("Apertado Apple"),
     );
   }
 
@@ -385,7 +383,6 @@ class _LoginPageState extends State<LoginPage> {
   /// @parameters
   /// TextEditingController _email The email to send the reset email
   Widget passwordResetButton(TextEditingController _email) {
-    // TODO implement reset password page
     return TextButton(
         onPressed: () {
           Navigator.push(
@@ -414,6 +411,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        body: SingleChildScrollView(child: buildBackground()));
+        body: SingleChildScrollView(child: buildBody()));
   }
 }

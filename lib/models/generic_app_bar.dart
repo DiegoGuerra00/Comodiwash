@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Generic app bar that can be used with or without title and have a return button
 class GenericAppBar extends StatelessWidget implements PreferredSizeWidget {
-  String title;
+  final String title;
   bool useTitle = true;
 
   GenericAppBar({Key? key, required this.title, required this.useTitle})

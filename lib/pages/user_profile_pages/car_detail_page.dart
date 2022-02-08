@@ -3,7 +3,7 @@ import 'package:comodiwash/models/generic_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class CarDetailPage extends StatefulWidget {
-  GarageCar car;
+  final GarageCar car;
 
   CarDetailPage({Key? key, required this.car}) : super(key: key);
 

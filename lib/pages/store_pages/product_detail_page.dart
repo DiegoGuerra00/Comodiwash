@@ -5,7 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 
 class ProductDetailPage extends StatefulWidget {
-  Products products;
+  final Products products;
 
   ProductDetailPage({Key? key, required this.products}) : super(key: key);
 

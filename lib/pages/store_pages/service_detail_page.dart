@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ServiceDetailPage extends StatefulWidget {
-  Services services;
+  final Services services;
 
   ServiceDetailPage({Key? key, required this.services}) : super(key: key);
 

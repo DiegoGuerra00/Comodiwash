@@ -1,4 +1,3 @@
-import 'package:comodiwash/pages/user_profile_pages/user_profile.dart';
 import 'package:flutter/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';

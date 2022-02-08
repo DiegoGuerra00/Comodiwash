@@ -8,7 +8,6 @@ import 'package:comodiwash/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -124,6 +123,7 @@ class _UserProfileState extends State<UserProfile> {
                     provider.emailSignOut();
                   } else if (profile.providerId == 'facebook.com') {
                     // logout with facebook
+                    // TODO switch to logout with apple
                   }
                 }
                 break;

@@ -8,11 +8,11 @@ import 'package:flutter/material.dart';
  /// @param descriptionText String with the text shown when the card is clicked
  /// @param statusAvatarColor Color of the circle avatar, demonstrating the status of that item
 class ChecklistCard extends StatelessWidget {
-  String topText;
-  String bottonText;
-  Text statusDetailText;
-  String descriptionText;
-  Color statusAvatarColor;
+  final String topText;
+  final String bottonText;
+  final Text statusDetailText;
+  final String descriptionText;
+  final Color statusAvatarColor;
 
   ChecklistCard(
       {Key? key,
