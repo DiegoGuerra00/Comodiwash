@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "670468041989",
+    "project_id": "comodiwash-37c18",
+    "storage_bucket": "comodiwash-37c18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670468041989:android:d5db232d98ff2b1fcf1b6c",
+        "android_client_info": {
+          "package_name": "com.example.comodiwash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670468041989-78i5spp58u7qqbens4j3h4k258rkao55.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI7SUc6FjDAqA0ShX8SdEhExSstl1I9Kc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670468041989-78i5spp58u7qqbens4j3h4k258rkao55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
