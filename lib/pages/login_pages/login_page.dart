@@ -16,8 +16,8 @@ class _LoginPageState extends State<LoginPage> {
 
   ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-    primary: Colors.white,
-    onPrimary: Colors.black,
+    primary: Color.fromRGBO(45, 26, 71, 1),
+    onPrimary: Colors.white,
     minimumSize: Size(300, 50),
   );
 
@@ -25,15 +25,18 @@ class _LoginPageState extends State<LoginPage> {
   ///
   /// @parameters
   /// String hintText String containing the text to be used as hint for that specific textfield
-  InputDecoration formDecoration(String hintText) {
+  InputDecoration formDecoration(String hintText, Icon prefixIcon) {
     return InputDecoration(
       contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
       border: OutlineInputBorder(),
       hintText: hintText,
       fillColor: Colors.white,
+      prefixIcon: prefixIcon,
+      prefixIconColor: Color.fromRGBO(45, 26, 71, 1),
       filled: true,
       enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10))),
+        borderSide: BorderSide(color: Colors.grey),
+          borderRadius: BorderRadius.all(Radius.circular(5))),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: Color.fromRGBO(45, 26, 71, 1)),
         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -44,11 +47,11 @@ class _LoginPageState extends State<LoginPage> {
   /// SizedBox used only for spacing porposes
   Widget genericSizedBox() {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.01,
+      height: MediaQuery.of(context).size.height * 0.015,
     );
   }
 
-  /// Create a container with gradient for the purple background and the column with the buttons
+  /// Create a Stack with gradient for the purple background and the column with the buttons
   Widget buildBody() {
     return Stack(
       children: [
@@ -71,26 +74,93 @@ class _LoginPageState extends State<LoginPage> {
                     Color.fromRGBO(45, 26, 71, 1),
                   ]),
             )),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Spacer(),
-            bannerLogo(),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-            Form(
-              key: _formKey,
-              child: emailLoginField(),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            isLogin ? googleLoginButton() : Container(),
-            // TODO reenable apple login button
-            // SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-            // isLogin ? appleLoginButton() : Container(),
-            isLogin
-                ? SizedBox(height: MediaQuery.of(context).size.height * 0.10)
-                : SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-            privacyButton(),
-          ],
+        Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Logo
+              bannerLogo(),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+
+              // Background of the textfields
+              Stack(
+                children: [
+                  // White background in the login textfields
+                  Positioned(
+                    bottom: isLogin ? MediaQuery.of(context).size.height * 0.295 : MediaQuery.of(context).size.height * 0.08,
+                    child: Container(
+                        width: MediaQuery.of(context).size.width * 0.97,
+                        height: isLogin ? MediaQuery.of(context).size.height * 0.3 : MediaQuery.of(context).size.height * 0.52,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: isLogin ? Radius.zero : Radius.circular(20),
+                              topRight: isLogin ? Radius.circular(20) : Radius.zero,
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                            ),
+                            color: Colors.white)),
+                  ),
+
+                  // Purple background on Login button
+                  isLogin
+                      ? Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: MediaQuery.of(context).size.height * 0.06,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
+                              ),
+                              color: Colors.white))
+                      : Container(),
+
+                  // Purple background on Create Account button
+                  if (isLogin)
+                    Container()
+                  else
+                    Positioned(
+                      right: MediaQuery.of(context).size.width * 0.00001,
+                      child: Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: MediaQuery.of(context).size.height * 0.06,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
+                              ),
+                              color: Colors.white)),
+                    ),
+
+                  // Login textfields
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8, ),
+                        child: Form(
+                          key: _formKey,
+                          child: emailLoginField(),
+                        ),
+                      ),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.05),
+                      isLogin ? googleLoginButton() : Container(),
+                      // TODO reenable apple login button
+                      isLogin ? SizedBox(height: MediaQuery.of(context).size.height * 0.01) : Container(),
+                      isLogin ? appleLoginButton() : Container(),
+                      isLogin
+                          ? SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.10)
+                          : SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01),
+                    ],
+                  )
+                ],
+              ),
+              privacyButton(),
+            ],
+          ),
         ),
       ],
     );
@@ -133,8 +203,10 @@ class _LoginPageState extends State<LoginPage> {
         onPrimary: Colors.white, //font
         minimumSize: Size(300, 50),
       ),
-      label: Text("Login com Apple", style: TextStyle(color: Color.fromRGBO(225, 225, 214, 1))),
-      icon: FaIcon(FontAwesomeIcons.apple, color: Color.fromRGBO(225, 225, 214, 1)),
+      label: Text("Login com Apple",
+          style: TextStyle(color: Color.fromRGBO(225, 225, 214, 1))),
+      icon: FaIcon(FontAwesomeIcons.apple,
+          color: Color.fromRGBO(225, 225, 214, 1)),
       onPressed: () => print("Apertado Apple"),
     );
   }
@@ -153,11 +225,8 @@ class _LoginPageState extends State<LoginPage> {
             child: Text('Login',
                 style: TextStyle(
                     fontSize: 16,
-                    decoration: isLogin
-                        ? TextDecoration.underline
-                        : TextDecoration.none,
-                    color: Colors.white))),
-        SizedBox(width: MediaQuery.of(context).size.width * 0.2),
+                    color: isLogin ? Colors.black : Colors.white))),
+        SizedBox(width: MediaQuery.of(context).size.width * 0.25),
         TextButton(
             onPressed: () {
               setState(() {
@@ -167,10 +236,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Text('Criar Conta',
                 style: TextStyle(
                     fontSize: 16,
-                    decoration: !isLogin
-                        ? TextDecoration.underline
-                        : TextDecoration.none,
-                    color: Colors.white))),
+                    color: !isLogin ? Colors.black : Colors.white))),
       ],
     );
   }
@@ -184,32 +250,27 @@ class _LoginPageState extends State<LoginPage> {
     TextEditingController _name = TextEditingController();
     TextEditingController _surname = TextEditingController();
 
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          loginOptionsRow(),
-          Container(
-              width: MediaQuery.of(context).size.width,
-              child: emailForm(_email)),
-          genericSizedBox(),
-          passwordField(_password),
-          genericSizedBox(),
-          !isLogin
-              ? confirmPasswordField(_confirmPassword, _password)
-              : Container(),
-          !isLogin ? genericSizedBox() : Container(),
-          !isLogin ? nameField(_name) : Container(),
-          !isLogin ? genericSizedBox() : Container(),
-          !isLogin ? surnameField(_surname) : Container(),
-          !isLogin ? genericSizedBox() : Container(),
-          loginConfirmButton(_email, _password, _name, _surname),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.001,
-          ),
-          passwordResetButton(_email)
-        ],
-      ),
+    return Column(
+      children: [
+        loginOptionsRow(),
+        emailField(_email),
+        genericSizedBox(),
+        passwordField(_password),
+        genericSizedBox(),
+        !isLogin
+            ? confirmPasswordField(_confirmPassword, _password)
+            : Container(),
+        !isLogin ? genericSizedBox() : Container(),
+        !isLogin ? nameField(_name) : Container(),
+        !isLogin ? genericSizedBox() : Container(),
+        !isLogin ? surnameField(_surname) : Container(),
+        !isLogin ? genericSizedBox() : Container(),
+        loginConfirmButton(_email, _password, _name, _surname),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.001,
+        ),
+        passwordResetButton(_email)
+      ],
     );
   }
 
@@ -219,22 +280,25 @@ class _LoginPageState extends State<LoginPage> {
   ///TextEditingController _email TextEditingController to store the input from the user
   ///
   /// Is used in login and sign in
-  Widget emailForm(TextEditingController _email) {
-    return TextFormField(
-      controller: _email,
-      decoration: formDecoration('E-mail*'),
-      autocorrect: false,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Campo obrigatório';
-        }
-        if (!RegExp(
-                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-            .hasMatch(value)) {
-          return 'E-mail Inválido';
-        }
-        return null;
-      },
+  Widget emailField(TextEditingController _email) {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.88,
+      child: TextFormField(
+        controller: _email,
+        decoration: formDecoration('E-mail*', Icon(Icons.email, color: Colors.grey)),
+        autocorrect: false,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Campo obrigatório';
+          }
+          if (!RegExp(
+                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+              .hasMatch(value)) {
+            return 'E-mail Inválido';
+          }
+          return null;
+        },
+      ),
     );
   }
 
@@ -245,24 +309,28 @@ class _LoginPageState extends State<LoginPage> {
   ///
   /// Is used in login and sign in
   Widget passwordField(TextEditingController _password) {
-    return TextFormField(
-      controller: _password,
-      decoration: formDecoration('Senha*'),
-      obscureText: true,
-      autocorrect: false,
-      enableSuggestions: false,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Campo obrigatório';
-        }
-        if (value.length < 6) {
-          return 'Senha deve possuir pelo menos 6 caracteres';
-        }
-        if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$').hasMatch(value) && !isLogin) {
-          return 'Sua senha deve possuir pelo menos um caractere maiúsculo, \num minúsculo e um número';
-        }
-        return null;
-      },
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.88,
+      child: TextFormField(
+        controller: _password,
+        decoration: formDecoration('Senha*', Icon(Icons.password, color: Colors.grey)),
+        obscureText: true,
+        autocorrect: false,
+        enableSuggestions: false,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Campo obrigatório';
+          }
+          if (value.length < 6) {
+            return 'Senha deve possuir pelo menos 6 caracteres';
+          }
+          if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$').hasMatch(value) &&
+              !isLogin) {
+            return 'Sua senha deve possuir pelo menos um caractere maiúsculo, \num minúsculo e um número';
+          }
+          return null;
+        },
+      ),
     );
   }
 
@@ -271,24 +339,28 @@ class _LoginPageState extends State<LoginPage> {
   /// Used only on sign up
   Widget confirmPasswordField(
       TextEditingController _confirmPassword, TextEditingController _password) {
-    return TextFormField(
-      controller: _confirmPassword,
-      decoration: formDecoration('Confirme sua senha*'),
-      obscureText: true,
-      autocorrect: false,
-      enableSuggestions: false,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Campo obrigatório';
-        }
-        if (value != _password.text.trim()) {
-          return 'As senhas não conferem';
-        }
-        if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$').hasMatch(value) && !isLogin) {
-          return 'Sua senha deve possuir pelo menos um caractere maiúsculo, \num minúsculo e um número';
-        }
-        return null;
-      },
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.88,
+      child: TextFormField(
+        controller: _confirmPassword,
+        decoration: formDecoration('Confirme sua senha*', Icon(Icons.password, color: Colors.grey)),
+        obscureText: true,
+        autocorrect: false,
+        enableSuggestions: false,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Campo obrigatório';
+          }
+          if (value != _password.text.trim()) {
+            return 'As senhas não conferem';
+          }
+          if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$').hasMatch(value) &&
+              !isLogin) {
+            return 'Sua senha deve possuir pelo menos um caractere maiúsculo, \num minúsculo e um número';
+          }
+          return null;
+        },
+      ),
     );
   }
 
@@ -299,18 +371,21 @@ class _LoginPageState extends State<LoginPage> {
   ///
   /// Used only on sign up
   Widget nameField(TextEditingController _name) {
-    return TextFormField(
-      controller: _name,
-      decoration: formDecoration('Nome*'),
-      obscureText: false,
-      autocorrect: false,
-      enableSuggestions: false,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Campo obrigatório';
-        }
-        return null;
-      },
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.88,
+      child: TextFormField(
+        controller: _name,
+        decoration: formDecoration('Nome*', Icon(Icons.account_circle, color: Colors.grey)),
+        obscureText: false,
+        autocorrect: false,
+        enableSuggestions: false,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Campo obrigatório';
+          }
+          return null;
+        },
+      ),
     );
   }
 
@@ -321,18 +396,21 @@ class _LoginPageState extends State<LoginPage> {
   ///
   /// User only on sign in
   Widget surnameField(TextEditingController _surname) {
-    return TextFormField(
-      controller: _surname,
-      decoration: formDecoration('Sobrenome*'),
-      obscureText: false,
-      autocorrect: false,
-      enableSuggestions: false,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Campo obrigatório';
-        }
-        return null;
-      },
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.88,
+      child: TextFormField(
+        controller: _surname,
+        decoration: formDecoration('Sobrenome*', Icon(Icons.account_circle, color: Colors.grey)),
+        obscureText: false,
+        autocorrect: false,
+        enableSuggestions: false,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Campo obrigatório';
+          }
+          return null;
+        },
+      ),
     );
   }
 
@@ -390,7 +468,7 @@ class _LoginPageState extends State<LoginPage> {
         },
         child: Text(
           'Esqueci minha senha',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ));
   }
 
