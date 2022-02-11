@@ -15,16 +15,17 @@ class _LoginPageState extends State<LoginPage> {
   bool isLogin = true;
 
   ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
     primary: Color.fromRGBO(45, 26, 71, 1),
     onPrimary: Colors.white,
-    minimumSize: Size(300, 50),
+    minimumSize: Size(130, 50),
   );
 
   /// Returns InputDecoration for the TextFormFields.
   ///
   /// @parameters
   /// String hintText String containing the text to be used as hint for that specific textfield
+  /// Icon prefixIcon Icon to be used in the textfield
   InputDecoration formDecoration(String hintText, Icon prefixIcon) {
     return InputDecoration(
       contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
@@ -35,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
       prefixIconColor: Color.fromRGBO(45, 26, 71, 1),
       filled: true,
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: Colors.grey),
           borderRadius: BorderRadius.all(Radius.circular(5))),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: Color.fromRGBO(45, 26, 71, 1)),
@@ -79,33 +80,40 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(height: MediaQuery.of(context).size.height * 0.04),
               // Logo
               bannerLogo(),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.05),
 
               // Background of the textfields
               Stack(
                 children: [
                   // White background in the login textfields
                   Positioned(
-                    bottom: isLogin ? MediaQuery.of(context).size.height * 0.295 : MediaQuery.of(context).size.height * 0.08,
+                    bottom: isLogin
+                        ? MediaQuery.of(context).size.height * 0.28
+                        : MediaQuery.of(context).size.height * 0.055,
                     child: Container(
                         width: MediaQuery.of(context).size.width * 0.97,
-                        height: isLogin ? MediaQuery.of(context).size.height * 0.3 : MediaQuery.of(context).size.height * 0.52,
+                        height: isLogin
+                            ? MediaQuery.of(context).size.height * 0.25
+                            : MediaQuery.of(context).size.height * 0.48,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
-                              topLeft: isLogin ? Radius.zero : Radius.circular(20),
-                              topRight: isLogin ? Radius.circular(20) : Radius.zero,
+                              topLeft:
+                                  isLogin ? Radius.zero : Radius.circular(20),
+                              topRight:
+                                  isLogin ? Radius.circular(20) : Radius.zero,
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20),
                             ),
                             color: Colors.white)),
                   ),
 
-                  // Purple background on Login button
+                  // White background on Login button
                   isLogin
                       ? Container(
-                          width: MediaQuery.of(context).size.width * 0.5,
+                          width: MediaQuery.of(context).size.width * 0.48,
                           height: MediaQuery.of(context).size.height * 0.06,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
@@ -115,14 +123,14 @@ class _LoginPageState extends State<LoginPage> {
                               color: Colors.white))
                       : Container(),
 
-                  // Purple background on Create Account button
+                  // White background on Create Account button
                   if (isLogin)
                     Container()
                   else
                     Positioned(
                       right: MediaQuery.of(context).size.width * 0.00001,
                       child: Container(
-                          width: MediaQuery.of(context).size.width * 0.5,
+                          width: MediaQuery.of(context).size.width * 0.48,
                           height: MediaQuery.of(context).size.height * 0.06,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
@@ -136,7 +144,11 @@ class _LoginPageState extends State<LoginPage> {
                   Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8, ),
+                        padding: const EdgeInsets.only(
+                          left: 8,
+                          right: 8,
+                          bottom: 8,
+                        ),
                         child: Form(
                           key: _formKey,
                           child: emailLoginField(),
@@ -146,7 +158,10 @@ class _LoginPageState extends State<LoginPage> {
                           height: MediaQuery.of(context).size.height * 0.05),
                       isLogin ? googleLoginButton() : Container(),
                       // TODO reenable apple login button
-                      isLogin ? SizedBox(height: MediaQuery.of(context).size.height * 0.01) : Container(),
+                      isLogin
+                          ? SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.01)
+                          : Container(),
                       isLogin ? appleLoginButton() : Container(),
                       isLogin
                           ? SizedBox(
@@ -157,6 +172,9 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   )
                 ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
               ),
               privacyButton(),
             ],
@@ -214,8 +232,10 @@ class _LoginPageState extends State<LoginPage> {
   /// Button to switch between login and sign in fiels
   Widget loginOptionsRow() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.14,
+        ),
         TextButton(
             onPressed: () {
               setState(() {
@@ -226,7 +246,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(
                     fontSize: 16,
                     color: isLogin ? Colors.black : Colors.white))),
-        SizedBox(width: MediaQuery.of(context).size.width * 0.25),
+        SizedBox(width: MediaQuery.of(context).size.width * 0.29),
         TextButton(
             onPressed: () {
               setState(() {
@@ -250,9 +270,21 @@ class _LoginPageState extends State<LoginPage> {
     TextEditingController _name = TextEditingController();
     TextEditingController _surname = TextEditingController();
 
+    @override
+    void dispose() {
+      _email.dispose();
+      _password.dispose();
+      _confirmPassword.dispose();
+      _name.dispose();
+      _surname.dispose();
+    }
+
     return Column(
       children: [
         loginOptionsRow(),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.01,
+        ),
         emailField(_email),
         genericSizedBox(),
         passwordField(_password),
@@ -265,11 +297,18 @@ class _LoginPageState extends State<LoginPage> {
         !isLogin ? genericSizedBox() : Container(),
         !isLogin ? surnameField(_surname) : Container(),
         !isLogin ? genericSizedBox() : Container(),
-        loginConfirmButton(_email, _password, _name, _surname),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.001,
-        ),
-        passwordResetButton(_email)
+        Row(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.03,
+            ),
+            passwordResetButton(_email),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.16,
+            ),
+            loginConfirmButton(_email, _password, _name, _surname),
+          ],
+        )
       ],
     );
   }
@@ -283,22 +322,26 @@ class _LoginPageState extends State<LoginPage> {
   Widget emailField(TextEditingController _email) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.88,
-      child: TextFormField(
-        controller: _email,
-        decoration: formDecoration('E-mail*', Icon(Icons.email, color: Colors.grey)),
-        autocorrect: false,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Campo obrigatório';
-          }
-          if (!RegExp(
-                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-              .hasMatch(value)) {
-            return 'E-mail Inválido';
-          }
-          return null;
-        },
-      ),
+      child: Stack(children: [
+        TextFormField(
+          controller: _email,
+          decoration:
+              formDecoration('E-mail*', Icon(Icons.email, color: Colors.grey)),
+          autocorrect: false,
+          keyboardType: TextInputType.emailAddress,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Campo obrigatório';
+            }
+            if (!RegExp(
+                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                .hasMatch(value)) {
+              return 'E-mail Inválido';
+            }
+            return null;
+          },
+        ),
+      ]),
     );
   }
 
@@ -313,7 +356,8 @@ class _LoginPageState extends State<LoginPage> {
       width: MediaQuery.of(context).size.width * 0.88,
       child: TextFormField(
         controller: _password,
-        decoration: formDecoration('Senha*', Icon(Icons.password, color: Colors.grey)),
+        decoration:
+            formDecoration('Senha*', Icon(Icons.password, color: Colors.grey)),
         obscureText: true,
         autocorrect: false,
         enableSuggestions: false,
@@ -324,7 +368,8 @@ class _LoginPageState extends State<LoginPage> {
           if (value.length < 6) {
             return 'Senha deve possuir pelo menos 6 caracteres';
           }
-          if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$').hasMatch(value) &&
+          if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$')
+                  .hasMatch(value) &&
               !isLogin) {
             return 'Sua senha deve possuir pelo menos um caractere maiúsculo, \num minúsculo e um número';
           }
@@ -343,7 +388,8 @@ class _LoginPageState extends State<LoginPage> {
       width: MediaQuery.of(context).size.width * 0.88,
       child: TextFormField(
         controller: _confirmPassword,
-        decoration: formDecoration('Confirme sua senha*', Icon(Icons.password, color: Colors.grey)),
+        decoration: formDecoration(
+            'Confirme sua senha*', Icon(Icons.password, color: Colors.grey)),
         obscureText: true,
         autocorrect: false,
         enableSuggestions: false,
@@ -354,7 +400,8 @@ class _LoginPageState extends State<LoginPage> {
           if (value != _password.text.trim()) {
             return 'As senhas não conferem';
           }
-          if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$').hasMatch(value) &&
+          if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])$')
+                  .hasMatch(value) &&
               !isLogin) {
             return 'Sua senha deve possuir pelo menos um caractere maiúsculo, \num minúsculo e um número';
           }
@@ -375,7 +422,8 @@ class _LoginPageState extends State<LoginPage> {
       width: MediaQuery.of(context).size.width * 0.88,
       child: TextFormField(
         controller: _name,
-        decoration: formDecoration('Nome*', Icon(Icons.account_circle, color: Colors.grey)),
+        decoration: formDecoration(
+            'Nome*', Icon(Icons.account_circle, color: Colors.grey)),
         obscureText: false,
         autocorrect: false,
         enableSuggestions: false,
@@ -400,7 +448,8 @@ class _LoginPageState extends State<LoginPage> {
       width: MediaQuery.of(context).size.width * 0.88,
       child: TextFormField(
         controller: _surname,
-        decoration: formDecoration('Sobrenome*', Icon(Icons.account_circle, color: Colors.grey)),
+        decoration: formDecoration(
+            'Sobrenome*', Icon(Icons.account_circle, color: Colors.grey)),
         obscureText: false,
         autocorrect: false,
         enableSuggestions: false,
@@ -453,7 +502,15 @@ class _LoginPageState extends State<LoginPage> {
             }
           }
         },
-        child: isLogin ? const Text('Login') : const Text('Criar Conta'));
+        child: isLogin
+            ? const Text(
+                'Login',
+                style: TextStyle(fontSize: 16),
+              )
+            : const Text(
+                'Criar Conta',
+                style: TextStyle(fontSize: 16),
+              ));
   }
 
   /// Elevated button to go to reset the user's password page
@@ -468,7 +525,7 @@ class _LoginPageState extends State<LoginPage> {
         },
         child: Text(
           'Esqueci minha senha',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.grey),
         ));
   }
 
