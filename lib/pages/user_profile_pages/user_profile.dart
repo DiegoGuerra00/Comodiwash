@@ -245,7 +245,7 @@ class _UserProfileState extends State<UserProfile> {
             child: CircleAvatar(
               radius: 40,
               backgroundColor: Colors.deepPurple,
-              // backgroundImage: NetworkImage(user.photoURL!),
+              child: Icon(Icons.person, color: Colors.white, size: 50,),
             ),
           ),
           SizedBox(

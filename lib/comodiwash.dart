@@ -74,7 +74,7 @@ class _ComodiWashState extends State<ComodiWash> {
           ],
           child: MaterialApp(
             theme: theme.copyWith(
-              backgroundColor: Color.fromRGBO(243, 245, 248, 1),
+              backgroundColor: Colors.white,
               colorScheme: theme.colorScheme.copyWith(secondary: Color.fromRGBO(45, 26, 71, 1))
             ),
             debugShowCheckedModeBanner: false,

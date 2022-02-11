@@ -17,12 +17,25 @@ class StorePage extends StatefulWidget {
 }
 
 class _StorePageState extends State<StorePage> {
-  String searchText = '';
+  String _searchText = '';
   String _servicesSortSetting = 'A-Z';
   String _productsSortSettings = 'A-Z';
   NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
   late ServicesRepository services;
   late ProductsRepository products;
+  bool searchPressed = false;
+
+  void _searchBarPressed() {
+    if (searchPressed) {
+      setState(() {
+        searchPressed = false;
+      });
+    } else if (!searchPressed) {
+      setState(() {
+        searchPressed = true;
+      });
+    }
+  }
 
   /// Return colunm for the sort options of the services when the modalButtonSheet is clicked
   Widget buildServicesSortOptions() {
@@ -155,15 +168,16 @@ class _StorePageState extends State<StorePage> {
           child: Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(left: 14),
                 child: Text(
                   _servicesSortSetting,
                   style: TextStyle(fontSize: 14, color: Colors.white),
+                  textAlign: TextAlign.center,
                 ),
               ),
               Spacer(),
               Padding(
-                padding: const EdgeInsets.only(right: 10),
+                padding: const EdgeInsets.only(right: 14),
                 child: Icon(
                   Icons.sort,
                   color: Colors.white,
@@ -199,7 +213,7 @@ class _StorePageState extends State<StorePage> {
           child: Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(left: 14),
                 child: Text(
                   _productsSortSettings,
                   style: TextStyle(fontSize: 14, color: Colors.white),
@@ -207,7 +221,7 @@ class _StorePageState extends State<StorePage> {
               ),
               Spacer(),
               Padding(
-                padding: const EdgeInsets.only(right: 10),
+                padding: const EdgeInsets.only(right: 14),
                 child: Icon(
                   Icons.sort,
                   color: Colors.white,
@@ -249,26 +263,38 @@ class _StorePageState extends State<StorePage> {
           ? Padding(
               padding: const EdgeInsets.all(8),
               child: SizedBox(
-                height: 260,
+                height: 270,
                 child: ListView.separated(
-                    itemCount: 50,
-                    itemBuilder: (BuildContext context, int index) => LoadingContainer(height: 260, width: 200,),
-                    separatorBuilder: (BuildContext context, int index) => SizedBox(width: 50,),
+                  itemCount: 50,
+                  itemBuilder: (BuildContext context, int index) =>
+                      LoadingContainer(
+                    height: 260,
+                    width: 200,
                   ),
+                  separatorBuilder: (BuildContext context, int index) =>
+                      SizedBox(
+                    width: 50,
+                  ),
+                ),
               ),
             )
           : Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                height: 260,
+                height: 270,
                 child: ListView.builder(
                   physics: ClampingScrollPhysics(),
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: services.servicesList.length,
                   itemBuilder: (BuildContext context, int service) => Card(
+                    elevation: 1,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10))),
                     child: InkWell(
                       onTap: () =>
                           openServicePage(services.servicesList[service]),
@@ -280,12 +306,16 @@ class _StorePageState extends State<StorePage> {
                               width: 200,
                               height: 200,
                               child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      topRight: Radius.circular(15),
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
                                   child: Image.asset(
                                       services.servicesList[service].icon)),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 8),
+                              padding: const EdgeInsets.only(left: 8, top: 10),
                               child: Text(
                                 services.servicesList[service].name,
                                 style: TextStyle(fontSize: 16),
@@ -319,9 +349,9 @@ class _StorePageState extends State<StorePage> {
     return Consumer<ProductsRepository>(builder: (context, services, child) {
       return products.productsList.isEmpty
           ? Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-                height: 260,
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                height: 270,
                 child: ListView.separated(
                   itemCount: 5,
                   shrinkWrap: true,
@@ -333,19 +363,24 @@ class _StorePageState extends State<StorePage> {
                   ),
                 ),
               ),
-          )
+            )
           : Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                height: 260,
+                height: 270,
                 child: ListView.builder(
                   physics: ClampingScrollPhysics(),
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: products.productsList.length,
                   itemBuilder: (BuildContext context, int product) => Card(
+                    elevation: 1,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10))),
                     child: InkWell(
                       onTap: () =>
                           openProductPage(products.productsList[product]),
@@ -357,12 +392,16 @@ class _StorePageState extends State<StorePage> {
                               width: 200,
                               height: 200,
                               child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10)),
                                   child: Image.asset(
                                       services.productsList[product].icon)),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 8),
+                              padding: const EdgeInsets.only(left: 8, top: 10),
                               child: Text(
                                 products.productsList[product].name,
                                 style: TextStyle(fontSize: 16),
@@ -391,31 +430,28 @@ class _StorePageState extends State<StorePage> {
 
   /// Return textfild for the search bar on the top of the screen
   Widget buildSearchBar() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8, right: 20, left: 20),
-      child: Container(
-        height: 50,
-        child: TextField(
-          onChanged: (text) {
-            searchText = text;
-            print(searchText);
-            // TODO implement search
-          },
-          decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color.fromRGBO(45, 26, 71, 1)),
-                borderRadius: BorderRadius.all(Radius.circular(100)),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(100)),
-              ),
-              labelText: 'Busca...',
-              labelStyle: TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
-              prefixIcon: Icon(
-                Icons.search,
-                color: Color.fromRGBO(45, 26, 71, 1),
-              )),
-        ),
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.65,
+      child: TextField(
+        onChanged: (text) {
+          _searchText = text;
+          print(_searchText);
+          // TODO implement search
+        },
+        decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Color.fromRGBO(45, 26, 71, 1)),
+              borderRadius: BorderRadius.all(Radius.circular(100)),
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(100)),
+            ),
+            labelText: 'Busca...',
+            labelStyle: TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
+            prefixIcon: Icon(
+              Icons.search,
+              color: Color.fromRGBO(45, 26, 71, 1),
+            )),
       ),
     );
   }
@@ -423,12 +459,12 @@ class _StorePageState extends State<StorePage> {
   /// Return the row where the services sort button is placed
   Widget buildServicesMenu() {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.only(left: 12, right: 10, top: 10, bottom: 6),
       child: Row(
         children: [
           Text(
             'Serviços',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
           ),
           Spacer(),
           Padding(
@@ -443,11 +479,11 @@ class _StorePageState extends State<StorePage> {
   /// Return the row where the products sort button is placed
   Widget buildProductsMenu() {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.only(left: 12, right: 10, top: 10, bottom: 6),
       child: Row(children: [
         Text(
           'Produtos',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
         ),
         Spacer(),
         Padding(
@@ -464,12 +500,33 @@ class _StorePageState extends State<StorePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Padding(
-            padding: EdgeInsets.all(15),
-            child: Image.asset('assets/icons/ComodiWashSquarerender.png')),
         actions: <Widget>[
+          searchPressed
+              ? Padding(
+                  padding: const EdgeInsets.only(
+                      top: 10, bottom: 10, right: 8, left: 8),
+                  child: buildSearchBar(),
+                )
+              : Container(),
           Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.only(top: 8, bottom: 8),
+            child: GestureDetector(
+              onTap: () {
+                _searchBarPressed();
+              },
+              child: !searchPressed
+                  ? Icon(
+                      Icons.search,
+                      color: Colors.black,
+                    )
+                  : Icon(
+                      Icons.close,
+                      color: Colors.black,
+                    ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
             child: GestureDetector(
               onTap: () {
                 Navigator.push(context,
@@ -478,13 +535,28 @@ class _StorePageState extends State<StorePage> {
               child: Icon(Icons.local_grocery_store, color: Colors.black),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(right: 10, top: 8, bottom: 8),
+            child: CircleAvatar(
+              backgroundColor: Color.fromRGBO(45, 26, 71, 1),
+              radius: 16,
+              child: CircleAvatar(
+                radius: 15,
+                backgroundColor: Colors.deepPurple,
+                child: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                  size: 20,
+                ),
+              ),
+            ),
+          )
         ],
       ),
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Column(
           children: [
-            buildSearchBar(),
             buildServicesMenu(),
             buildServices(),
             buildProductsMenu(),
