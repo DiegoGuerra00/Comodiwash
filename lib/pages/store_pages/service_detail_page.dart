@@ -81,13 +81,49 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
     );
   }
 
+  Widget serviceTitle() {
+    return Row(
+      textBaseline: TextBaseline.ideographic,
+      crossAxisAlignment: CrossAxisAlignment.baseline,
+      children: [
+        Text(
+          widget.services.name,
+          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+        ),
+        Spacer(),
+        Text(
+          real.format(widget.services.price),
+          style: TextStyle(fontSize: 22),
+        ),
+      ],
+    );
+  }
+
+  // TODO add actual rating
+  Widget ratingButton() {
+    return ElevatedButton.icon(
+      onPressed: () {},
+      icon: Icon(
+        Icons.star,
+        color: Colors.amber,
+        size: 28,
+      ),
+      label: Text(
+        rating.toString(),
+        style: TextStyle(color: Colors.black, fontSize: 20),
+      ),
+      style: ElevatedButton.styleFrom(
+          primary: Colors.white, elevation: 0, padding: EdgeInsets.all(0)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: GenericAppBar(title: '', useTitle: false),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(left: 12, right: 12, bottom: 8, top: 8),
         child: Column(
           children: [
             // service icon
@@ -97,53 +133,19 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                 child: Image.asset(widget.services.icon),
               ),
             ),
-            // service name
-            Padding(
-              padding: const EdgeInsets.only(top: 28, left: 6),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  widget.services.name,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-              ),
+            SizedBox(
+              height: 15,
             ),
-            SizedBox(height: 20),
-            // row with price, qtd button and rating bar
-            Padding(
-              padding: const EdgeInsets.only(left: 6, right: 6),
-              child: Row(
-                children: [
-                  Text(
-                    real.format(widget.services.price),
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                  Spacer(),
-                  RatingBar.builder(
-                    // TODO implment functional rating
-                    minRating: 1,
-                    initialRating: rating,
-                    allowHalfRating: true,
-                    itemSize: 30,
-                    itemBuilder: (context, _) => Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) => setState(() {
-                      this.rating = rating;
-                    }),
-                  ),
-                ],
-              ),
-            ),
+            // Builds title and price of service
+            serviceTitle(),
+            SizedBox(height: 15),
+            // Build rating button
+            Align(alignment: Alignment.centerLeft, child: ratingButton()),
             Spacer(),
             // service description
-            Padding(
-              padding: const EdgeInsets.only(left: 6, right: 6),
-              child: buildDescription(),
-            ),
+            buildDescription(),
             Spacer(),
-            // add to cart button
+            // Add to cart button
             SafeArea(
                 top: false,
                 left: false,

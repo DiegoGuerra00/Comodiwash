@@ -25,7 +25,7 @@ class ServicesRepository extends ChangeNotifier {
     db = DBFirestore.get();
   }
 
-  /// Gets the services info from the database and store each instance of service in the _servicesList list 
+  /// Gets the services info from the database and store each instance of service in the _servicesList list
   _readServices() async {
     if (_servicesList.isEmpty) {
       final snapshot = await db.collection('/store/services/services').get();
@@ -35,7 +35,8 @@ class ServicesRepository extends ChangeNotifier {
         String icon = doc.get('icon');
         String description = doc.get('description');
         double price = doc.get('price');
-        _servicesList.add(new Services(icon: icon, name: name, description: description, price: price));
+        _servicesList.add(new Services(
+            icon: icon, name: name, description: description, price: price));
         notifyListeners();
       });
     }
