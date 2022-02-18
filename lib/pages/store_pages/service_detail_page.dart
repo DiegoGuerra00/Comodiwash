@@ -1,8 +1,11 @@
+import 'package:comodiwash/models/cart_item.dart';
 import 'package:comodiwash/models/generic_app_bar.dart';
 import 'package:comodiwash/models/services.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:comodiwash/repositories/shopping_cart_repository.dart';
+import 'package:provider/provider.dart';
 
 class ServiceDetailPage extends StatefulWidget {
   final Services services;
@@ -14,9 +17,32 @@ class ServiceDetailPage extends StatefulWidget {
 }
 
 class _ServiceDetailPageState extends State<ServiceDetailPage> {
-  NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
+  NumberFormat real =
+      NumberFormat.currency(locale: 'pt_BR', name: 'R\$', decimalDigits: 0);
   int qtd = 1;
   double rating = 0;
+  late ShoppingCartRepository cartItems =
+      Provider.of<ShoppingCartRepository>(context, listen: false);
+  String img2 = 'assets/images/ComodiWash_horizontal.png';
+  String imagePath = 'assets/images/ComodiWash_horizontal.png';
+  int imageIndex = 0;
+  TextEditingController _textController = TextEditingController();
+  String feedback = '';
+
+  void changeImage(int index) {
+    switch (index) {
+      case 0:
+        setState(() {
+          imagePath = widget.services.icon;
+        });
+        break;
+      case 1:
+        setState(() {
+          imagePath = img2;
+        });
+        break;
+    }
+  }
 
   /// Returns a circular button with inkwell gesture detector
   ///
@@ -82,27 +108,81 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
   }
 
   Widget serviceTitle() {
-    return Row(
-      textBaseline: TextBaseline.ideographic,
-      crossAxisAlignment: CrossAxisAlignment.baseline,
-      children: [
-        Text(
-          widget.services.name,
-          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-        ),
-        Spacer(),
-        Text(
-          real.format(widget.services.price),
-          style: TextStyle(fontSize: 22),
-        ),
-      ],
+    return Text(
+      widget.services.name,
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    );
+  }
+
+  Widget ratingBar() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(),
+          RatingBar.builder(
+            minRating: 1,
+            initialRating: rating,
+            allowHalfRating: true,
+            itemSize: 50,
+            itemBuilder: (context, _) => Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+            onRatingUpdate: (rating) => setState(() {
+              this.rating = rating;
+            }),
+          ),
+          TextFormField(
+            controller: _textController,
+            maxLines: 7,
+            onChanged: (text) {
+              print(_textController.text.trim());
+            },
+            decoration: InputDecoration(
+              hintText: 'Digite aqui seu feedback',
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Color.fromRGBO(45, 26, 71, 1)),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              print('feedback button');
+            },
+            child: Text('Envie seu feedback'),
+            style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100)),
+                primary: Color.fromRGBO(45, 26, 71, 1),
+                onPrimary: Colors.white,
+                minimumSize: Size(300, 50)),
+          )
+        ],
+      ),
     );
   }
 
   // TODO add actual rating
   Widget ratingButton() {
     return ElevatedButton.icon(
-      onPressed: () {},
+      onPressed: () {
+        showModalBottomSheet(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30))),
+            context: context,
+            builder: (BuildContext context) {
+              return SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: ratingBar());
+            });
+      },
       icon: Icon(
         Icons.star,
         color: Colors.amber,
@@ -128,19 +208,51 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
           children: [
             // service icon
             Center(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.35,
-                child: Image.asset(widget.services.icon),
+              child: GestureDetector(
+                onPanUpdate: (details) {
+                  if (details.delta.dx > 0) {
+                    setState(() {
+                      if (imageIndex < 3) {
+                        imageIndex++;
+                      }
+                    });
+                    changeImage(imageIndex);
+                  }
+                  if (details.delta.dx < 0) {
+                    setState(() {
+                      if (imageIndex >= 0) {
+                        imageIndex--;
+                      }
+                    });
+                    changeImage(imageIndex);
+                  }
+                },
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.35,
+                  child: Image.asset(imagePath),
+                ),
               ),
             ),
             SizedBox(
               height: 15,
             ),
             // Builds title and price of service
-            serviceTitle(),
-            SizedBox(height: 15),
+            Align(alignment: Alignment.bottomLeft, child: serviceTitle()),
+            SizedBox(height: 5),
             // Build rating button
-            Align(alignment: Alignment.centerLeft, child: ratingButton()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Align(alignment: Alignment.centerLeft, child: ratingButton()),
+                Text(
+                  real.format(widget.services.price),
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey),
+                ),
+              ],
+            ),
             Spacer(),
             // service description
             buildDescription(),
@@ -158,7 +270,11 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                         onPrimary: Colors.white,
                         minimumSize: Size(300, 50)),
                     onPressed: () {
-                      print('Carrinho ${widget.services.name}');
+                      cartItems.save(CartItem(
+                          icon: widget.services.icon,
+                          name: widget.services.name,
+                          price: widget.services.price,
+                          qtd: 1));
                     },
                     icon: Icon(
                       Icons.shopping_bag,

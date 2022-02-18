@@ -20,7 +20,7 @@ class _StorePageState extends State<StorePage> {
   String _searchText = '';
   String _servicesSortSetting = 'A-Z';
   String _productsSortSettings = 'A-Z';
-  NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
+  NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$', decimalDigits: 0);
   late ServicesRepository services;
   late ProductsRepository products;
   bool searchPressed = false;

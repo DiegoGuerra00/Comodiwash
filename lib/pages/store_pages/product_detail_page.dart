@@ -14,7 +14,7 @@ class ProductDetailPage extends StatefulWidget {
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage> {
-  NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
+  NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$', decimalDigits: 0);
   bool isReadMore = false;
   int qtd = 1;
   double rating = 0;

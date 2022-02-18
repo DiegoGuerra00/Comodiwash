@@ -2,12 +2,13 @@
 class CartItem {
   String icon;
   String name;
-  double price;
-
+  int price;
+  int qtd;
 
   CartItem({
     required this.icon,
     required this.name,
     required this.price,
+    required this.qtd
   });
 }

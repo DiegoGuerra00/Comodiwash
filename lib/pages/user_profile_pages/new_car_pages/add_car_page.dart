@@ -35,8 +35,12 @@ class _AddCarPageState extends State<AddCarPage> {
   String licensePlateIcon = 'assets/icons/placas/placa_generica.png';
   String selectedPlateType = '';
 
+  RoundedRectangleBorder modalSheetBorder = RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30), topRight: Radius.circular(30)));
+
   /// Checks if the license plate is in valid
-  /// 
+  ///
   /// @param plate The string with the plate numbers to be checked
   checkLicensePlate<bool>(String plate) {
     List<String> plateChars = [];
@@ -116,7 +120,8 @@ class _AddCarPageState extends State<AddCarPage> {
                     (snapshot.data! as ManufacturerList).manufacturers.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    childAspectRatio: MediaQuery.of(context).size.width / (MediaQuery.of(context).size.height / 2)),
+                    childAspectRatio: MediaQuery.of(context).size.width /
+                        (MediaQuery.of(context).size.height / 2)),
                 itemBuilder: (BuildContext context, int name) => InkWell(
                   onTap: () => {
                     setState(() {
@@ -387,8 +392,7 @@ class _AddCarPageState extends State<AddCarPage> {
                         width: 40,
                         height: 40,
                         child: Image.asset(colorsIcon[color]),
-                      )
-                  ),
+                      )),
                   Spacer(),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
@@ -449,6 +453,7 @@ class _AddCarPageState extends State<AddCarPage> {
         height: 70,
         child: InkWell(
           onTap: () => showModalBottomSheet(
+            shape: modalSheetBorder,
               context: context,
               builder: (BuildContext context) {
                 return SizedBox(
@@ -482,6 +487,7 @@ class _AddCarPageState extends State<AddCarPage> {
           onTap: () {
             if (selectedManufacturer != 'Selecione a marca') {
               showModalBottomSheet(
+                shape: modalSheetBorder,
                   context: context,
                   builder: (BuildContext context) {
                     return SizedBox(
@@ -533,6 +539,7 @@ class _AddCarPageState extends State<AddCarPage> {
         height: 70,
         child: InkWell(
           onTap: () => showModalBottomSheet(
+            shape: modalSheetBorder,
               context: context,
               builder: (BuildContext context) {
                 return SizedBox(
@@ -706,7 +713,7 @@ class _AddCarPageState extends State<AddCarPage> {
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Color.fromRGBO(45, 26, 71, 1)),
-            borderRadius: BorderRadius.all(Radius.circular(100)),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
           border: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -725,6 +732,7 @@ class _AddCarPageState extends State<AddCarPage> {
         height: 70,
         child: InkWell(
           onTap: () => showModalBottomSheet(
+            shape: modalSheetBorder,
               context: context,
               builder: (BuildContext context) {
                 return SizedBox(
@@ -756,7 +764,7 @@ class _AddCarPageState extends State<AddCarPage> {
   }
 
   /// Build the confirm button to send the new car data to firebase
-  /// 
+  ///
   /// If the license plate is invalid or any of the information isn't selected returns a error dialog, otherwise adds the car to firebase in the user garage
   Widget buildConfirmButton() {
     garage = Provider.of<GarageRepository>(context);
@@ -764,7 +772,10 @@ class _AddCarPageState extends State<AddCarPage> {
     return ElevatedButton(
       onPressed: () => {
         if (checkLicensePlate(plateNumber) &&
-            (selectedColor != 'Selecione a cor') && (selectedManufacturer != 'Selecione a marca') && (selectedModel != 'Selecione o modelo') && (selectedYear != 'Selecione o ano'))
+            (selectedColor != 'Selecione a cor') &&
+            (selectedManufacturer != 'Selecione a marca') &&
+            (selectedModel != 'Selecione o modelo') &&
+            (selectedYear != 'Selecione o ano'))
           {
             garage.save(new GarageCar(
                 manufacturer: selectedManufacturer,

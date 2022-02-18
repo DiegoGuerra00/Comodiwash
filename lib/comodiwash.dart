@@ -4,6 +4,7 @@ import 'package:comodiwash/pages/user_profile_pages/settings_page.dart';
 import 'package:comodiwash/repositories/garage_repository.dart';
 import 'package:comodiwash/repositories/products_repository.dart';
 import 'package:comodiwash/repositories/services_repository.dart';
+import 'package:comodiwash/repositories/shopping_cart_repository.dart';
 import 'package:comodiwash/services/login_handle.dart';
 import 'package:comodiwash/services/auth_service.dart';
 import 'package:comodiwash/services/themes/themes_manager.dart';
@@ -70,7 +71,7 @@ class _ComodiWashState extends State<ComodiWash> {
             ),
             ChangeNotifierProvider(
               create: (context) => ProductsRepository() 
-            )
+            ), ChangeNotifierProvider(create: (context) => ShoppingCartRepository())
           ],
           child: MaterialApp(
             theme: theme.copyWith(
