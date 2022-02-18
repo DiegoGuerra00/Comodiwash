@@ -546,6 +546,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        body: SingleChildScrollView(child: buildBody()));
+        body: SingleChildScrollView(
+          reverse: true,
+          child: buildBody()));
   }
 }

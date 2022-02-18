@@ -102,37 +102,6 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
     return Scaffold(
         appBar: GenericAppBar(title: '', useTitle: false),
         body: buildItensList() 
-        /* Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Expanded(child: buildItensList()),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    Text('Métodos de Pagamento',
-                        style: TextStyle(fontSize: 20)),
-                    buildPaymentList(),
-                    Spacer(),
-                    Text('Total do Pedido',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                    Text(real.format(totalPrice),
-                        style: TextStyle(fontSize: 20)),
-                    Spacer(),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(100)),
-                            primary: Color.fromRGBO(45, 26, 71, 1),
-                            onPrimary: Colors.white,
-                            minimumSize: Size(300, 50)),
-                        onPressed: () {
-                          print('Finalizar compra');
-                        },
-                        child: Text('Checkout'))
-                  ],
-                ),
-              ) */);
+        );
   }
 }
