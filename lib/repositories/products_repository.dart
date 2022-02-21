@@ -34,9 +34,10 @@ class ProductsRepository extends ChangeNotifier {
         String name = doc.get('name');
         String icon = doc.get('icon');
         String description = doc.get('description');
-        int price = doc.get('price');
+        int priceInt = doc.get('price');
+        double _priceDouble = priceInt.toDouble();
         _productsList.add(new Products(
-            icon: icon, name: name, description: description, price: price));
+            icon: icon, name: name, description: description, price: _priceDouble));
         notifyListeners();
       });
     }

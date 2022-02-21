@@ -34,9 +34,10 @@ class ServicesRepository extends ChangeNotifier {
         String name = doc.get('name');
         String icon = doc.get('icon');
         String description = doc.get('description');
-        int price = doc.get('price');
+        int priceInt = doc.get('price');
+        double _priceDouble = priceInt.toDouble();
         _servicesList.add(new Services(
-            icon: icon, name: name, description: description, price: price));
+            icon: icon, name: name, description: description, price: _priceDouble));
         notifyListeners();
       });
     }

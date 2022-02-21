@@ -2,7 +2,7 @@
 class CartItem {
   String icon;
   String name;
-  int price;
+  double price;
   int qtd;
 
   CartItem({

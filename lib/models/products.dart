@@ -3,7 +3,7 @@ class Products {
   String icon;
   String name;
   String description;
-  int price;
+  double price;
 
 
   Products({

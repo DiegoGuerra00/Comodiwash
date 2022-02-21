@@ -3,7 +3,7 @@ class Services {
   String icon;
   String name;
   String description;
-  int price;
+  double price;
 
 
   Services({

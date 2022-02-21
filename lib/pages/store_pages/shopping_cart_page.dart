@@ -1,4 +1,3 @@
-import 'package:comodiwash/models/cart_item.dart';
 import 'package:comodiwash/models/generic_app_bar.dart';
 import 'package:comodiwash/repositories/shopping_cart_repository.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +15,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
   late ShoppingCartRepository cartItems =
       Provider.of<ShoppingCartRepository>(context);
   double totalPrice = 0;
+  double discount = 0;
   NumberFormat real =
       NumberFormat.currency(locale: 'pt_BR', name: 'R\$', decimalDigits: 0);
 
@@ -48,12 +48,13 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
   }
 
   Widget buildBody() {
-    return Consumer<ShoppingCartRepository>(builder: (context, items, child) {
-      return items.cartList.isEmpty
+    return Consumer<ShoppingCartRepository>(
+        builder: (context, cartItems, child) {
+      return cartItems.cartList.isEmpty
           ? buildEmptyListBody()
           : ListView.builder(
               physics: ClampingScrollPhysics(),
-              itemCount: items.cartList.length,
+              itemCount: cartItems.cartList.length,
               itemBuilder: (BuildContext context, int item) => Card(
                 child: Row(
                   children: [
@@ -61,7 +62,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
                       padding:
                           const EdgeInsets.only(left: 8, top: 4, bottom: 4),
                       child: SizedBox(
-                        child: Image.asset(items.cartList[item].icon),
+                        child: Image.asset(cartItems.cartList[item].icon),
                         width: 75,
                         height: 75,
                       ),
@@ -72,12 +73,20 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(items.cartList[item].name,
+                        Text(cartItems.cartList[item].name,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20)),
-                        Text(real.format(items.cartList[item].price),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18))
+                        Row(
+                          children: [
+                            Text(real.format(cartItems.cartList[item].price),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 18)),
+                            SizedBox(width: 10,),
+                            Text('x', style: TextStyle(fontSize: 18, color: Colors.grey)),
+                            Text(cartItems.cartList[item].qtd.toString(),
+                                style: TextStyle(fontSize: 18, color: Colors.grey))
+                          ],
+                        )
                       ],
                     ),
                     Spacer(),
@@ -100,6 +109,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Align(
             alignment: Alignment.center,
@@ -117,7 +127,32 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
           ),
-          Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Desconto:',
+                style: TextStyle(color: Colors.grey, fontSize: 20),
+              ),
+              Text(
+                real.format(discount),
+                style: TextStyle(fontSize: 20),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Total:',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                real.format(totalPrice),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
           checkoutButton()
         ],
       ),
@@ -125,9 +160,10 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
   }
 
   Widget checkoutButton() {
-    return ElevatedButton(
+    return ElevatedButton.icon(
         onPressed: () {},
-        child: Text('Checkout'),
+        icon: Icon(Icons.done),
+        label: Text('Checkout'),
         style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(100)),
@@ -145,7 +181,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
             Expanded(child: buildBody()),
             Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: MediaQuery.of(context).size.height * 0.3,
               child: Card(elevation: 10, child: checkoutCard()),
             ),
           ],
