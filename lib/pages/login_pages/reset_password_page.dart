@@ -7,6 +7,7 @@ import 'package:comodiwash/services/themes/storage_manager.dart';
 import 'package:comodiwash/services/timer_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({Key? key}) : super(key: key);
@@ -22,6 +23,12 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
   Timer? timer;
   int spamCount = 0;
   Duration maxTimer = Duration(minutes: 5);
+
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance
+        ?.addPostFrameCallback((_) => getSubmmitButtonState());
+  }
 
   /// Style of the formfield
   InputDecoration formDecoration(String hintText) {
@@ -55,17 +62,28 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     );
   }
 
+  void getSubmmitButtonState() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+        canSendEmail = prefs.getBool('canSendEmail') as bool;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var timerService = TimerService.of(context);
-    int _timerCounter = StorageManager.getTimerCounter('timerCounter') as int;
+    int _timerCounter = 20;
     late Timer _timer;
-    int _lastDateTime = StorageManager.getDateTime('timeStamp') as int;
+    int _lastDateTime;
     String backDialogText =
         'Ao retornar à página de login a redefinição de senha será cancelada.\nPara redefinir a senha você deverá repetir o processo apertando o botão de redefinir a senha';
 
-    void _startTimer() {
-      // TODO get datetime of when the page was closed and actual datetime to calculate the time that has passed
+    void _startTimer() async {
+      // TODO save button state on shared preferences
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      _timerCounter = prefs.getInt('timerCounter') ?? 20;
+      _lastDateTime = prefs.getInt('timeStamp') ?? 0;
+
       if (_lastDateTime != 0) {
         DateTime before = DateTime.fromMillisecondsSinceEpoch(_lastDateTime);
         DateTime now = DateTime.now();
@@ -78,11 +96,13 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
         if (_timerCounter > 0) {
           setState(() {
             _timerCounter--;
+            print(_timerCounter.toString());
           });
         } else {
           setState(() {
             canSendEmail = true;
           });
+          StorageManager.saveData('canSendEmail', true);
           _timer.cancel();
           StorageManager.deleteData('timerCounter');
           StorageManager.deleteData('timeStamp');
@@ -105,6 +125,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     Future resetPassword() async {
       setState(() {
         canSendEmail = false;
+        StorageManager.saveData('canSendEmail', false);
       });
 
       try {
@@ -158,6 +179,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                         StorageManager.saveData('timerCounter', _timerCounter);
                         int timeStamp = DateTime.now().millisecondsSinceEpoch;
                         StorageManager.saveData('timeStamp', timeStamp);
+                        StorageManager.saveData('canSendEmail', canSendEmail);
                         Navigator.push(context,
                             MaterialPageRoute(builder: (_) => LoginPage()));
                       },
@@ -202,7 +224,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      submitButton()
+                      submitButton(),
                     ],
                   ),
                 );
