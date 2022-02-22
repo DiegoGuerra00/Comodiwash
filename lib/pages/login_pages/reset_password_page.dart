@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:comodiwash/models/generic_app_bar.dart';
 import 'package:comodiwash/pages/login_pages/login_page.dart';
 import 'package:comodiwash/services/auth_service.dart';
+import 'package:comodiwash/services/themes/storage_manager.dart';
 import 'package:comodiwash/services/timer_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -57,8 +58,27 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
   @override
   Widget build(BuildContext context) {
     var timerService = TimerService.of(context);
+    int _timerCounter = StorageManager.getTimerCounter('timerCounter') as int;
+    late Timer _timer;
     String backDialogText =
         'Ao retornar à página de login a redefinição de senha será cancelada.\nPara redefinir a senha você deverá repetir o processo apertando o botão de redefinir a senha';
+
+    void _startTimer() {
+      // TODO get datetime of when the page was closed and actual datetime to calculate the time that has passed
+      _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+        if (_timerCounter > 0) {
+          setState(() {
+            _timerCounter--;
+          });
+        } else {
+          setState(() {
+            canSendEmail = true;
+          });
+          _timer.cancel();
+          StorageManager.deleteData('timerCounter');
+        }
+      });
+    }
 
     /// Checks spam with the email
     ///
@@ -81,7 +101,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
         if (_formKey.currentState!.validate()) {
           final provider = Provider.of<AuthProvider>(context, listen: false);
           provider.emailResetPassword(email: _emailController.text.trim());
-          timerService.start();
+          _startTimer();
           spamCount++;
         }
       } catch (e) {
@@ -125,13 +145,20 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 actions: [
                   TextButton(
                       onPressed: () {
+                        StorageManager.saveData('timerCounter', _timerCounter);
                         Navigator.push(context,
                             MaterialPageRoute(builder: (_) => LoginPage()));
                       },
-                      child: Text('Ok', style: TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),)),
+                      child: Text(
+                        'Ok',
+                        style: TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
+                      )),
                   TextButton(
                       onPressed: Navigator.of(context).pop,
-                      child: Text('Cancelar', style: TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),))
+                      child: Text(
+                        'Cancelar',
+                        style: TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
+                      ))
                 ],
               );
             });
