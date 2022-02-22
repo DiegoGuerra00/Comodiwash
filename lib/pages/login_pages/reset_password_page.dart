@@ -60,11 +60,20 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     var timerService = TimerService.of(context);
     int _timerCounter = StorageManager.getTimerCounter('timerCounter') as int;
     late Timer _timer;
+    int _lastDateTime = StorageManager.getDateTime('timeStamp') as int;
     String backDialogText =
         'Ao retornar à página de login a redefinição de senha será cancelada.\nPara redefinir a senha você deverá repetir o processo apertando o botão de redefinir a senha';
 
     void _startTimer() {
       // TODO get datetime of when the page was closed and actual datetime to calculate the time that has passed
+      if (_lastDateTime != 0) {
+        DateTime before = DateTime.fromMillisecondsSinceEpoch(_lastDateTime);
+        DateTime now = DateTime.now();
+        Duration timeDifference = now.difference(before);
+        int timeDifferenceSeconds = timeDifference.inSeconds;
+
+        _timerCounter = _timerCounter - timeDifferenceSeconds;
+      }
       _timer = Timer.periodic(Duration(seconds: 1), (timer) {
         if (_timerCounter > 0) {
           setState(() {
@@ -76,6 +85,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
           });
           _timer.cancel();
           StorageManager.deleteData('timerCounter');
+          StorageManager.deleteData('timeStamp');
         }
       });
     }
@@ -108,14 +118,14 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
         print(e.toString());
       }
 
-      timer = Timer.periodic(Duration(seconds: 1), (_) {
+      /* timer = Timer.periodic(Duration(seconds: 1), (_) {
         if (timerService.currentDuration >= maxTimer) {
           setState(() {
             canSendEmail = true;
           });
           timerService.reset();
         }
-      });
+      }); */
     }
 
     /// ElevatedButton to submit the password reset
@@ -146,6 +156,8 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   TextButton(
                       onPressed: () {
                         StorageManager.saveData('timerCounter', _timerCounter);
+                        int timeStamp = DateTime.now().millisecondsSinceEpoch;
+                        StorageManager.saveData('timeStamp', timeStamp);
                         Navigator.push(context,
                             MaterialPageRoute(builder: (_) => LoginPage()));
                       },

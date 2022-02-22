@@ -24,19 +24,24 @@ class StorageManager {
   static Future<dynamic> readData(String key) async {
     final prefs = await SharedPreferences.getInstance();
     dynamic obj = prefs.get(key);
-    return obj ?? false;
+    return obj;
   }
 
-
   /// Get the counter used for the timer on reset password page
-  /// 
+  ///
   /// @param String key key used to identify the counter in SharedPreferences
-  /// 
+  ///
   /// @return int counter or 300(seconds or 5 minutes) when value doesn't exist
   static Future<int> getTimerCounter(String key) async {
     final prefs = await SharedPreferences.getInstance();
     int? obj = prefs.getInt(key);
     return obj ?? 300;
+  }
+
+  static Future<int> getDateTime(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    int? obj = prefs.getInt(key);
+    return obj ?? 0;
   }
 
   /// Delete the data assigned to the key passed
