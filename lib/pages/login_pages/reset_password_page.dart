@@ -199,7 +199,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
         return false;
       },
       child: Scaffold(
-        appBar: GenericAppBar(title: 'Esqueci minha senha', useTitle: true),
+        appBar: GenericAppBar(title: 'Esqueci minha senha', useTitle: true), // TODO execute timer functions on appBar button
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(

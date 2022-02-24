@@ -35,7 +35,7 @@ class StorageManager {
   static Future<int> getTimerCounter(String key) async {
     final prefs = await SharedPreferences.getInstance();
     int? obj = prefs.getInt(key);
-    return obj?? 300;
+    return obj ?? 300;
   }
 
   static Future<int> getDateTime(String key) async {
