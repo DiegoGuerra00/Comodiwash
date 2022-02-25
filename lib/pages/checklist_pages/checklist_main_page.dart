@@ -2,6 +2,7 @@ import 'package:comodiwash/pages/checklist_pages/engine_checklist_page.dart';
 import 'package:comodiwash/pages/checklist_pages/lights_checklist_page.dart.dart';
 import 'package:comodiwash/pages/checklist_pages/tires_checklist_page.dart.dart';
 import 'package:comodiwash/pages/login_pages/user_info_page.dart';
+import 'package:comodiwash/pages/test_pages/realtime_test.dart';
 import 'package:flutter/material.dart';
 
 class CheckListMainPage extends StatefulWidget {
@@ -284,7 +285,7 @@ class _CheckListMainPageState extends State<CheckListMainPage>
           onPrimary: Colors.black,
           minimumSize: Size(buttonHeight, buttonWidth)),
       onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (_) => UserInfoPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (_) => RealtimeTest()));
       },
       label: Text(
         'Informações Gerais                                                                  ',
