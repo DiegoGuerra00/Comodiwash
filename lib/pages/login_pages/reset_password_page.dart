@@ -1,10 +1,7 @@
 import 'dart:async';
 
-import 'package:comodiwash/models/generic_app_bar.dart';
-import 'package:comodiwash/pages/login_pages/login_page.dart';
 import 'package:comodiwash/services/auth_service.dart';
 import 'package:comodiwash/services/themes/storage_manager.dart';
-import 'package:comodiwash/services/timer_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -22,12 +19,13 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
   bool canSendEmail = true;
   Timer? timer;
   int spamCount = 0;
-  Duration maxTimer = Duration(minutes: 5);
+  int _timerCounter = 30;
+  late Timer _timer;
+  int _lastDateTime = 0;
 
   void initState() {
     super.initState();
-    WidgetsBinding.instance
-        ?.addPostFrameCallback((_) => getSubmmitButtonState());
+    WidgetsBinding.instance?.addPostFrameCallback((_) => getTimerState());
   }
 
   /// Style of the formfield
@@ -62,41 +60,60 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     );
   }
 
-  void getSubmmitButtonState() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-        canSendEmail = prefs.getBool('canSendEmail') as bool;
-    });
+  /// ElevatedButton to submit the password reset
+  ///
+  /// onPressed checks the bool canSendEmail to enable or disable the button
+  Widget submitButton() {
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+          primary: checkSpam() ? Color.fromRGBO(45, 26, 71, 1) : Colors.grey,
+          onPrimary: Colors.white,
+          minimumSize: Size(300, 50),
+        ),
+        onPressed: canSendEmail ? resetPassword : null,
+        child: Text('Enviar'));
   }
 
-  @override
-  Widget build(BuildContext context) {
-    var timerService = TimerService.of(context);
-    int _timerCounter = 20;
-    late Timer _timer;
-    int _lastDateTime;
-    String backDialogText =
-        'Ao retornar à página de login a redefinição de senha será cancelada.\nPara redefinir a senha você deverá repetir o processo apertando o botão de redefinir a senha';
+  /// Function used to start the timer when the user clicks on the submmit button
+  void _startTimer() async {
+    getTimerState();
+  }
 
-    void _startTimer() async {
-      // TODO save button state on shared preferences
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      _timerCounter = prefs.getInt('timerCounter') ?? 20;
-      _lastDateTime = prefs.getInt('timeStamp') ?? 0;
+  /// Checks spam with the email
+  ///
+  /// Blocks the button if either more than 5 requisitons were made or the last email was sent less than 5 minutes ago
+  bool checkSpam() {
+    if (spamCount <= 5 && canSendEmail) {
+      return true;
+    }
 
-      if (_lastDateTime != 0) {
-        DateTime before = DateTime.fromMillisecondsSinceEpoch(_lastDateTime);
-        DateTime now = DateTime.now();
-        Duration timeDifference = now.difference(before);
-        int timeDifferenceSeconds = timeDifference.inSeconds;
+    return false;
+  }
 
-        _timerCounter = _timerCounter - timeDifferenceSeconds;
+  void getTimerState() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    _timerCounter = prefs.getInt('timerCounter') ?? 30; //TODO set 300 seconds
+    _lastDateTime = prefs.getInt('timeStamp') ?? 0;
+    if (_lastDateTime != 0) {
+      DateTime before = DateTime.fromMillisecondsSinceEpoch(_lastDateTime);
+      DateTime now = DateTime.now();
+      Duration timeDifference = now.difference(before);
+      int timeDifferenceSeconds = timeDifference.inSeconds;
+
+      _timerCounter = _timerCounter - timeDifferenceSeconds;
+
+      if (_timerCounter > 0) {
+        setState(() {
+          canSendEmail = false;
+        });
       }
       _timer = Timer.periodic(Duration(seconds: 1), (timer) {
         if (_timerCounter > 0) {
           setState(() {
             _timerCounter--;
-            print(_timerCounter.toString());
+            print('Timer:' + _timerCounter.toString());
           });
         } else {
           setState(() {
@@ -109,159 +126,77 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
         }
       });
     }
+  }
 
-    /// Checks spam with the email
-    ///
-    /// Blocks the button if either more than 5 requisitons were made or the last email was sent less than 5 minutes ago
-    bool checkSpam() {
-      if (spamCount <= 5 && canSendEmail) {
-        return true;
+  /// Sends the password reset email and then awaits 5 minutes to enable the send button again
+  Future resetPassword() async {
+    setState(() {
+      canSendEmail = false;
+      StorageManager.saveData('canSendEmail', false);
+    });
+
+    try {
+      if (_formKey.currentState!.validate()) {
+        final provider = Provider.of<AuthProvider>(context, listen: false);
+        // provider.emailResetPassword(email: _emailController.text.trim());
+        _startTimer();
+        spamCount++;
       }
-
-      return false;
+    } catch (e) {
+      print(e.toString());
     }
+  }
 
-    /// Sends the password reset email and then awaits 5 minutes to enable the send button again
-    Future resetPassword() async {
-      setState(() {
-        canSendEmail = false;
-        StorageManager.saveData('canSendEmail', false);
-      });
-
-      try {
-        if (_formKey.currentState!.validate()) {
-          final provider = Provider.of<AuthProvider>(context, listen: false);
-          provider.emailResetPassword(email: _emailController.text.trim());
-          _startTimer();
-          spamCount++;
-        }
-      } catch (e) {
-        print(e.toString());
-      }
-
-      /* timer = Timer.periodic(Duration(seconds: 1), (_) {
-        if (timerService.currentDuration >= maxTimer) {
-          setState(() {
-            canSendEmail = true;
-          });
-          timerService.reset();
-        }
-      }); */
-    }
-
-    /// ElevatedButton to submit the password reset
-    ///
-    /// onPressed checks the bool canSendEmail to enable or disable the button
-    Widget submitButton() {
-      return ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100)),
-            primary: checkSpam() ? Color.fromRGBO(45, 26, 71, 1) : Colors.grey,
-            onPrimary: Colors.white,
-            minimumSize: Size(300, 50),
-          ),
-          onPressed: canSendEmail ? resetPassword : null,
-          child: Text('Enviar'));
-    }
-
+  @override
+  Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text('Alerta'),
-                content: Text(backDialogText),
-                actions: [
-                  TextButton(
-                      onPressed: () {
-                        StorageManager.saveData('timerCounter', _timerCounter);
-                        int timeStamp = DateTime.now().millisecondsSinceEpoch;
-                        StorageManager.saveData('timeStamp', timeStamp);
-                        StorageManager.saveData('canSendEmail', canSendEmail);
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => LoginPage()));
-                      },
-                      child: Text(
-                        'Ok',
-                        style: TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
-                      )),
-                  TextButton(
-                      onPressed: Navigator.of(context).pop,
-                      child: Text(
-                        'Cancelar',
-                        style: TextStyle(color: Color.fromRGBO(45, 26, 71, 1)),
-                      ))
-                ],
-              );
-            });
+        StorageManager.saveData('timerCounter', _timerCounter);
+        int timeStamp = DateTime.now().millisecondsSinceEpoch;
+        StorageManager.saveData('timeStamp', timeStamp);
+        StorageManager.saveData('canSendEmail', canSendEmail);
+        Navigator.pop(context);
         return false;
       },
       child: Scaffold(
-        appBar: GenericAppBar(title: 'Esqueci minha senha', useTitle: true), // TODO execute timer functions on appBar button
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.black,
+            ),
+            onPressed: () => Navigator.pop(context),
+          ),
+          elevation: 0,
+          backgroundColor: Colors.white,
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(
-            child: AnimatedBuilder(
-              animation: timerService,
-              builder: (context, child) {
-                return Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: Center(
-                              child: Text(
-                        'Insira seu e-mail para recuperar a senha',
-                        style: TextStyle(fontSize: 24),
-                      ))),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.15,
-                      ),
-                      emailField(),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      submitButton(),
-                    ],
-                  ),
-                );
-              },
+              child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                    child: Center(
+                        child: Text(
+                  'Insira seu e-mail para recuperar a senha',
+                  style: TextStyle(fontSize: 24),
+                ))),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.15,
+                ),
+                emailField(),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                submitButton(),
+              ],
             ),
-          ),
+          )),
         ),
       ),
     );
-
-    /* return Scaffold(
-      appBar: GenericAppBar(title: 'Esqueci minha senha', useTitle: true),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                  child: Center(
-                      child: Text(
-                'Insira seu e-mail para recuperar a senha',
-                style: TextStyle(fontSize: 24),
-              ))),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.15,
-              ),
-              emailField(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              submitButton()
-            ],
-          ),
-        ),
-      ),
-    ); */
   }
 }
